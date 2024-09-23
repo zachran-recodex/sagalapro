@@ -11,6 +11,8 @@ Route::get('/service/aerial-fire-fighting-consultant-operation', [MainController
 Route::get('/service/heavy-outsized-cargo-service', [MainController::class, 'cargo'])->name('cargo');
 Route::get('/service/private-jet-charters-flights', [MainController::class, 'charter'])->name('charter');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+Route::get('/blog', [MainController::class, 'blog'])->name('blog');
+Route::get('/fleet', [MainController::class, 'fleet'])->name('fleet');
 
 
 Route::get('/dashboard', function () {

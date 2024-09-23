@@ -44,6 +44,16 @@ class MainController extends Controller
         return view ('main.contact');
     }
 
+    public function blog()
+    {
+        return view ('main.blog');
+    }
+
+    public function fleet()
+    {
+        return view ('main.fleet');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
