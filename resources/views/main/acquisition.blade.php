@@ -5,7 +5,7 @@
     <section class="bg-cover bg-center bg-no-repeat h-screen" style="background-image: url({{ asset('images/air.jpg') }})">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative h-full flex items-center">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="container-main py-12">
                 <div class="text-center lg:text-start">
                     <p class="leading-relaxed text-white text-lg md:text-xl">
                         Sagala Pro Aerial Support
@@ -19,8 +19,8 @@
     </section>
 
     <!-- Description Section -->
-    <section class="py-8 sm:py-12 lg:py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-main">
+        <div class="container-main">
             <div class="flex flex-wrap lg:flex-nowrap gap-8 items-center">
                 <!-- Image Section -->
                 <div class="w-full lg:w-1/2">
@@ -29,7 +29,7 @@
                 </div>
                 <!-- Text Section -->
                 <div class="w-full lg:w-1/2">
-                    <h2 class="text-[#2A6F97] text-2xl font-bold mb-4">Aircraft & Helicopter Acquisition</h2>
+                    <h2 class="text-[#2A6F97] text-title">Aircraft & Helicopter Acquisition</h2>
                     <p class="mb-4 text-justify">
                         We specialize in the acquisition of aircraft and helicopters tailored to your specific needs.
                         Whether you are looking to purchase new or pre-owned aircraft, our team will guide you through the
@@ -60,8 +60,8 @@
     </section>
 
     <!-- Request a Quote Section -->
-    <section class="bg-[#2A6F97] py-8 sm:py-12 lg:py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-white lg:text-start text-center">
+    <section class="bg-[#2A6F97] py-main">
+        <div class="container-main text-white lg:text-start text-center">
             <h3 class="text-2xl sm:text-3xl font-semibold mb-4">
                 Request a Quote
             </h3>
@@ -77,8 +77,8 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-8 sm:py-12 lg:py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-main">
+        <div class="container-main">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Section -->
                 <div class="lg:col-span-1 flex flex-col justify-center">
@@ -207,8 +207,8 @@
     </section>
 
     <!-- Latest News and Blog Section -->
-    <section class="bg-[#F9F9F9] py-8 sm:py-12 lg:py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="bg-[#F9F9F9] py-main">
+        <div class="container-main">
             <h2 class="text-4xl font-bold mb-8 text-black">Latest News and Blog</h2>
         </div>
         <div class="px-4 sm:px-6 lg:px-8">

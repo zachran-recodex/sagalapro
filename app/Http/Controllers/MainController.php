@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Faq;
+use App\Models\Blog;
+use App\Models\Fleet;
+use App\Models\Contact;
+use App\Models\Partner;
+use App\Models\Service;
+use App\Models\HeroSection;
+use App\Http\Requests\StoreContactRequest;
 
 class MainController extends Controller
 {
@@ -11,12 +18,79 @@ class MainController extends Controller
      */
     public function index()
     {
-        return view ('index');
+        $hero_sections = HeroSection::all();
+        $services = Service::all();
+        $partners = Partner::all();
+        $blogs = Blog::all();
+        $faqs = Faq::all();
+
+        return view('index', compact('hero_sections', 'services', 'partners', 'blogs', 'faqs'));
     }
 
     public function about()
     {
-        return view ('main.about');
+        $partners = Partner::all();
+        $blogs = Blog::all();
+        $faqs = Faq::all();
+
+        return view ('main.about', compact('partners', 'blogs', 'faqs'));
+    }
+
+    public function service($slug)
+    {
+        $services = Service::all();
+        $blogs = Blog::all();
+        $faqs = Faq::all();
+        $service = Service::where('slug', $slug)->firstOrFail();
+
+        return view('main.service', compact('service', 'services', 'faqs', 'blogs'));
+    }
+
+    public function fleet()
+    {
+        $fleets = Fleet::all();
+        $blogs = Blog::all();
+        $faqs = Faq::all();
+
+        return view ('main.fleet', compact('fleets', 'blogs', 'faqs'));
+    }
+
+    public function detailFleet($slug)
+    {
+        $blogs = Blog::all();
+        $faqs = Faq::all();
+        $fleet = Fleet::where('slug', $slug)->firstOrFail();
+
+        return view ('main.discover', compact('fleet', 'faqs', 'blogs'));
+    }
+
+    public function blog($slug)
+    {
+        $blogs = Blog::all();
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+
+        return view('main.blog', compact('blog', 'blogs'));
+    }
+
+    public function contact()
+    {
+        return view ('main.contact');
+    }
+
+    public function storeContact(StoreContactRequest $request)
+    {
+        $contact = new Contact();
+
+        // Update fields with request data
+        $contact->name = $request->name;
+        $contact->phone = $request->phone;
+        $contact->email = $request->email;
+        $contact->service = $request->service;
+        $contact->message = $request->message;
+
+        $contact->save();
+
+        return redirect()->route('main.contact')->with('success', 'Service created successfully');
     }
 
     public function acquisition()
@@ -37,68 +111,5 @@ class MainController extends Controller
     public function charter()
     {
         return view ('main.charter');
-    }
-
-    public function contact()
-    {
-        return view ('main.contact');
-    }
-
-    public function blog()
-    {
-        return view ('main.blog');
-    }
-
-    public function fleet()
-    {
-        return view ('main.fleet');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
