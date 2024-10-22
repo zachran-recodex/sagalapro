@@ -43,7 +43,7 @@
                                 class="w-full h-[350px] object-cover rounded-lg shadow-lg">
                         </div>
                         <div class="col-span-2">
-                            <h2 class="text-sagala text-2xl font-bold mb-4 pb-4 border-b-2 border-black">
+                            <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-black">
                                 {{ $fleet->title }}</h2>
                             <p class="text-gray-700 text-justify mb-6">
                                 {{ $fleet->description }}
@@ -55,7 +55,7 @@
                         </div>
                     @else
                         <div class="col-span-2">
-                            <h2 class="text-sagala text-2xl font-bold mb-4 pb-4 border-b-2 border-black">
+                            <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-black">
                                 {{ $fleet->title }}</h2>
                             <p class="text-gray-700 text-justify mb-6">
                                 {{ $fleet->description }}
@@ -78,7 +78,7 @@
     @endforelse
 
     <!-- Request a Quote Section -->
-    <section class="bg-sagala py-main">
+    <section class="bg-sagala-500 py-main">
         <div class="container-main text-white lg:text-start text-center">
             <h3 class="text-title">
                 Request a Quote
@@ -90,7 +90,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-white py-[10px] px-[26px] text-base transition hover:bg-white hover:text-sagala">
+                class="inline-flex items-center border border-white py-[10px] px-[26px] text-base transition hover:bg-white hover:text-sagala-500">
                 Get a Quote
             </a>
         </div>
@@ -103,12 +103,12 @@
                 <!-- Left Section -->
                 <div class="lg:col-span-1 flex flex-col justify-between">
                     <h2 class="text-title text-black">Frequently Asked Questions</h2>
-                    <a href="{{ route('contact') }}" class="text-sagala font-light underline">Contact Support</a>
+                    <a href="{{ route('contact') }}" class="text-sagala-500 font-light underline">Contact Support</a>
                 </div>
 
                 <!-- Right Section -->
                 <div class="lg:col-span-2">
-                    <div class="divide-y divide-sagala">
+                    <div class="divide-y divide-sagala-500">
                         @forelse ($faqs as $faq)
                             <!-- FAQ Item -->
                             <div class="py-4">
@@ -151,7 +151,7 @@
                                     <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala text-wrap">
+                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
                                     {{ $blog->title }}
                                 </h5>
                             </div>
@@ -164,7 +164,7 @@
                                     <p class="mb-3 font-light text-gray-700">News</p>
                                     <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala text-wrap">
+                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
                                     All you need to know about Ground Handling
                                 </h5>
                             </div>

@@ -39,10 +39,10 @@
                                 <h1 class="mb-6 mt-2 text-4xl font-bold text-white sm:text-6xl">{{ $item->title }}</h1>
                                 <div class="flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
                                     <a href="{{ route('about') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-white transition bg-sagala border-0 hover:bg-[#1d5e7a] focus:outline-none">About
+                                        class="inline-flex py-2 px-6 text-lg text-white transition bg-sagala-500 border-0 hover:bg-sagala-600 focus:outline-none">About
                                         Us</a>
                                     <a href="{{ route('contact') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-white transition border border-white hover:bg-white hover:text-sagala focus:outline-none">Get
+                                        class="inline-flex py-2 px-6 text-lg text-white transition border border-white hover:bg-white hover:text-sagala-500 focus:outline-none">Get
                                         a Quote</a>
                                 </div>
                             </div>
@@ -64,10 +64,10 @@
                                 <h1 class="mb-6 mt-2 text-4xl font-bold text-white sm:text-6xl">Welcome</h1>
                                 <div class="flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
                                     <a href="{{ route('about') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-white transition bg-sagala border-0 hover:bg-[#1d5e7a] focus:outline-none">About
+                                        class="inline-flex py-2 px-6 text-lg text-white transition bg-sagala-500 border-0 hover:bg-[#1d5e7a] focus:outline-none">About
                                         Us</a>
                                     <a href="{{ route('contact') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-white transition border border-white hover:bg-white hover:text-sagala focus:outline-none">Get
+                                        class="inline-flex py-2 px-6 text-lg text-white transition border border-white hover:bg-white hover:text-sagala-500 focus:outline-none">Get
                                         a Quote</a>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
     <!-- Partner Section -->
     <section class="py-main">
         <div class="container-main">
-            <h2 class="text-center text-title text-sagala">We Work with the Best Partners</h2>
+            <h2 class="text-center text-title text-sagala-500">We Work with the Best Partners</h2>
 
             <div x-data="{}" x-init="$nextTick(() => {
                 let ul = $refs.logos;
@@ -115,9 +115,9 @@
                         <img src="{{ Storage::url($service->image) }}" alt="{{ $service->title }}"
                             class="w-full h-screen object-cover">
                         <div
-                            class="absolute inset-0 flex flex-col justify-end items-start bg-black hover:bg-sagala bg-opacity-50 hover:bg-opacity-65 pb-[125px] pl-10">
+                            class="absolute inset-0 flex flex-col justify-end items-start bg-black hover:bg-sagala-600 bg-opacity-50 hover:bg-opacity-65 pb-[125px] pl-10">
                             <h3 class="text-white text-lg font-medium mb-1">{{ $service->title }}</h3>
-                            <svg class="w-[56px] h-[16px] text-sagala hover:text-white" aria-hidden="true"
+                            <svg class="w-[56px] h-[16px] text-sagala-500 hover:text-white" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" width="56" height="16" fill="none"
                                 viewBox="0 0 56 16">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -137,7 +137,7 @@
     <!-- Why Choose Us Section -->
     <section class="py-main">
         <div class="container-main">
-            <h2 class="text-sagala text-title">
+            <h2 class="text-sagala-500 text-title">
                 Why Choose Us?
             </h2>
             <p class="text-desc">
@@ -148,8 +148,8 @@
             <a href="{{ route('about') }}"
                 class="inline-flex items-center border border-black py-2 px-4 sm:py-3 sm:px-6 focus:outline-none text-sm sm:text-lg transition hover:bg-black hover:text-white">
                 More About Us
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sagala ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sagala-500 ml-2" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M19 12H5m14 0-4 4m4-4-4-4" />
                 </svg>
@@ -214,7 +214,7 @@
     </section>
 
     <!-- Request a Quote Section -->
-    <section class="bg-sagala py-main">
+    <section class="bg-sagala-500 py-main">
         <div class="container-main text-white lg:text-start text-center">
             <h2 class="text-title">
                 Request a Quote
@@ -226,7 +226,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-white py-[10px] px-[26px] text-base transition hover:bg-white hover:text-sagala">
+                class="inline-flex items-center border border-white py-[10px] px-[26px] text-base transition hover:bg-white hover:text-sagala-500">
                 Get a Quote
             </a>
         </div>
@@ -239,12 +239,12 @@
                 <!-- Left Section -->
                 <div class="lg:col-span-1 flex flex-col justify-between">
                     <h2 class="text-title text-black">Frequently Asked Questions</h2>
-                    <a href="{{ route('contact') }}" class="text-sagala font-light underline">Contact Support</a>
+                    <a href="{{ route('contact') }}" class="text-sagala-500 font-light underline">Contact Support</a>
                 </div>
 
                 <!-- Right Section -->
                 <div class="lg:col-span-2">
-                    <div class="divide-y divide-sagala">
+                    <div class="divide-y divide-sagala-500">
                         @forelse ($faqs as $faq)
                             <!-- FAQ Item -->
                             <div class="py-4">
@@ -287,7 +287,7 @@
                                     <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala text-wrap">
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
                                     {{ $blog->title }}
                                 </h3>
                             </div>
@@ -300,7 +300,7 @@
                                     <p class="mb-3 font-light text-gray-700">Neows</p>
                                     <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
                                 </div>
-                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala text-wrap">
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
                                     All you need to know about Ground Handling
                                 </h3>
                             </div>

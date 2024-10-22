@@ -48,18 +48,18 @@
             <div class="">
                 <ul class="flex space-x-12 justify-between items-center">
                     <li>
-                        <a href="{{ route('home') }}" class="hover:text-sagala">
+                        <a href="{{ route('home') }}" class="hover:text-sagala-500">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('about') }}" class="hover:text-sagala">
+                        <a href="{{ route('about') }}" class="hover:text-sagala-500">
                             About Us
                         </a>
                     </li>
                     <li>
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="flex justify-between items-center hover:text-sagala">Services
+                            class="flex justify-between items-center hover:text-sagala-500">Services
                             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -84,13 +84,13 @@
                         </div>
                     </li>
                     <li>
-                        <a href="{{ route('fleet') }}" class="hover:text-sagala">
+                        <a href="{{ route('fleet') }}" class="hover:text-sagala-500">
                             Fleets
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('contact') }}"
-                            class="bg-sagala px-4 py-2 rounded-lg border hover:bg-transparent hover:border">
+                            class="bg-sagala-500 px-4 py-2 rounded-lg border hover:bg-transparent hover:border">
                             Contact Us
                         </a>
                     </li>
@@ -103,7 +103,7 @@
         @yield('content')
     </main>
 
-    <footer class="bg-sagala pt-16 text-white">
+    <footer class="bg-sagala-500 pt-16 text-white">
         <div class="container-main">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- Section 1: Logo and Description -->
