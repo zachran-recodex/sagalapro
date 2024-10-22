@@ -36,7 +36,7 @@
 
 <body>
 
-    <header class="bg-transparent fixed w-full z-50 top-0 left-0 py-4 transition duration-300 text-white"
+    <header class="bg-transparent fixed w-full z-50 top-0 left-0 py-4 transition duration-300 text-sagala-opt-50"
         id="navbar">
         <nav class="container-main flex items-center justify-between">
             <a href="{{ route('home') }}">
@@ -46,18 +46,18 @@
             <div class="">
                 <ul class="flex space-x-12 justify-between items-center">
                     <li>
-                        <a href="{{ route('home') }}" class="hover:text-sagala-500">
+                        <a href="{{ route('home') }}" class="hover:text-sagala-600">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('about') }}" class="hover:text-sagala-500">
+                        <a href="{{ route('about') }}" class="hover:text-sagala-600">
                             About Us
                         </a>
                     </li>
                     <li>
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="flex justify-between items-center hover:text-sagala-500">Services
+                            class="flex justify-between items-center hover:text-sagala-600">Services
                             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -66,7 +66,7 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-fit">
+                            class="z-10 hidden font-normal bg-sagala-opt-50 divide-y divide-gray-100 rounded-lg shadow w-fit">
                             <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
                                 @forelse ($navServices as $service)
                                     <li>
@@ -82,13 +82,13 @@
                         </div>
                     </li>
                     <li>
-                        <a href="{{ route('fleet') }}" class="hover:text-sagala-500">
+                        <a href="{{ route('fleet') }}" class="hover:text-sagala-600">
                             Fleets
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('contact') }}"
-                            class="bg-sagala-500 px-4 py-2 rounded-lg border hover:bg-transparent hover:border">
+                            class="bg-sagala-600 px-4 py-2 rounded-lg border hover:bg-transparent hover:border">
                             Contact Us
                         </a>
                     </li>
@@ -101,7 +101,7 @@
         @yield('content')
     </main>
 
-    <footer class="bg-sagala-500 pt-16 text-white">
+    <footer class="bg-sagala-600 pt-16 text-sagala-opt-50">
         <div class="container-main">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- Section 1: Logo and Description -->
@@ -224,12 +224,12 @@
             const logo = document.getElementById('navbarLogo');
 
             if (window.scrollY > 50) {
-                navbar.classList.add('bg-white', 'shadow-md', 'text-black');
-                navbar.classList.remove('bg-transparent', 'text-white');
+                navbar.classList.add('bg-sagala-opt-50', 'shadow-md', 'text-sagala-opt-950');
+                navbar.classList.remove('bg-transparent', 'text-sagala-opt-50');
                 logo.src = "{{ asset('images/logo-sagala-second.png') }}";
             } else {
-                navbar.classList.add('bg-transparent', 'text-white');
-                navbar.classList.remove('bg-white', 'shadow-md', 'text-black');
+                navbar.classList.add('bg-transparent', 'text-sagala-opt-50');
+                navbar.classList.remove('bg-sagala-opt-50', 'shadow-md', 'text-sagala-opt-950');
                 logo.src = "{{ asset('images/logo-sagala.png') }}";
             }
         });

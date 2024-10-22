@@ -22,10 +22,10 @@
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-[50vh]"
         style="background-image: url({{ asset('images/hero-about.jpg') }})">
-        <div class="relative bg-black/50 h-full flex items-center">
+        <div class="relative bg-sagala-opt-950/50 h-full flex items-center">
             <div class="container-main py-12">
                 <div class="text-center lg:text-start">
-                    <h2 class="text-4xl sm:text-6xl font-bold text-white mt-2">
+                    <h2 class="text-4xl sm:text-6xl font-bold text-sagala-opt-50 mt-2">
                         Explore Our Exclusive Fleet
                     </h2>
                 </div>
@@ -43,25 +43,25 @@
                                 class="w-full h-[350px] object-cover rounded-lg shadow-lg">
                         </div>
                         <div class="col-span-2">
-                            <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-black">
+                            <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-sagala-opt-950">
                                 {{ $fleet->title }}</h2>
                             <p class="text-gray-700 text-justify mb-6">
                                 {{ $fleet->description }}
                             </p>
                             <a href="{{ route('fleet.details', $fleet->slug) }}"
-                                class="inline-block py-2 border-b-2 border-black">
+                                class="inline-block py-2 border-b-2 border-sagala-opt-950">
                                 Discover {{ $fleet->title }}
                             </a>
                         </div>
                     @else
                         <div class="col-span-2">
-                            <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-black">
+                            <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-sagala-opt-950">
                                 {{ $fleet->title }}</h2>
                             <p class="text-gray-700 text-justify mb-6">
                                 {{ $fleet->description }}
                             </p>
                             <a href="{{ route('fleet.details', $fleet->slug) }}"
-                                class="inline-block py-2 border-b-2 border-black">
+                                class="inline-block py-2 border-b-2 border-sagala-opt-950">
                                 Discover {{ $fleet->title }}
                             </a>
                         </div>
@@ -79,7 +79,7 @@
 
     <!-- Request a Quote Section -->
     <section class="bg-sagala-500 py-main">
-        <div class="container-main text-white lg:text-start text-center">
+        <div class="container-main text-sagala-opt-50 lg:text-start text-center">
             <h3 class="text-title">
                 Request a Quote
             </h3>
@@ -90,7 +90,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-white py-[10px] px-[26px] text-base transition hover:bg-white hover:text-sagala-500">
+                class="inline-flex items-center border border-sagala-opt-50 py-[10px] px-[26px] text-base transition hover:bg-sagala-opt-50 hover:text-sagala-500">
                 Get a Quote
             </a>
         </div>
@@ -102,7 +102,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Section -->
                 <div class="lg:col-span-1 flex flex-col justify-between">
-                    <h2 class="text-title text-black">Frequently Asked Questions</h2>
+                    <h2 class="text-title bg-sagala-opt-950">Frequently Asked Questions</h2>
                     <a href="{{ route('contact') }}" class="text-sagala-500 font-light underline">Contact Support</a>
                 </div>
 
@@ -133,7 +133,7 @@
     </section>
 
     <!-- Latest News and Blog Section -->
-    <section class="bg-[#F9F9F9] py-main">
+    <section class="bg-sagala-opt-50 py-main">
         <div class="container-main">
             <h2 class="text-title">Latest News and Blog</h2>
         </div>
@@ -142,7 +142,7 @@
                 <div class="flex gap-6 whitespace-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-white border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
@@ -157,7 +157,7 @@
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-white border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="" />
                             <div class="p-5">
                                 <div class="flex justify-between">

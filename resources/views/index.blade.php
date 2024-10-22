@@ -30,19 +30,21 @@
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                         alt="{{ $item->title }}">
 
-                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                    <div class="absolute inset-0 bg-sagala-opt-950 opacity-50"></div>
 
                     <div class="relative h-full flex items-center">
                         <div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
                             <div class="text-center lg:text-start">
-                                <h2 class="leading-relaxed text-lg text-white md:text-xl">Welcome To Aerial Website</h2>
-                                <h1 class="mb-6 mt-2 text-4xl font-bold text-white sm:text-6xl">{{ $item->title }}</h1>
+                                <h2 class="leading-relaxed text-lg text-sagala-opt-50 md:text-xl">Welcome To Aerial Website
+                                </h2>
+                                <h1 class="mb-6 mt-2 text-4xl font-bold text-sagala-opt-50 sm:text-6xl">{{ $item->title }}
+                                </h1>
                                 <div class="flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
                                     <a href="{{ route('about') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-white transition bg-sagala-500 border-0 hover:bg-sagala-600 focus:outline-none">About
+                                        class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition bg-sagala-600 border-0 hover:bg-sagala-700 focus:outline-none">About
                                         Us</a>
                                     <a href="{{ route('contact') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-white transition border border-white hover:bg-white hover:text-sagala-500 focus:outline-none">Get
+                                        class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition border border-sagala-opt-50 hover:bg-sagala-opt-50 hover:text-sagala-600 focus:outline-none">Get
                                         a Quote</a>
                                 </div>
                             </div>
@@ -55,19 +57,20 @@
                     <img src="{{ asset('images/default.jpg') }}"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Hero Image">
 
-                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                    <div class="absolute inset-0 bg-sagala-opt-950 opacity-50"></div>
 
                     <div class="relative h-full flex items-center">
                         <div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
                             <div class="text-center lg:text-start">
-                                <h2 class="leading-relaxed text-lg text-white md:text-xl">No Available Carousel Items</h2>
-                                <h1 class="mb-6 mt-2 text-4xl font-bold text-white sm:text-6xl">Welcome</h1>
+                                <h2 class="leading-relaxed text-lg text-sagala-opt-50 md:text-xl">No Available Carousel
+                                    Items</h2>
+                                <h1 class="mb-6 mt-2 text-4xl font-bold text-sagala-opt-50 sm:text-6xl">Welcome</h1>
                                 <div class="flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
                                     <a href="{{ route('about') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-white transition bg-sagala-500 border-0 hover:bg-[#1d5e7a] focus:outline-none">About
+                                        class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition bg-sagala-600 border-0 hover:bg-sagala-700 focus:outline-none">About
                                         Us</a>
                                     <a href="{{ route('contact') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-white transition border border-white hover:bg-white hover:text-sagala-500 focus:outline-none">Get
+                                        class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition border border-sagala-opt-50 hover:bg-sagala-opt-50 hover:text-sagala-600 focus:outline-none">Get
                                         a Quote</a>
                                 </div>
                             </div>
@@ -81,23 +84,23 @@
     <!-- Partner Section -->
     <section class="py-main">
         <div class="container-main">
-            <h2 class="text-center text-title text-sagala-500">We Work with the Best Partners</h2>
+            <h2 class="text-center text-title text-sagala-600">We Work with the Best Partners</h2>
 
             <div x-data="{}" x-init="$nextTick(() => {
                 let ul = $refs.logos;
                 ul.insertAdjacentHTML('afterend', ul.outerHTML);
                 ul.nextSibling.setAttribute('aria-hidden', 'true');
             })"
-                class="flex overflow-hidden mt-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+                class="flex overflow-hidden mt-8 [mask-image:_linear-gradient(to_right,transparent_0,_sagala-opt-50_128px,_sagala-opt-50_calc(100%-200px),transparent_100%)]">
                 <ul x-ref="logos" class="inline-flex items-center justify-center md:justify-start animate-infinite-scroll">
                     @forelse ($partners as $partner)
                         <li
-                            class="w-[250px] h-[100px] p-4 bg-[#F6F6F6] flex items-center justify-center shadow rounded me-8">
+                            class="w-[250px] h-[100px] p-4 bg-sagala-opt-50 flex items-center justify-center shadow rounded me-8">
                             <img src="{{ Storage::url($partner->image) }}" alt="{{ $partner->id }}">
                         </li>
                     @empty
                         <li
-                            class="w-[250px] h-[100px] p-4 bg-[#F6F6F6] flex items-center justify-center shadow rounded me-8">
+                            class="w-[250px] h-[100px] p-4 bg-sagala-opt-50 flex items-center justify-center shadow rounded me-8">
                             NO DATA
                         </li>
                     @endforelse
@@ -115,9 +118,9 @@
                         <img src="{{ Storage::url($service->image) }}" alt="{{ $service->title }}"
                             class="w-full h-screen object-cover">
                         <div
-                            class="absolute inset-0 flex flex-col justify-end items-start bg-black hover:bg-sagala-600 bg-opacity-50 hover:bg-opacity-65 pb-[125px] pl-10">
-                            <h3 class="text-white text-lg font-medium mb-1">{{ $service->title }}</h3>
-                            <svg class="w-[56px] h-[16px] text-sagala-500 hover:text-white" aria-hidden="true"
+                            class="absolute inset-0 flex flex-col justify-end items-start bg-sagala-opt-950 hover:bg-sagala-700 bg-opacity-50 hover:bg-opacity-65 pb-[125px] pl-10">
+                            <h3 class="text-sagala-opt-50 text-lg font-medium mb-1">{{ $service->title }}</h3>
+                            <svg class="w-[56px] h-[16px] text-sagala-600 hover:text-sagala-opt-50" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" width="56" height="16" fill="none"
                                 viewBox="0 0 56 16">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -137,7 +140,7 @@
     <!-- Why Choose Us Section -->
     <section class="py-main">
         <div class="container-main">
-            <h2 class="text-sagala-500 text-title">
+            <h2 class="text-sagala-600 text-title">
                 Why Choose Us?
             </h2>
             <p class="text-desc">
@@ -146,9 +149,9 @@
                 experience every time.
             </p>
             <a href="{{ route('about') }}"
-                class="inline-flex items-center border border-black py-2 px-4 sm:py-3 sm:px-6 focus:outline-none text-sm sm:text-lg transition hover:bg-black hover:text-white">
+                class="inline-flex items-center border border-sagala-opt-50 py-2 px-4 sm:py-3 sm:px-6 focus:outline-none text-sm sm:text-lg transition hover:bg-sagala-opt-950 hover:text-sagala-opt-50">
                 More About Us
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sagala-500 ml-2" aria-hidden="true"
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sagala-600 ml-2" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M19 12H5m14 0-4 4m4-4-4-4" />
@@ -171,10 +174,10 @@
                                     <source src="{{ asset('videos/2.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                                <div class="absolute inset-0 bg-sagala-opt-950 bg-opacity-20"></div>
                                 <!-- Text Overlay -->
                                 <div
-                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sagala-opt-50">
                                     <h2 class="text-4xl sm:text-8xl font-light mb-4">Aerial Fire Fighter Consultant &
                                         Operation</h2>
                                 </div>
@@ -184,10 +187,10 @@
                                     <source src="{{ asset('videos/1.mp4') }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                                <div class="absolute inset-0 bg-sagala-opt-950 bg-opacity-20"></div>
                                 <!-- Text Overlay -->
                                 <div
-                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sagala-opt-50">
                                     <h2 class="text-4xl sm:text-8xl font-light mb-4">Private Jet Charters & Flights</h2>
                                 </div>
                             </div>
@@ -195,14 +198,14 @@
                     </div>
                     <!-- Navigation Buttons -->
                     <button id="prev"
-                        class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-[#242424]/40 text-white p-2">
+                        class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950/40 text-sagala-opt-50 p-2">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
                     <button id="next"
-                        class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-[#242424]/40 text-white p-2">
+                        class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950/40 text-sagala-opt-50 p-2">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -214,8 +217,8 @@
     </section>
 
     <!-- Request a Quote Section -->
-    <section class="bg-sagala-500 py-main">
-        <div class="container-main text-white lg:text-start text-center">
+    <section class="bg-sagala-600 py-main">
+        <div class="container-main text-sagala-opt-50 lg:text-start text-center">
             <h2 class="text-title">
                 Request a Quote
             </h2>
@@ -226,7 +229,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-white py-[10px] px-[26px] text-base transition hover:bg-white hover:text-sagala-500">
+                class="inline-flex items-center border border-sagala-opt-50 py-[10px] px-[26px] text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600">
                 Get a Quote
             </a>
         </div>
@@ -238,13 +241,13 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Section -->
                 <div class="lg:col-span-1 flex flex-col justify-between">
-                    <h2 class="text-title text-black">Frequently Asked Questions</h2>
-                    <a href="{{ route('contact') }}" class="text-sagala-500 font-light underline">Contact Support</a>
+                    <h2 class="text-title bg-sagala-opt-950">Frequently Asked Questions</h2>
+                    <a href="{{ route('contact') }}" class="text-sagala-600 font-light underline">Contact Support</a>
                 </div>
 
                 <!-- Right Section -->
                 <div class="lg:col-span-2">
-                    <div class="divide-y divide-sagala-500">
+                    <div class="divide-y divide-sagala-600">
                         @forelse ($faqs as $faq)
                             <!-- FAQ Item -->
                             <div class="py-4">
@@ -269,16 +272,16 @@
     </section>
 
     <!-- Latest News and Blog Section -->
-    <section class="bg-[#F9F9F9] py-main">
+    <section class="bg-sagala-opt-50 py-main">
         <div class="container-main">
             <h2 class="text-title">Latest News and Blog</h2>
         </div>
         <div class="px-4 sm:px-6 lg:px-8">
             <div class="overflow-x-auto">
-                <div class="flex gap-6 whitespace-nowrap mb-8">
+                <div class="flex gap-6 sagala-opt-50space-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-white border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
@@ -287,20 +290,20 @@
                                     <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     {{ $blog->title }}
                                 </h3>
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-white border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="yoyoy" />
                             <div class="p-5">
                                 <div class="flex justify-between">
                                     <p class="mb-3 font-light text-gray-700">Neows</p>
                                     <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
                                 </div>
-                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     All you need to know about Ground Handling
                                 </h3>
                             </div>

@@ -22,7 +22,7 @@
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat min-h-screen"
         style="background-image: url({{ asset('images/discover-bg.jpg') }}); padding-top: 85px;">
-        <div class="container mx-auto text-white px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto text-sagala-opt-50 px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold mb-8 text-center">{{ $fleet->title }}</h2>
             <div class="flex flex-wrap justify-between gap-8">
                 <div class="">
@@ -74,14 +74,14 @@
                 </div>
                 <!-- Navigation Buttons -->
                 <button id="prev"
-                    class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-[#242424]/40 text-white p-2">
+                    class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950/40 text-sagala-opt-50 p-2">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
                 <button id="next"
-                    class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-[#242424]/40 text-white p-2">
+                    class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950/40 text-sagala-opt-50 p-2">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -154,8 +154,8 @@
     </section>
 
     <!-- Request a Quote Section -->
-    <section class="bg-[#2A6F97] py-main">
-        <div class="container-main text-white lg:text-start text-center">
+    <section class="bg-sagala-600 py-main">
+        <div class="container-main text-sagala-opt-50 lg:text-start text-center">
             <h3 class="text-title">
                 Request a Quote
             </h3>
@@ -166,7 +166,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-white py-[10px] px-[26px] text-base transition hover:bg-white hover:text-[#2A6F97]">
+                class="inline-flex items-center border border-sagala-opt-50 py-[10px] px-[26px] text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600">
                 Get a Quote
             </a>
         </div>
@@ -178,13 +178,13 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Section -->
                 <div class="lg:col-span-1 flex flex-col justify-between">
-                    <h2 class="text-title text-black">Frequently Asked Questions</h2>
-                    <a href="{{ route('contact') }}" class="text-[#2A6F97] font-light underline">Contact Support</a>
+                    <h2 class="text-title text-sagala-opt-950">Frequently Asked Questions</h2>
+                    <a href="{{ route('contact') }}" class="text-sagala-600 font-light underline">Contact Support</a>
                 </div>
 
                 <!-- Right Section -->
                 <div class="lg:col-span-2">
-                    <div class="divide-y divide-[#2A6F97]">
+                    <div class="divide-y divide-sagala-600">
                         @forelse ($faqs as $faq)
                             <!-- FAQ Item -->
                             <div class="py-4">
@@ -209,7 +209,7 @@
     </section>
 
     <!-- Latest News and Blog Section -->
-    <section class="bg-[#F9F9F9] py-main">
+    <section class="bg-sagala-opt-50 py-main">
         <div class="container-main">
             <h2 class="text-title">Latest News and Blog</h2>
         </div>
@@ -218,7 +218,7 @@
                 <div class="flex gap-6 whitespace-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-white border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
@@ -227,20 +227,20 @@
                                     <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-[#2A6F97] text-wrap">
+                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     {{ $blog->title }}
                                 </h5>
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-white border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="" />
                             <div class="p-5">
                                 <div class="flex justify-between">
                                     <p class="mb-3 font-light text-gray-700">News</p>
                                     <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-[#2A6F97] text-wrap">
+                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     All you need to know about Ground Handling
                                 </h5>
                             </div>

@@ -22,14 +22,14 @@
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-screen"
         style="background-image: url({{ asset('images/hero-about.jpg') }})">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="absolute inset-0 bg-sagala-opt-950 opacity-50"></div>
         <div class="relative h-full flex items-center">
             <div class="container-main py-12">
                 <div class="text-center lg:text-start">
-                    <p class="leading-relaxed text-white text-lg md:text-xl">
+                    <p class="leading-relaxed text-sagala-opt-50 text-lg md:text-xl">
                         Sagala Pro Aerial Support
                     </p>
-                    <h1 class="text-4xl sm:text-6xl font-bold text-white mt-2">
+                    <h1 class="text-4xl sm:text-6xl font-bold text-sagala-opt-50 mt-2">
                         About Us
                     </h1>
                 </div>
@@ -54,13 +54,13 @@
 
     <!-- Vision & Mission Section -->
     <section class="bg-cover bg-center h-[616px]" style="background-image: url({{ asset('images/visi-misi.jpg') }});">
-        <div class="bg-black bg-opacity-20 h-full">
+        <div class="bg-sagala-opt-950 bg-opacity-20 h-full">
             <div class="container-main h-full flex items-center">
-                <div class="lg:w-1/2 text-white flex flex-col gap-2">
+                <div class="lg:w-1/2 text-sagala-opt-50 flex flex-col gap-2">
 
                     <!-- Vision Section -->
                     <div id="vision" class="animate-fade-up animate-duration-[1500ms] animate-ease-in-out">
-                        <h4 class="text-lg font-semibold text-[#2A6F97]">Path To Success</h4>
+                        <h4 class="text-lg font-semibold text-sagala-600">Path To Success</h4>
                         <h3 class="text-title">Our Vision</h3>
                         <p class="text-desc">
                             To be a leading provider of exceptional aviation services, consistently delivering outstanding
@@ -70,7 +70,7 @@
 
                     <!-- Mission Section -->
                     <div id="mission" class="hidden animate-fade-up animate-duration-[1500ms] animate-ease-in-out">
-                        <h4 class="text-lg font-semibold text-[#2A6F97]">Path To Success</h4>
+                        <h4 class="text-lg font-semibold text-sagala-600">Path To Success</h4>
                         <h3 class="text-title">Our Mission</h3>
                         <p class="text-desc">
                             Understanding that aviation services come with high costs, SagalaPro offers free consultations
@@ -86,7 +86,7 @@
     <!-- Partner Section -->
     <section class="py-main">
         <div class="container-main">
-            <h3 class="text-center text-title text-[#2A6F97]">We Work with the Best Partners</h3>
+            <h3 class="text-center text-title text-sagala-600">We Work with the Best Partners</h3>
 
             <div x-data="{}" x-init="$nextTick(() => {
                 let ul = $refs.logos;
@@ -97,12 +97,12 @@
                 <ul x-ref="logos" class="inline-flex items-center justify-center md:justify-start animate-infinite-scroll">
                     @forelse ($partners as $partner)
                         <li
-                            class="w-[250px] h-[100px] p-4 bg-[#F6F6F6] flex items-center justify-center shadow rounded me-8">
+                            class="w-[250px] h-[100px] p-4 bg-sagala-opt-50 flex items-center justify-center shadow rounded me-8">
                             <img src="{{ Storage::url($partner->image) }}" alt="{{ $partner->id }}">
                         </li>
                     @empty
                         <li
-                            class="w-[250px] h-[100px] p-4 bg-[#F6F6F6] flex items-center justify-center shadow rounded me-8">
+                            class="w-[250px] h-[100px] p-4 bg-sagala-opt-50 flex items-center justify-center shadow rounded me-8">
                             NO DATA
                         </li>
                     @endforelse
@@ -117,13 +117,13 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Section -->
                 <div class="lg:col-span-1 flex flex-col justify-between">
-                    <h2 class="text-title text-black">Frequently Asked Questions</h2>
-                    <a href="{{ route('contact') }}" class="text-[#2A6F97] font-light underline">Contact Support</a>
+                    <h2 class="text-title text-sagala-opt-950">Frequently Asked Questions</h2>
+                    <a href="{{ route('contact') }}" class="text-sagala-600 font-light underline">Contact Support</a>
                 </div>
 
                 <!-- Right Section -->
                 <div class="lg:col-span-2">
-                    <div class="divide-y divide-[#2A6F97]">
+                    <div class="divide-y divide-sagala-600">
                         @forelse ($faqs as $faq)
                             <!-- FAQ Item -->
                             <div class="py-4">
@@ -148,7 +148,7 @@
     </section>
 
     <!-- Latest News and Blog Section -->
-    <section class="bg-[#F9F9F9] py-main">
+    <section class="bg-sagala-opt-50 py-main">
         <div class="container-main">
             <h2 class="text-title">Latest News and Blog</h2>
         </div>
@@ -157,7 +157,7 @@
                 <div class="flex gap-6 whitespace-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-white border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
@@ -166,20 +166,20 @@
                                     <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-[#2A6F97] text-wrap">
+                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     {{ $blog->title }}
                                 </h5>
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-white border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="" />
                             <div class="p-5">
                                 <div class="flex justify-between">
                                     <p class="mb-3 font-light text-gray-700">News</p>
                                     <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-[#2A6F97] text-wrap">
+                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     All you need to know about Ground Handling
                                 </h5>
                             </div>

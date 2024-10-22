@@ -21,13 +21,13 @@
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-[50vh]"
         style="background-image: url({{ Storage::url($blog->image) }})">
-        <div class="relative bg-black/50 h-full flex items-center">
+        <div class="relative bg-sagala-opt-950/50 h-full flex items-center">
             <div class="container-main py-12">
                 <div class="text-center lg:text-start">
-                    <p class="leading-relaxed text-white text-lg md:text-xl">
+                    <p class="leading-relaxed text-sagala-opt-50 text-lg md:text-xl">
                         Sagala Pro Aerial Support
                     </p>
-                    <h2 class="text-4xl sm:text-6xl font-bold text-white mt-2">
+                    <h2 class="text-4xl sm:text-6xl font-bold text-sagala-opt-50 mt-2">
                         {{ $blog->title }}
                     </h2>
                 </div>
@@ -55,7 +55,7 @@
     </section>
 
     <!-- Latest News and Blog Section -->
-    <section class="bg-[#F9F9F9] py-main">
+    <section class="bg-sagala-opt-50 py-main">
         <div class="container-main">
             <h2 class="text-title">Latest News and Blog</h2>
         </div>
@@ -64,7 +64,7 @@
                 <div class="flex gap-6 whitespace-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-white border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
@@ -73,20 +73,20 @@
                                     <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-[#2A6F97] text-wrap">
+                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     {{ $blog->title }}
                                 </h5>
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-white border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="" />
                             <div class="p-5">
                                 <div class="flex justify-between">
                                     <p class="mb-3 font-light text-gray-700">News</p>
                                     <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-[#2A6F97] text-wrap">
+                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     All you need to know about Ground Handling
                                 </h5>
                             </div>
