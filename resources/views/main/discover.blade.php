@@ -101,12 +101,12 @@
             <div class="mb-8">
                 <div class="flex flex-wrap justify-center -mb-px">
                     <a href="#cabin"
-                        class="inline-block py-4 px-6 border-b-2 border-transparent font-medium text-lg leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
+                        class="inline-block py-4 px-6 border-b-2 border-transparent font-medium text-lg leading-5 text-sagala-opt-500 hover:text-sagala-opt-700 hover:border-sagala-opt-300 focus:outline-none focus:text-sagala-opt-700 focus:border-sagala-opt-300"
                         aria-selected="false">
                         Cabin
                     </a>
                     <a href="#performance"
-                        class="inline-block py-4 px-6 border-b-2 border-transparent font-medium text-lg leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
+                        class="inline-block py-4 px-6 border-b-2 border-transparent font-medium text-lg leading-5 text-sagala-opt-500 hover:text-sagala-opt-700 hover:border-sagala-opt-300 focus:outline-none focus:text-sagala-opt-700 focus:border-sagala-opt-300"
                         aria-selected="false">
                         Performance
                     </a>
@@ -117,15 +117,15 @@
                     <table class="table-auto w-full">
                         <tbody>
                             <tr>
-                                <td class="py-2 px-4 font-medium text-gray-900">Payload</td>
+                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Payload</td>
                                 <td class="py-2 px-4">Up to 4.000 Kg</td>
                             </tr>
                             <tr>
-                                <td class="py-2 px-4 font-medium text-gray-900">Hold Size (LxWxH)</td>
+                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Hold Size (LxWxH)</td>
                                 <td class="py-2 px-4">5.34 m x 2.34 m x 1.8 m</td>
                             </tr>
                             <tr>
-                                <td class="py-2 px-4 font-medium text-gray-900">Door Size</td>
+                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Door Size</td>
                                 <td class="py-2 px-4">1.25 m x 1.6 m</td>
                             </tr>
                         </tbody>
@@ -135,15 +135,15 @@
                     <table class="table-auto w-full">
                         <tbody>
                             <tr>
-                                <td class="py-2 px-4 font-medium text-gray-900">Load Volume</td>
+                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Load Volume</td>
                                 <td class="py-2 px-4">23 cubic meters</td>
                             </tr>
                             <tr>
-                                <td class="py-2 px-4 font-medium text-gray-900">Fuel Tank</td>
+                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Fuel Tank</td>
                                 <td class="py-2 px-4">500 Km</td>
                             </tr>
                             <tr>
-                                <td class="py-2 px-4 font-medium text-gray-900">Fuel Tank (Additional)</td>
+                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Fuel Tank (Additional)</td>
                                 <td class="py-2 px-4">1.065 Km</td>
                             </tr>
                         </tbody>
@@ -193,13 +193,13 @@
                                     <button class="text-xl toggle-faq" data-target="faq-{{ $loop->index }}"
                                         aria-expanded="false">+</button>
                                 </div>
-                                <p class="mt-2 text-gray-500 faq-content hidden" id="faq-{{ $loop->index }}">
+                                <p class="mt-2 text-sagala-opt-500 faq-content hidden" id="faq-{{ $loop->index }}">
                                     {{ $faq->description }}
                                 </p>
                             </div>
                         @empty
                             <div class="py-4">
-                                <p class="text-gray-500">No FAQs available at the moment.</p>
+                                <p class="text-sagala-opt-500">No FAQs available at the moment.</p>
                             </div>
                         @endforelse
                     </div>
@@ -218,13 +218,14 @@
                 <div class="flex gap-6 whitespace-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->author }}</p>
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
+                                    <p class="mb-3 font-light text-sagala-opt-700">{{ $blog->author }}</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">
+                                        {{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
                                 <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
@@ -233,12 +234,12 @@
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">News</p>
-                                    <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">News</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">August 22, 2024</p>
                                 </div>
                                 <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     All you need to know about Ground Handling
@@ -255,27 +256,15 @@
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
     <script>
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-        const slides = document.getElementById('slides');
-        let index = 0;
-
-        function updateSlidePosition() {
-            const slideWidth = slides.children[0].clientWidth;
-            slides.style.transform = `translateX(-${index * slideWidth}px)`;
-        }
-
-        prevButton.addEventListener('click', () => {
-            index = (index > 0) ? index - 1 : slides.children.length - 1;
-            updateSlidePosition();
+        document.querySelectorAll('.toggle-faq').forEach(button => {
+            button.addEventListener('click', () => {
+                const target = document.getElementById(button.dataset.target);
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                target.classList.toggle('hidden', isExpanded);
+                button.textContent = isExpanded ? '+' : '×'; // Change button symbol based on state
+                button.setAttribute('aria-expanded', !isExpanded); // Update aria-expanded attribute
+            });
         });
-
-        nextButton.addEventListener('click', () => {
-            index = (index < slides.children.length - 1) ? index + 1 : 0;
-            updateSlidePosition();
-        });
-
-        window.addEventListener('resize', updateSlidePosition);
     </script>
 
     @stack('after-scripts')

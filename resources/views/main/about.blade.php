@@ -132,13 +132,13 @@
                                     <button class="text-xl toggle-faq" data-target="faq-{{ $loop->index }}"
                                         aria-expanded="false">+</button>
                                 </div>
-                                <p class="mt-2 text-gray-500 faq-content hidden" id="faq-{{ $loop->index }}">
+                                <p class="mt-2 text-sagala-opt-500 faq-content hidden" id="faq-{{ $loop->index }}">
                                     {{ $faq->description }}
                                 </p>
                             </div>
                         @empty
                             <div class="py-4">
-                                <p class="text-gray-500">No FAQs available at the moment.</p>
+                                <p class="text-sagala-opt-500">No FAQs available at the moment.</p>
                             </div>
                         @endforelse
                     </div>
@@ -157,13 +157,14 @@
                 <div class="flex gap-6 whitespace-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->author }}</p>
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
+                                    <p class="mb-3 font-light text-sagala-opt-700">{{ $blog->author }}</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">
+                                        {{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
                                 <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
@@ -172,12 +173,12 @@
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">News</p>
-                                    <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">News</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">August 22, 2024</p>
                                 </div>
                                 <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     All you need to know about Ground Handling

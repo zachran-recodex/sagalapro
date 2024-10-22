@@ -45,7 +45,7 @@
                         <div class="col-span-2">
                             <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-sagala-opt-950">
                                 {{ $fleet->title }}</h2>
-                            <p class="text-gray-700 text-justify mb-6">
+                            <p class="text-sagala-opt-700 text-justify mb-6">
                                 {{ $fleet->description }}
                             </p>
                             <a href="{{ route('fleet.details', $fleet->slug) }}"
@@ -57,7 +57,7 @@
                         <div class="col-span-2">
                             <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-sagala-opt-950">
                                 {{ $fleet->title }}</h2>
-                            <p class="text-gray-700 text-justify mb-6">
+                            <p class="text-sagala-opt-700 text-justify mb-6">
                                 {{ $fleet->description }}
                             </p>
                             <a href="{{ route('fleet.details', $fleet->slug) }}"
@@ -102,13 +102,13 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Section -->
                 <div class="lg:col-span-1 flex flex-col justify-between">
-                    <h2 class="text-title bg-sagala-opt-950">Frequently Asked Questions</h2>
-                    <a href="{{ route('contact') }}" class="text-sagala-500 font-light underline">Contact Support</a>
+                    <h2 class="text-title text-sagala-opt-950">Frequently Asked Questions</h2>
+                    <a href="{{ route('contact') }}" class="text-sagala-600 font-light underline">Contact Support</a>
                 </div>
 
                 <!-- Right Section -->
                 <div class="lg:col-span-2">
-                    <div class="divide-y divide-sagala-500">
+                    <div class="divide-y divide-sagala-600">
                         @forelse ($faqs as $faq)
                             <!-- FAQ Item -->
                             <div class="py-4">
@@ -117,13 +117,13 @@
                                     <button class="text-xl toggle-faq" data-target="faq-{{ $loop->index }}"
                                         aria-expanded="false">+</button>
                                 </div>
-                                <p class="mt-2 text-gray-500 faq-content hidden" id="faq-{{ $loop->index }}">
+                                <p class="mt-2 text-sagala-opt-500 faq-content hidden" id="faq-{{ $loop->index }}">
                                     {{ $faq->description }}
                                 </p>
                             </div>
                         @empty
                             <div class="py-4">
-                                <p class="text-gray-500">No FAQs available at the moment.</p>
+                                <p class="text-sagala-opt-500">No FAQs available at the moment.</p>
                             </div>
                         @endforelse
                     </div>
@@ -142,13 +142,14 @@
                 <div class="flex gap-6 whitespace-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->author }}</p>
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
+                                    <p class="mb-3 font-light text-sagala-opt-700">{{ $blog->author }}</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">
+                                        {{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
                                 <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
@@ -157,12 +158,12 @@
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">News</p>
-                                    <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">News</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">August 22, 2024</p>
                                 </div>
                                 <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
                                     All you need to know about Ground Handling
@@ -176,6 +177,17 @@
     </section>
 
     @stack('before-scripts')
+    <script>
+        document.querySelectorAll('.toggle-faq').forEach(button => {
+            button.addEventListener('click', () => {
+                const target = document.getElementById(button.dataset.target);
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                target.classList.toggle('hidden', isExpanded);
+                button.textContent = isExpanded ? '+' : '×'; // Change button symbol based on state
+                button.setAttribute('aria-expanded', !isExpanded); // Update aria-expanded attribute
+            });
+        });
+    </script>
 
 
     @stack('after-scripts')

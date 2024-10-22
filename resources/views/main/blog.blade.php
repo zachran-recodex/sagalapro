@@ -42,12 +42,13 @@
             <!-- Blog Content -->
             <article>
                 <h2 class="text-3xl lg:text-4xl font-bold mb-4">{{ $blog->title }}</h2>
-                <p class="text-sm text-gray-500 mb-6">{{ $blog->created_at->format('M d, Y') }} | {{ $blog->author }}</p>
+                <p class="text-sm text-sagala-opt-500 mb-6">{{ $blog->created_at->format('M d, Y') }} | {{ $blog->author }}
+                </p>
 
                 <img src="{{ Storage::url($blog->image) }}" alt="{{ $blog->title }}"
                     class="mb-6 w-full h-[530px] rounded-lg shadow-lg object-cover">
 
-                <p class="text-gray-700 leading-relaxed mb-4 text-justify">
+                <p class="text-sagala-opt-700 leading-relaxed mb-4 text-justify">
                     {{ $blog->description }}
                 </p>
             </article>
@@ -64,13 +65,14 @@
                 <div class="flex gap-6 whitespace-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->author }}</p>
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
+                                    <p class="mb-3 font-light text-sagala-opt-700">{{ $blog->author }}</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">
+                                        {{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
                                 <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
@@ -79,12 +81,12 @@
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">News</p>
-                                    <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">News</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">August 22, 2024</p>
                                 </div>
                                 <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     All you need to know about Ground Handling

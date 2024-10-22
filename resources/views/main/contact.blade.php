@@ -74,35 +74,36 @@
 
                 <!-- Contact Form -->
                 <div class="w-full lg:w-1/2">
-                    <div class="border border-gray-300 p-6">
+                    <div class="border border-sagala-opt-300 p-6">
                         <h5 class="text-xl font-semibold mb-4">CLIENT SUPPORT</h5>
                         <form action="{{ route('contact.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-5">
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
+                                <label for="name"
+                                    class="block mb-2 text-sm font-medium text-sagala-opt-900">Name</label>
                                 <input type="text" id="name" name="name"
-                                    class="bg-sagala-opt-200 border-0 text-gray-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
+                                    class="bg-sagala-opt-200 border-0 text-sagala-opt-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
                                     placeholder="Your Name" required>
                             </div>
                             <div class="mb-5">
-                                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone
+                                <label for="phone" class="block mb-2 text-sm font-medium text-sagala-opt-900">Phone
                                     Number</label>
                                 <input type="tel" id="phone" name="phone"
-                                    class="bg-sagala-opt-200 border-0 text-gray-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
+                                    class="bg-sagala-opt-200 border-0 text-sagala-opt-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
                                     placeholder="Your Phone Number" required pattern="[0-9]{10,15}">
                             </div>
                             <div class="mb-5">
-                                <label for="mail" class="block mb-2 text-sm font-medium text-gray-900">E-mail
+                                <label for="mail" class="block mb-2 text-sm font-medium text-sagala-opt-900">E-mail
                                     Address</label>
                                 <input type="email" id="email" name="email"
-                                    class="bg-sagala-opt-200 border-0 text-gray-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
+                                    class="bg-sagala-opt-200 border-0 text-sagala-opt-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
                                     placeholder="Your E-mail Address" required>
                             </div>
                             <div class="mb-5">
-                                <label for="service" class="block mb-2 text-sm font-medium text-gray-900">Select
+                                <label for="service" class="block mb-2 text-sm font-medium text-sagala-opt-900">Select
                                     Service</label>
                                 <select id="service" name="service"
-                                    class="bg-sagala-opt-200 border-0 text-gray-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
+                                    class="bg-sagala-opt-200 border-0 text-sagala-opt-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
                                     required>
                                     <option value="" disabled selected>Select a service</option>
                                     <option value="acquisition">Aircraft & Helicopter Acquisition</option>
@@ -113,9 +114,10 @@
                                 </select>
                             </div>
                             <div class="mb-5">
-                                <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Message</label>
+                                <label for="message"
+                                    class="block mb-2 text-sm font-medium text-sagala-opt-900">Message</label>
                                 <textarea id="message" name="message"
-                                    class="bg-sagala-opt-200 border-0 text-gray-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
+                                    class="bg-sagala-opt-200 border-0 text-sagala-opt-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
                                     placeholder="Your Message" rows="4" required></textarea>
                             </div>
                             <button type="submit"

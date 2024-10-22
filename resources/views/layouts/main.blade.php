@@ -66,16 +66,16 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
-                            class="z-10 hidden font-normal bg-sagala-opt-50 divide-y divide-gray-100 rounded-lg shadow w-fit">
-                            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                            class="z-10 hidden font-normal bg-sagala-opt-50 divide-y divide-sagala-opt-100 rounded-lg shadow w-fit">
+                            <ul class="py-2 text-sm text-sagala-opt-700" aria-labelledby="dropdownLargeButton">
                                 @forelse ($navServices as $service)
                                     <li>
                                         <a href="{{ route('service.details', $service->slug) }}"
-                                            class="block px-4 py-2 hover:bg-gray-100">{{ $service->title }}</a>
+                                            class="block px-4 py-2 hover:bg-sagala-opt-100">{{ $service->title }}</a>
                                     </li>
                                 @empty
                                     <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">No Data</a>
+                                        <a href="#" class="block px-4 py-2 hover:bg-sagala-opt-100">No Data</a>
                                     </li>
                                 @endforelse
                             </ul>
@@ -203,7 +203,7 @@
             </div>
         </div>
 
-        <hr class="mt-8 border-gray-300">
+        <hr class="mt-8 border-sagala-opt-300">
 
         <div class="container mx-auto flex flex-col sm:flex-row justify-between py-4 px-4 sm:px-6 lg:px-8">
             <h5 class="text-center sm:text-left">© Sagala Pro All Rights Reserved</h5>

@@ -91,7 +91,7 @@
                 ul.insertAdjacentHTML('afterend', ul.outerHTML);
                 ul.nextSibling.setAttribute('aria-hidden', 'true');
             })"
-                class="flex overflow-hidden mt-8 [mask-image:_linear-gradient(to_right,transparent_0,_sagala-opt-50_128px,_sagala-opt-50_calc(100%-200px),transparent_100%)]">
+                class="flex overflow-hidden mt-8 [mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
                 <ul x-ref="logos" class="inline-flex items-center justify-center md:justify-start animate-infinite-scroll">
                     @forelse ($partners as $partner)
                         <li
@@ -130,7 +130,7 @@
                     </div>
                 </a>
             @empty
-                <div class="col-span-1 text-center text-gray-500">
+                <div class="col-span-1 text-center text-sagala-opt-500">
                     <p>No services available at the moment.</p>
                 </div>
             @endforelse
@@ -149,7 +149,7 @@
                 experience every time.
             </p>
             <a href="{{ route('about') }}"
-                class="inline-flex items-center border border-sagala-opt-50 py-2 px-4 sm:py-3 sm:px-6 focus:outline-none text-sm sm:text-lg transition hover:bg-sagala-opt-950 hover:text-sagala-opt-50">
+                class="inline-flex items-center border border-sagala-opt-400 py-2 px-4 sm:py-3 sm:px-6 focus:outline-none text-sm sm:text-lg transition hover:bg-sagala-opt-950 hover:text-sagala-opt-50">
                 More About Us
                 <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sagala-600 ml-2" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -198,14 +198,14 @@
                     </div>
                     <!-- Navigation Buttons -->
                     <button id="prev"
-                        class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950/40 text-sagala-opt-50 p-2">
+                        class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950 text-sagala-opt-50 p-2">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
                     <button id="next"
-                        class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950/40 text-sagala-opt-50 p-2">
+                        class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950 text-sagala-opt-50 p-2">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -241,7 +241,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Left Section -->
                 <div class="lg:col-span-1 flex flex-col justify-between">
-                    <h2 class="text-title bg-sagala-opt-950">Frequently Asked Questions</h2>
+                    <h2 class="text-title text-sagala-opt-950">Frequently Asked Questions</h2>
                     <a href="{{ route('contact') }}" class="text-sagala-600 font-light underline">Contact Support</a>
                 </div>
 
@@ -256,13 +256,13 @@
                                     <button class="text-xl toggle-faq" data-target="faq-{{ $loop->index }}"
                                         aria-expanded="false">+</button>
                                 </div>
-                                <p class="mt-2 text-gray-500 faq-content hidden" id="faq-{{ $loop->index }}">
+                                <p class="mt-2 text-sagala-opt-500 faq-content hidden" id="faq-{{ $loop->index }}">
                                     {{ $faq->description }}
                                 </p>
                             </div>
                         @empty
                             <div class="py-4">
-                                <p class="text-gray-500">No FAQs available at the moment.</p>
+                                <p class="text-sagala-opt-500">No FAQs available at the moment.</p>
                             </div>
                         @endforelse
                     </div>
@@ -278,16 +278,17 @@
         </div>
         <div class="px-4 sm:px-6 lg:px-8">
             <div class="overflow-x-auto">
-                <div class="flex gap-6 sagala-opt-50space-nowrap mb-8">
+                <div class="flex gap-6 whitespace-nowrap mb-8">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->author }}</p>
-                                    <p class="mb-3 font-light text-gray-700">{{ $blog->created_at->format('M d, Y') }}
+                                    <p class="mb-3 font-light text-sagala-opt-700">{{ $blog->author }}</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">
+                                        {{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
                                 <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
@@ -296,12 +297,12 @@
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-gray-200 shadow">
+                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
                             <img class="object-cover h-36 w-full" src="" alt="yoyoy" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-gray-700">Neows</p>
-                                    <p class="mb-3 font-light text-gray-700">August 22, 2024</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">Neows</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">August 22, 2024</p>
                                 </div>
                                 <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     All you need to know about Ground Handling
