@@ -17,7 +17,19 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                'sagala': '#2A6F97',
+                'sagala': {
+                    '50': '#f3f8fc',
+                    '100': '#e6f1f8',
+                    '200': '#c8e1ef',
+                    '300': '#98c7e1',
+                    '400': '#61aacf',
+                    '500': '#3c90bb',
+                    '600': '#2a6f97',
+                    '700': '#245d80',
+                    '800': '#224f6a',
+                    '900': '#214259',
+                    '950': '#162b3b',
+                },
             },
             animation: {
                 'infinite-scroll': 'infinite-scroll 50s linear infinite',

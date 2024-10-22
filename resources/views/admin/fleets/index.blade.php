@@ -5,9 +5,9 @@
     <div class="flex items-center justify-between flex-wrap gap-2 mb-6">
         <h4 class="text-default-900 text-lg font-medium">fleets</h4>
 
-        <div class="md:flex bg-info px-6 py-2 rounded-md hidden items-center gap-3 text-sm font-semibold">
-            <a href="{{ route('admin.fleets.create') }}" class="text-sm text-white font-medium text-default-700">Add new
-                fleet</a>
+        <div
+            class="md:flex bg-sagala-500 hover:bg-sagala-600 px-6 py-2 rounded-md hidden items-center gap-3 text-sm font-semibold">
+            <a href="{{ route('admin.fleets.create') }}" class="text-sm text-white font-medium text-default-700">ADD</a>
         </div>
     </div>
     <!-- Page Title End -->
@@ -21,7 +21,6 @@
                             <tr>
                                 <th class="px-6 py-3 text-start">Title</th>
                                 <th class="px-6 py-3 text-start">Image</th>
-                                <th class="px-6 py-3 text-start">Description</th>
                                 <th class="px-6 py-3 text-start">Status</th>
                                 <th class="px-6 py-3 text-center">Action</th>
                             </tr>
@@ -34,7 +33,6 @@
                                         <img src="{{ Storage::url($fleet->image) }}" alt="{{ $fleet->title }}"
                                             class="w-16 h-16 object-cover">
                                     </td>
-                                    <td class="px-6 py-3">{{ $fleet->description }}</td>
                                     <td class="px-6 py-3">{{ ucfirst($fleet->status) }}</td>
                                     <td class="px-6 py-3 text-center">
                                         <a href="{{ route('admin.fleets.edit', $fleet) }}"

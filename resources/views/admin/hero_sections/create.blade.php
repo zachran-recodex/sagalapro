@@ -3,11 +3,13 @@
 @section('content')
     <!-- Page Title Start -->
     <div class="flex items-center justify-between flex-wrap gap-2 mb-6">
-        <h4 class="text-default-900 text-lg font-medium">Add New hero_section</h4>
+        <h4 class="text-default-900 text-lg font-medium">Add New Hero Section</h4>
 
-        <div class="md:flex bg-info px-6 py-2 rounded-md hidden items-center gap-3 text-sm font-semibold">
-            <a href="{{ route('admin.hero_sections.index') }}" class="text-sm text-white font-medium text-default-700">Back to
-                hero_section</a>
+        <div
+            class="md:flex bg-sagala-500 hover:bg-sagala-600 px-6 py-2 rounded-md hidden items-center gap-3 text-sm font-semibold">
+            <a href="{{ route('admin.hero_sections.index') }}" class="text-sm text-white font-medium text-default-700">
+                BACK
+            </a>
         </div>
     </div>
     <!-- Page Title End -->
@@ -54,8 +56,8 @@
 
                             <div class="flex justify-end">
                                 <button type="submit"
-                                    class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">
-                                    Create hero_section
+                                    class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
+                                    CREATE
                                 </button>
                             </div>
                         </div>

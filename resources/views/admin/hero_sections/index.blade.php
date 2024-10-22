@@ -3,11 +3,12 @@
 @section('content')
     <!-- Page Title Start -->
     <div class="flex items-center justify-between flex-wrap gap-2 mb-6">
-        <h4 class="text-default-900 text-lg font-medium">hero_sections</h4>
+        <h4 class="text-default-900 text-lg font-medium">Hero Sections</h4>
 
-        <div class="md:flex bg-info px-6 py-2 rounded-md hidden items-center gap-3 text-sm font-semibold">
-            <a href="{{ route('admin.hero_sections.create') }}" class="text-sm text-white font-medium text-default-700">Add
-                new Hero Section
+        <div
+            class="md:flex bg-sagala-500 hover:bg-sagala-600 px-6 py-2 rounded-md hidden items-center gap-3 text-sm font-semibold">
+            <a href="{{ route('admin.hero_sections.create') }}" class="text-sm text-white font-medium text-default-700">
+                ADD
             </a>
         </div>
     </div>
@@ -37,7 +38,7 @@
                                     <td class="px-6 py-3">{{ ucfirst($hero_section->status) }}</td>
                                     <td class="px-6 py-3 text-center">
                                         <a href="{{ route('admin.hero_sections.edit', $hero_section) }}"
-                                            class="me-3 px-2 py-1 bg-warning text-white text-xs rounded hover:bg-warning/20 transition">
+                                            class="me-3 px-2 py-1 bg-yellow-300 text-white text-xs rounded hover:bg-yellow-400 transition">
                                             Edit
                                         </a>
                                         <form action="{{ route('admin.hero_sections.destroy', $hero_section) }}"
@@ -45,7 +46,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                class="px-2 py-1 bg-danger text-white text-xs rounded hover:bg-danger/20 transition"
+                                                class="px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 transition"
                                                 onclick="return confirm('Are you sure you want to delete this hero_section?');">
                                                 Delete
                                             </button>

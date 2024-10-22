@@ -2280,16 +2280,16 @@ label{
 }
 .card-radio .form-radio:checked + .form-label{
   --tw-border-opacity: 1;
-  border-color: rgb(139 92 246 / var(--tw-border-opacity));
+  border-color: rgb(60 144 187 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 .btn-radio .form-radio{
   display: none;
 }
 .btn-radio .form-radio:checked + label{
   --tw-bg-opacity: 1;
-  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+  background-color: rgb(60 144 187 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -3237,10 +3237,10 @@ label{
 }
 .border-primary{
   --tw-border-opacity: 1;
-  border-color: rgb(139 92 246 / var(--tw-border-opacity));
+  border-color: rgb(60 144 187 / var(--tw-border-opacity));
 }
 .border-primary\/10{
-  border-color: rgb(139 92 246 / 0.1);
+  border-color: rgb(60 144 187 / 0.1);
 }
 .border-purple-500{
   --tw-border-opacity: 1;
@@ -3446,22 +3446,22 @@ label{
 }
 .bg-primary{
   --tw-bg-opacity: 1;
-  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+  background-color: rgb(60 144 187 / var(--tw-bg-opacity));
 }
 .bg-primary\/10{
-  background-color: rgb(139 92 246 / 0.1);
+  background-color: rgb(60 144 187 / 0.1);
 }
 .bg-primary\/25{
-  background-color: rgb(139 92 246 / 0.25);
+  background-color: rgb(60 144 187 / 0.25);
 }
 .bg-primary\/5{
-  background-color: rgb(139 92 246 / 0.05);
+  background-color: rgb(60 144 187 / 0.05);
 }
 .bg-primary\/50{
-  background-color: rgb(139 92 246 / 0.5);
+  background-color: rgb(60 144 187 / 0.5);
 }
 .bg-primary\/75{
-  background-color: rgb(139 92 246 / 0.75);
+  background-color: rgb(60 144 187 / 0.75);
 }
 .bg-purple-100{
   --tw-bg-opacity: 1;
@@ -3607,7 +3607,7 @@ label{
 }
 .from-primary{
   --tw-gradient-from: #8b5cf6 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(139 92 246 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-to: rgb(60 144 187 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .to-blue-500{
@@ -3998,26 +3998,26 @@ label{
 }
 .text-primary{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 .text-primary-600{
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 .text-primary\/10{
-  color: rgb(139 92 246 / 0.1);
+  color: rgb(60 144 187 / 0.1);
 }
 .text-primary\/25{
-  color: rgb(139 92 246 / 0.25);
+  color: rgb(60 144 187 / 0.25);
 }
 .text-primary\/50{
-  color: rgb(139 92 246 / 0.5);
+  color: rgb(60 144 187 / 0.5);
 }
 .text-primary\/75{
-  color: rgb(139 92 246 / 0.75);
+  color: rgb(60 144 187 / 0.75);
 }
 .text-primary\/90{
-  color: rgb(139 92 246 / 0.9);
+  color: rgb(60 144 187 / 0.9);
 }
 .text-purple-600{
   --tw-text-opacity: 1;
@@ -4513,7 +4513,7 @@ th.fc-day-header {
 .fc-state-active,
 .fc-state-disabled{
   --tw-bg-opacity: 1;
-  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+  background-color: rgb(60 144 187 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   text-shadow: none;
@@ -4675,22 +4675,22 @@ main{
   }
 }
 .admin-menu a.active{
-  background-color: rgb(139 92 246 / 0.1);
+  background-color: rgb(60 144 187 / 0.1);
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 .admin-menu a.active .material-symbols-rounded{
   font-variation-settings: 'FILL' 1;
 }
 .admin-menu .hs-accordion.active > .hs-accordion-toggle.hs-accordion-active\:bg-default-100{
-  background-color: rgb(139 92 246 / 0.1);
+  background-color: rgb(60 144 187 / 0.1);
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 .admin-menu .hs-accordion-content .active{
   background-color: transparent;
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 [data-simplebar] {
@@ -4938,7 +4938,7 @@ main{
 
 [data-simplebar-primary] .simplebar-scrollbar:before{
   --tw-bg-opacity: 1;
-  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+  background-color: rgb(60 144 187 / var(--tw-bg-opacity));
 }
 
 .\*\:flex > *{
@@ -5096,7 +5096,7 @@ main{
 
 .hover\:border-primary:hover{
   --tw-border-opacity: 1;
-  border-color: rgb(139 92 246 / var(--tw-border-opacity));
+  border-color: rgb(60 144 187 / var(--tw-border-opacity));
 }
 
 .hover\:border-primary-600:hover{
@@ -5219,7 +5219,7 @@ main{
 
 .hover\:bg-primary:hover{
   --tw-bg-opacity: 1;
-  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+  background-color: rgb(60 144 187 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-primary-600:hover{
@@ -5329,7 +5329,7 @@ main{
 
 .hover\:text-primary:hover{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary-600:hover{
@@ -5389,7 +5389,7 @@ main{
 
 .hover\:\*\:text-primary > *:hover{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 .focus\:z-10:focus{
@@ -5482,7 +5482,7 @@ main{
 
 .focus\:text-primary:focus{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 .focus\:text-purple-500:focus{
@@ -5531,11 +5531,11 @@ main{
 
 .focus\:ring-primary:focus{
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(139 92 246 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(60 144 187 / var(--tw-ring-opacity));
 }
 
 .focus\:ring-primary\/60:focus{
-  --tw-ring-color: rgb(139 92 246 / 0.6);
+  --tw-ring-color: rgb(60 144 187 / 0.6);
 }
 
 .focus\:ring-transparent:focus{
@@ -5643,12 +5643,12 @@ main{
 }
 
 .hs-accordion.active.hs-accordion-active\:bg-primary\/10{
-  background-color: rgb(139 92 246 / 0.1);
+  background-color: rgb(60 144 187 / 0.1);
 }
 
 .hs-accordion.active.hs-accordion-active\:text-primary{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 .hs-accordion.active.hs-accordion-active\:text-primary-600{
@@ -5681,12 +5681,12 @@ main{
 }
 
 .hs-accordion.active > .hs-accordion-active\:bg-primary\/10{
-  background-color: rgb(139 92 246 / 0.1);
+  background-color: rgb(60 144 187 / 0.1);
 }
 
 .hs-accordion.active > .hs-accordion-active\:text-primary{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 .hs-accordion.active > .hs-accordion-active\:text-primary-600{
@@ -5719,12 +5719,12 @@ main{
 }
 
 .hs-accordion.active > .hs-accordion-toggle .hs-accordion-active\:bg-primary\/10{
-  background-color: rgb(139 92 246 / 0.1);
+  background-color: rgb(60 144 187 / 0.1);
 }
 
 .hs-accordion.active > .hs-accordion-toggle .hs-accordion-active\:text-primary{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 .hs-accordion.active > .hs-accordion-toggle .hs-accordion-active\:text-primary-600{
@@ -5757,12 +5757,12 @@ main{
 }
 
 .hs-accordion.active > .hs-accordion-heading > .hs-accordion-toggle .hs-accordion-active\:bg-primary\/10{
-  background-color: rgb(139 92 246 / 0.1);
+  background-color: rgb(60 144 187 / 0.1);
 }
 
 .hs-accordion.active > .hs-accordion-heading > .hs-accordion-toggle .hs-accordion-active\:text-primary{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 .hs-accordion.active > .hs-accordion-heading > .hs-accordion-toggle .hs-accordion-active\:text-primary-600{
@@ -5795,12 +5795,12 @@ main{
 }
 
 .hs-accordion.active > .hs-accordion-toggle.hs-accordion-active\:bg-primary\/10{
-  background-color: rgb(139 92 246 / 0.1);
+  background-color: rgb(60 144 187 / 0.1);
 }
 
 .hs-accordion.active > .hs-accordion-toggle.hs-accordion-active\:text-primary{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 .hs-accordion.active > .hs-accordion-toggle.hs-accordion-active\:text-primary-600{
@@ -5833,12 +5833,12 @@ main{
 }
 
 .hs-accordion.active > .hs-accordion-heading > .hs-accordion-toggle.hs-accordion-active\:bg-primary\/10{
-  background-color: rgb(139 92 246 / 0.1);
+  background-color: rgb(60 144 187 / 0.1);
 }
 
 .hs-accordion.active > .hs-accordion-heading > .hs-accordion-toggle.hs-accordion-active\:text-primary{
   --tw-text-opacity: 1;
-  color: rgb(139 92 246 / var(--tw-text-opacity));
+  color: rgb(60 144 187 / var(--tw-text-opacity));
 }
 
 .hs-accordion.active > .hs-accordion-heading > .hs-accordion-toggle.hs-accordion-active\:text-primary-600{

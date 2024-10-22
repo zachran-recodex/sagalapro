@@ -13,7 +13,10 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ $setting->favicon ? Storage::url($setting->favicon) : asset('favicon.ico') }}"
+        type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/ddb90eabf1.js" crossorigin="anonymous"></script>
 
     <!-- Jsvectormap plugin css -->
     <link href="{{ asset('admin/libs/jsvectormap/css/jsvectormap.min.css') }}" rel="stylesheet" type="text/css">
@@ -119,34 +122,18 @@
                     <div class="relative">
                         <div class="hs-dropdown relative inline-flex [--placement:bottom-right]">
                             <button type="button" class="hs-dropdown-toggle">
-                                <img src="{{ asset('') }}admin/images/users/avatar-8.jpg" alt="user-image"
-                                    class="rounded-full h-10">
+                                <p>Admin</p>
                             </button>
                             <div
                                 class="hs-dropdown-menu duration mt-2 min-w-48 rounded-lg border border-default-200 bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
                                 <a class="flex items-center py-2 px-3 rounded-md text-sm text-default-800 hover:bg-gray-100"
-                                    href="#">
+                                    href="{{ route('profile.edit') }}">
                                     Profile
                                 </a>
-                                <a class="flex items-center py-2 px-3 rounded-md text-sm text-default-800 hover:bg-gray-100"
-                                    href="#">
-                                    Feed
-                                </a>
-                                <a class="flex items-center py-2 px-3 rounded-md text-sm text-default-800 hover:bg-gray-100"
-                                    href="#">
-                                    Analytics
-                                </a>
-                                <a class="flex items-center py-2 px-3 rounded-md text-sm text-default-800 hover:bg-gray-100"
-                                    href="#">
-                                    Settings
-                                </a>
-                                <a class="flex items-center py-2 px-3 rounded-md text-sm text-default-800 hover:bg-gray-100"
-                                    href="#">
-                                    Support
-                                </a>
+
                                 <hr class="my-2">
                                 <a class="flex items-center py-2 px-3 rounded-md text-sm text-default-800 hover:bg-gray-100"
-                                    href="#">
+                                    href="{{ route('logout') }}">
                                     Log Out
                                 </a>
                             </div>
@@ -167,10 +154,10 @@
                     <div>
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> © OpenDash
+                        </script> © PT. Triwalana Sagala Pro
                     </div>
                     <div class="md:flex hidden gap-2 item-center md:justify-end">
-                        Design &amp; Develop by<a href="#" class="text-primary">MyraStudio</a>
+                        Design &amp; Develop by<a href="#" class="text-primary">RECODEX</a>
                     </div>
                 </div>
             </footer>

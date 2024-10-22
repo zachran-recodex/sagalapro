@@ -22,7 +22,6 @@
                                 <th class="px-6 py-3 text-start">Phone</th>
                                 <th class="px-6 py-3 text-start">Email</th>
                                 <th class="px-6 py-3 text-start">Service</th>
-                                <th class="px-6 py-3 text-start">Message</th>
                                 <th class="px-6 py-3 text-center">Action</th>
                             </tr>
                         </thead>
@@ -33,7 +32,6 @@
                                     <td class="px-6 py-3">{{ $contact->phone }}</td>
                                     <td class="px-6 py-3">{{ $contact->email }}</td>
                                     <td class="px-6 py-3">{{ $services[$contact->service] }}</td>
-                                    <td class="px-6 py-3">{{ $contact->message }}</td>
                                     <td class="px-6 py-3">
                                         <a href="{{ route('admin.contacts.show', $contact) }}"
                                             class="px-2 py-1 bg-success/10 text-success text-xs rounded hover:bg-success/20 transition">
