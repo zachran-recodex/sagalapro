@@ -7,14 +7,12 @@
 
     <link rel="shortcut icon" href="{{ $setting->favicon ? Storage::url($setting->favicon) : asset('favicon.ico') }}"
         type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon/favicon-16x16.png') }}">
-    <link rel="icon" type="image/png" sizes="512x512"
-        href="{{ asset('images/favicon/android-chrome-512x512.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192"
-        href="{{ asset('images/favicon/android-chrome-192x192.png') }}">
-    <link rel="manifest" href="{{ asset('images/favicon/site.webmanifest') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('favicon/android-chrome-512x512.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon/android-chrome-192x192.png') }}">
+    <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
 
     <script src="https://kit.fontawesome.com/ddb90eabf1.js" crossorigin="anonymous"></script>
 
