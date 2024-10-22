@@ -24,9 +24,14 @@ class UpdateFleetRequest extends FormRequest
         return [
             'title' => 'sometimes|required|string|max:255',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'gltf' => 'nullable|mimes:gltf|max:5120',
+            'gltf' => 'nullable|string',
             'description' => 'sometimes|required|string',
             'status' => 'required|in:active,inactive',
+            'practice_range' => 'sometimes|required|string|max:255',
+            'cruise_speed' => 'sometimes|required|string|max:255',
+            'maximum_speed' => 'sometimes|required|string|max:255',
+            'normal_takeoff_weight' => 'sometimes|required|string|max:255',
+            'max_takeoff_weight' => 'sometimes|required|string|max:255',
         ];
     }
 }

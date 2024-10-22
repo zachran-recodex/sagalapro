@@ -40,20 +40,23 @@ class FleetController extends Controller
         $fleet->slug = Str::slug($request->title);
         $fleet->description = $request->description;
         $fleet->status = $request->status;
+        $fleet->gltf = $request->gltf;
+
+        // New fields
+        $fleet->practice_range = $request->practice_range;
+        $fleet->cruise_speed = $request->cruise_speed;
+        $fleet->maximum_speed = $request->maximum_speed;
+        $fleet->normal_takeoff_weight = $request->normal_takeoff_weight;
+        $fleet->max_takeoff_weight = $request->max_takeoff_weight;
 
         // Handle image upload
         if ($request->hasFile('image')) {
             $fleet->image = $request->file('image')->store('fleets', 'public');
         }
 
-        // Upload GLTF file
-        if ($request->hasFile('gltf')) {
-            $fleet->gltf = $request->file('gltf')->store('fleets/gltf', 'public');
-        }
-
         $fleet->save();
 
-        return redirect()->route('admin.fleets.index')->with('success', 'fleet created successfully');
+        return redirect()->route('admin.fleets.index')->with('success', 'Fleet created successfully');
     }
 
     /**
@@ -74,6 +77,14 @@ class FleetController extends Controller
         $fleet->slug = Str::slug($request->title);
         $fleet->description = $request->description;
         $fleet->status = $request->status;
+        $fleet->gltf = $request->gltf;
+
+        // New fields
+        $fleet->practice_range = $request->practice_range;
+        $fleet->cruise_speed = $request->cruise_speed;
+        $fleet->maximum_speed = $request->maximum_speed;
+        $fleet->normal_takeoff_weight = $request->normal_takeoff_weight;
+        $fleet->max_takeoff_weight = $request->max_takeoff_weight;
 
         // Handle image upload
         if ($request->hasFile('image')) {
@@ -84,17 +95,9 @@ class FleetController extends Controller
             $fleet->image = $request->file('image')->store('fleets', 'public');
         }
 
-        // Update GLTF file
-        if ($request->hasFile('gltf')) {
-            if ($fleet->gltf) {
-                Storage::disk('public')->delete($fleet->gltf);
-            }
-            $fleet->gltf = $request->file('gltf')->store('fleets/gltf', 'public');
-        }
-
         $fleet->save();
 
-        return redirect()->route('admin.fleets.index')->with('success', 'fleet updated successfully');
+        return redirect()->route('admin.fleets.index')->with('success', 'Fleet updated successfully');
     }
 
     /**
@@ -102,17 +105,13 @@ class FleetController extends Controller
      */
     public function destroy(Fleet $fleet)
     {
-        // Delete images from storage if they exist
+        // Delete image from storage if it exists
         if ($fleet->image) {
             Storage::disk('public')->delete($fleet->image);
         }
 
-        if ($fleet->gltf) {
-            Storage::disk('public')->delete($fleet->gltf);
-        }
-
         $fleet->delete();
 
-        return redirect()->route('admin.fleets.index')->with('success', 'fleet deleted successfully');
+        return redirect()->route('admin.fleets.index')->with('success', 'Fleet deleted successfully');
     }
 }

@@ -3,9 +3,11 @@
 @section('meta_tag')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Triwalana Sagala Pro">
-    <meta name="keywords" content="Aerial Support">
-    <meta name="author" content="Zachran Razendra">
+    <meta name="description"
+        content="Discover Triwalana Sagala Pro's fleet of reliable aerial support vehicles, equipped for various operational needs. Learn more about our services and capabilities.">
+    <meta name="keywords"
+        content="{{ $fleet->title }}, Fleet, Aerial Support, Aerial Vehicles, Operational Support, Triwalana Sagala Pro, Aerial Services">
+    <meta name="author" content="RECODEX">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="index, follow">
@@ -13,7 +15,7 @@
 
     <link rel="canonical" href="{{ url()->current() }}">
 
-    <title>Triwalana Sagala Pro</title>
+    <title>{{ $fleet->title }} | Triwalana Sagala Pro</title>
 @endsection
 
 @section('content')
@@ -25,35 +27,35 @@
             <div class="flex flex-wrap justify-between gap-8">
                 <div class="">
                     <h5 class="text-lg font-semibold">Practice Range</h5>
-                    <p>610 km</p>
+                    <p>{{ $fleet->practice_range }} km</p>
                 </div>
                 <div class="">
                     <h5 class="text-lg font-semibold">Cruise Speed</h5>
-                    <p>230 km/h</p>
+                    <p>{{ $fleet->cruise_speed }} km/h</p>
                 </div>
                 <div class="">
                     <h5 class="text-lg font-semibold">Maximum Speed</h5>
-                    <p>250 km/h</p>
+                    <p>{{ $fleet->maximum_speed }} km/h</p>
                 </div>
                 <div class="">
                     <h5 class="text-lg font-semibold">Normal Takeoff Weight</h5>
-                    <p> 11.100 kg</p>
+                    <p>{{ $fleet->normal_takeoff_weight }} kg</p>
                 </div>
                 <div class="">
                     <h5 class="text-lg font-semibold">Max Takeoff Weight</h5>
-                    <p>13.000 kg</p>
+                    <p>{{ $fleet->max_takeoff_weight }} kg</p>
                 </div>
             </div>
         </div>
         <!-- 3D Helicopter -->
-        <model-viewer src="{{ asset('3d/Mi-8t.gltf') }}" alt="{{ $fleet->title }}" shadow-intensity="1" camera-controls
+        <model-viewer src="{{ asset($fleet->gltf) }}" alt="{{ $fleet->title }}" shadow-intensity="1" camera-controls
             auto-rotate disable-tap style="width: 100%; height: 600px;" camera-orbit="0deg 90deg 5m"
             min-camera-orbit="auto 90deg auto" max-camera-orbit="auto 90deg auto">
         </model-viewer>
     </section>
 
     <!-- Photo & Video Section -->
-    <section class="h-[700px]">
+    <section class="h-fit">
         <div class="grid grid-cols-1 md:grid-cols-2 justify-items-center">
             <div class="flex-shrink-0 w-full h-full relative">
                 <video class="w-full h-full object-cover" autoplay muted loop>

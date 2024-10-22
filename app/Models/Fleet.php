@@ -16,5 +16,10 @@ class Fleet extends Model
         'gltf',
         'description',
         'status',
+        'practice_range',
+        'cruise_speed',
+        'maximum_speed',
+        'normal_takeoff_weight',
+        'max_takeoff_weight',
     ];
 }

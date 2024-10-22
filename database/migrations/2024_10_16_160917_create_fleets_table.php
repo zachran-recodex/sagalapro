@@ -18,6 +18,11 @@ return new class extends Migration
             $table->string('image');
             $table->string('gltf')->nullable();
             $table->text('description');
+            $table->string('practice_range')->nullable();
+            $table->string('cruise_speed')->nullable();
+            $table->string('maximum_speed')->nullable();
+            $table->string('normal_takeoff_weight')->nullable();
+            $table->string('max_takeoff_weight')->nullable();
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
         });

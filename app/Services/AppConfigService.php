@@ -14,7 +14,7 @@ class AppConfigService
 
     public function __construct()
     {
-        $this->navServices = Service::orderBy('id')->take(5)->get();
+        $this->navServices = Service::orderBy('id')->take(4)->get();
         $this->setting = Setting::first(); // Ambil setting pertama
     }
 

@@ -24,9 +24,14 @@ class StoreFleetRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'gltf' => 'nullable|mimes:gltf|max:5120',
+            'gltf' => 'nullable|string',
             'description' => 'required|string',
             'status' => 'required|in:active,inactive',
+            'practice_range' => 'required|string|max:255',
+            'cruise_speed' => 'required|string|max:255',
+            'maximum_speed' => 'required|string|max:255',
+            'normal_takeoff_weight' => 'required|string|max:255',
+            'max_takeoff_weight' => 'required|string|max:255',
         ];
     }
 }

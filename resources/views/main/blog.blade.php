@@ -1,8 +1,26 @@
 @extends('layouts.main')
 
+@section('meta_tag')
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="{{ $blog->description ?? 'Read the latest articles on interesting topics on our blog.' }}">
+    <meta name="keywords" content="Blog, Articles, Information, Aerial Support, Triwalana Sagala Pro">
+    <meta name="author" content="RECODEX">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2A6F97">
+
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <title>{{ $blog->title }} | Triwalana Sagala Pro</title>
+@endsection
+
 @section('content')
     <!-- Hero Section -->
-    <section class="bg-cover bg-center bg-no-repeat h-[50vh]" style="background-image: url({{ Storage::url($blog->image) }})">
+    <section class="bg-cover bg-center bg-no-repeat h-[50vh]"
+        style="background-image: url({{ Storage::url($blog->image) }})">
         <div class="relative bg-black/50 h-full flex items-center">
             <div class="container-main py-12">
                 <div class="text-center lg:text-start">

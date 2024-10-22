@@ -1,5 +1,23 @@
 @extends('layouts.main')
 
+@section('meta_tag')
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="Explore Triwalana Sagala Pro's range of aerial support services, including aerial mapping, land surveys, and operational air support. Trusted solutions tailored to meet your industry's needs in Indonesia.">
+    <meta name="keywords"
+        content="{{ $service->title }}, Aerial Support Services, Aerial Mapping, Land Surveys, Operational Air Support, Triwalana Sagala Pro, Aerial Technology, Reliable Aerial Services, Aerial Solutions in Indonesia">
+    <meta name="author" content="RECODEX">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2A6F97">
+
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <title>{{ $service->title }} | Triwalana Sagala Pro</title>
+@endsection
+
 @section('content')
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-screen"

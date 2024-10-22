@@ -54,15 +54,9 @@
                             </div>
 
                             <div class="mb-4">
-                                <label for="gltf" class="block text-sm font-medium text-gray-700">3D Model
-                                    (.gltf)</label>
-                                <input type="file" name="gltf" id="gltf" accept=".gltf"
+                                <label for="gltf" class="block text-sm font-medium text-gray-700">GLTF File path</label>
+                                <input type="text" name="gltf" id="gltf" value="{{ old('gltf', $fleet->gltf) }}"
                                     class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200">
-                                @if ($fleet->gltf)
-                                    <p class="text-gray-500 text-sm mt-1">Current 3D Model: <a
-                                            href="{{ Storage::url($fleet->gltf) }}" class="text-indigo-600">Download 3D
-                                            Model</a></p>
-                                @endif
                                 @error('gltf')
                                     <span class="text-red-600 text-sm">{{ $message }}</span>
                                 @enderror
@@ -73,6 +67,71 @@
                                 <textarea name="description" id="description" rows="4"
                                     class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200" required>{{ old('description', $fleet->description) }}</textarea>
                                 @error('description')
+                                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <!-- Practice Range -->
+                            <div class="mb-4">
+                                <label for="practice_range" class="block text-sm font-medium text-gray-700">Practice
+                                    Range</label>
+                                <input type="text" name="practice_range" id="practice_range"
+                                    value="{{ old('practice_range', $fleet->practice_range) }}"
+                                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
+                                    required>
+                                @error('practice_range')
+                                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <!-- Cruise Speed -->
+                            <div class="mb-4">
+                                <label for="cruise_speed" class="block text-sm font-medium text-gray-700">Cruise
+                                    Speed</label>
+                                <input type="text" name="cruise_speed" id="cruise_speed"
+                                    value="{{ old('cruise_speed', $fleet->cruise_speed) }}"
+                                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
+                                    required>
+                                @error('cruise_speed')
+                                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <!-- Maximum Speed -->
+                            <div class="mb-4">
+                                <label for="maximum_speed" class="block text-sm font-medium text-gray-700">Maximum
+                                    Speed</label>
+                                <input type="text" name="maximum_speed" id="maximum_speed"
+                                    value="{{ old('maximum_speed', $fleet->maximum_speed) }}"
+                                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
+                                    required>
+                                @error('maximum_speed')
+                                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <!-- Normal Takeoff Weight -->
+                            <div class="mb-4">
+                                <label for="normal_takeoff_weight" class="block text-sm font-medium text-gray-700">Normal
+                                    Takeoff Weight</label>
+                                <input type="text" name="normal_takeoff_weight" id="normal_takeoff_weight"
+                                    value="{{ old('normal_takeoff_weight', $fleet->normal_takeoff_weight) }}"
+                                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
+                                    required>
+                                @error('normal_takeoff_weight')
+                                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <!-- Max Takeoff Weight -->
+                            <div class="mb-4">
+                                <label for="max_takeoff_weight" class="block text-sm font-medium text-gray-700">Max Takeoff
+                                    Weight</label>
+                                <input type="text" name="max_takeoff_weight" id="max_takeoff_weight"
+                                    value="{{ old('max_takeoff_weight', $fleet->max_takeoff_weight) }}"
+                                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-200"
+                                    required>
+                                @error('max_takeoff_weight')
                                     <span class="text-red-600 text-sm">{{ $message }}</span>
                                 @enderror
                             </div>
