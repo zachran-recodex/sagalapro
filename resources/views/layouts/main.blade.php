@@ -194,7 +194,7 @@
                     <div class="">
                         <h4 class="font-semibold mt-4 mb-2">QUICK LINKS</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="hover:underline">News</a></li>
+                            <li><a href="#" class="hover:underline">Blogs</a></li>
                             <li><a href="#" class="hover:underline">Careers</a></li>
                             <li><a href="#" class="hover:underline">Fleets</a></li>
                         </ul>

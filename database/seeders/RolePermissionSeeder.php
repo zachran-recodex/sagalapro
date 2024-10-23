@@ -15,14 +15,14 @@ class RolePermissionSeeder extends Seeder
     public function run(): void
     {
         $permissions = [
-            'manage settings',
-            'manage hero section',
-            'manage fleets',
             'manage services',
-            'manage abouts',
-            'manage page setups',
             'manage blogs',
-            'manage blog categories',
+            'manage faqs',
+            'manage partners',
+            'manage contacts',
+            'manage hero_sections',
+            'manage fleets',
+            'manage settings',
         ];
 
         foreach($permissions as $permission){
@@ -39,7 +39,7 @@ class RolePermissionSeeder extends Seeder
 
         $designManagerPermissions = [
             'manage fleets',
-            'manage services'
+            'manage services',
         ];
 
         $designManagerRole->syncPermissions($designManagerPermissions);
