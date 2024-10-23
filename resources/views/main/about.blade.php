@@ -56,13 +56,13 @@
     <section class="bg-cover bg-center h-[616px]" style="background-image: url({{ asset('images/visi-misi.jpg') }});">
         <div class="bg-sagala-opt-950 bg-opacity-20 h-full">
             <div class="container-main h-full flex items-center">
-                <div class="lg:w-1/2 text-sagala-opt-50 flex flex-col gap-2">
+                <div class="lg:w-1/2 text-sagala-opt-50 flex flex-col gap-6 px-4">
 
                     <!-- Vision Section -->
                     <div id="vision" class="animate-fade-up animate-duration-[1500ms] animate-ease-in-out">
                         <h4 class="text-lg font-semibold text-sagala-600">Path To Success</h4>
-                        <h3 class="text-title">Our Vision</h3>
-                        <p class="text-desc">
+                        <h3 class="text-4xl font-bold">Our Vision</h3>
+                        <p class="text-xl leading-relaxed text-justify">
                             To be a leading provider of exceptional aviation services, consistently delivering outstanding
                             solutions that meet and surpass our clients' needs and expectations.
                         </p>
@@ -71,8 +71,8 @@
                     <!-- Mission Section -->
                     <div id="mission" class="hidden animate-fade-up animate-duration-[1500ms] animate-ease-in-out">
                         <h4 class="text-lg font-semibold text-sagala-600">Path To Success</h4>
-                        <h3 class="text-title">Our Mission</h3>
-                        <p class="text-desc">
+                        <h3 class="text-4xl font-bold">Our Mission</h3>
+                        <p class="text-xl leading-relaxed text-justify">
                             Understanding that aviation services come with high costs, SagalaPro offers free consultations
                             to prospective clients to help them make informed decisions. Our goal is to assist as many
                             clients as possible by providing the right information to meet their specific needs.
@@ -86,23 +86,25 @@
     <!-- Partner Section -->
     <section class="py-main">
         <div class="container-main">
-            <h3 class="text-center text-title text-sagala-600">We Work with the Best Partners</h3>
+            <h2 class="text-center text-title text-sagala-600">We Work with the Best Partners</h2>
 
             <div x-data="{}" x-init="$nextTick(() => {
                 let ul = $refs.logos;
                 ul.insertAdjacentHTML('afterend', ul.outerHTML);
                 ul.nextSibling.setAttribute('aria-hidden', 'true');
             })"
-                class="flex overflow-hidden mt-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-                <ul x-ref="logos" class="inline-flex items-center justify-center md:justify-start animate-infinite-scroll">
+                class="flex overflow-hidden mt-8 [mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
+                <ul x-ref="logos"
+                    class="flex items-center justify-center md:justify-start animate-infinite-scroll space-x-4">
                     @forelse ($partners as $partner)
                         <li
-                            class="w-[250px] h-[100px] p-4 bg-sagala-opt-50 flex items-center justify-center shadow rounded me-8">
-                            <img src="{{ Storage::url($partner->image) }}" alt="{{ $partner->id }}">
+                            class="flex-shrink-0 w-[150px] h-[100px] p-4 bg-sagala-opt-50 flex items-center justify-center shadow rounded">
+                            <img src="{{ Storage::url($partner->image) }}" alt="{{ $partner->id }}"
+                                class="max-w-full max-h-full object-contain">
                         </li>
                     @empty
                         <li
-                            class="w-[250px] h-[100px] p-4 bg-sagala-opt-50 flex items-center justify-center shadow rounded me-8">
+                            class="flex-shrink-0 w-[150px] h-[100px] p-4 bg-sagala-opt-50 flex items-center justify-center shadow rounded">
                             NO DATA
                         </li>
                     @endforelse
@@ -147,18 +149,18 @@
         </div>
     </section>
 
-    <!-- Latest News and Blog Section -->
+    <!-- Blog Section -->
     <section class="bg-sagala-opt-50 py-main">
         <div class="container-main">
             <h2 class="text-title">Latest News and Blog</h2>
         </div>
         <div class="px-4 sm:px-6 lg:px-8">
             <div class="overflow-x-auto">
-                <div class="flex gap-6 whitespace-nowrap mb-8">
+                <div class="flex gap-6 overflow-x-auto mb-8 p-6">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
-                            <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
+                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow rounded-lg transition-transform transform hover:scale-105">
+                            <img class="object-cover h-36 w-full rounded-t-lg" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
                                 <div class="flex justify-between">
@@ -167,24 +169,24 @@
                                         {{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     {{ $blog->title }}
-                                </h5>
+                                </h3>
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
-                            <img class="object-cover h-36 w-full" src="" alt="" />
+                        <div class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow rounded-lg">
+                            <img class="object-cover h-36 w-full rounded-t-lg" src="" alt="No image available" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-sagala-opt-700">News</p>
-                                    <p class="mb-3 font-light text-sagala-opt-700">August 22, 2024</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">No Author</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">N/A</p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
-                                    All you need to know about Ground Handling
-                                </h5>
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
+                                    No blogs available at the moment.
+                                </h3>
                             </div>
-                        </a>
+                        </div>
                     @endforelse
                 </div>
             </div>
@@ -192,6 +194,7 @@
     </section>
 
     @stack('before-scripts')
+    <!-- FAQ Script -->
     <script>
         document.querySelectorAll('.toggle-faq').forEach(button => {
             button.addEventListener('click', () => {
@@ -204,6 +207,7 @@
         });
     </script>
 
+    <!-- Vision & Mission Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let vision = document.getElementById('vision');
@@ -226,6 +230,5 @@
             setInterval(toggleVisionMission, 5000);
         });
     </script>
-
     @stack('after-scripts')
 @endsection

@@ -38,13 +38,15 @@
             <div class="container-main">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
                     @if ($index % 2 === 0)
+                        <!-- Gambar di kiri -->
                         <div>
                             <img src="{{ Storage::url($fleet->image) }}" alt="{{ $fleet->title }}"
                                 class="w-full h-[350px] object-cover rounded-lg shadow-lg">
                         </div>
                         <div class="col-span-2">
-                            <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-sagala-opt-950">
-                                {{ $fleet->title }}</h2>
+                            <h2 class="text-sagala-600 text-2xl font-bold mb-4 pb-4 border-b-2 border-sagala-opt-950">
+                                {{ $fleet->title }}
+                            </h2>
                             <p class="text-sagala-opt-700 text-justify mb-6">
                                 {{ $fleet->description }}
                             </p>
@@ -54,9 +56,11 @@
                             </a>
                         </div>
                     @else
+                        <!-- Gambar di kanan -->
                         <div class="col-span-2">
-                            <h2 class="text-sagala-500 text-2xl font-bold mb-4 pb-4 border-b-2 border-sagala-opt-950">
-                                {{ $fleet->title }}</h2>
+                            <h2 class="text-sagala-600 text-2xl font-bold mb-4 pb-4 border-b-2 border-sagala-opt-950">
+                                {{ $fleet->title }}
+                            </h2>
                             <p class="text-sagala-opt-700 text-justify mb-6">
                                 {{ $fleet->description }}
                             </p>
@@ -74,15 +78,19 @@
             </div>
         </section>
     @empty
-        <p>No fleet data available.</p>
+        <section class="py-main">
+            <div class="container-main">
+                <p class="text-center text-sagala-opt-700">No fleet data available.</p>
+            </div>
+        </section>
     @endforelse
 
     <!-- Request a Quote Section -->
-    <section class="bg-sagala-500 py-main">
-        <div class="container-main text-sagala-opt-50 lg:text-start text-center">
-            <h3 class="text-title">
+    <section class="bg-sagala-600 py-main">
+        <div class="container-main text-sagala-opt-50 lg:text-start text-center px-4">
+            <h2 class="text-title">
                 Request a Quote
-            </h3>
+            </h2>
             <p class="text-desc">
                 <strong class="underline">Need a personalized aviation solution?</strong> We're here to provide you with
                 exactly what you need. Request a customized quote today, and let our experts craft the perfect solution
@@ -90,7 +98,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-sagala-opt-50 py-[10px] px-[26px] text-base transition hover:bg-sagala-opt-50 hover:text-sagala-500">
+                class="inline-flex items-center border border-sagala-opt-50 py-2 px-6 text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600 rounded-md">
                 Get a Quote
             </a>
         </div>
@@ -132,18 +140,18 @@
         </div>
     </section>
 
-    <!-- Latest News and Blog Section -->
+    <!-- Blog Section -->
     <section class="bg-sagala-opt-50 py-main">
         <div class="container-main">
             <h2 class="text-title">Latest News and Blog</h2>
         </div>
         <div class="px-4 sm:px-6 lg:px-8">
             <div class="overflow-x-auto">
-                <div class="flex gap-6 whitespace-nowrap mb-8">
+                <div class="flex gap-6 overflow-x-auto mb-8 p-6">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
-                            <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
+                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow rounded-lg transition-transform transform hover:scale-105">
+                            <img class="object-cover h-36 w-full rounded-t-lg" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
                                 <div class="flex justify-between">
@@ -152,24 +160,24 @@
                                         {{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     {{ $blog->title }}
-                                </h5>
+                                </h3>
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
-                            <img class="object-cover h-36 w-full" src="" alt="" />
+                        <div class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow rounded-lg">
+                            <img class="object-cover h-36 w-full rounded-t-lg" src="" alt="No image available" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-sagala-opt-700">News</p>
-                                    <p class="mb-3 font-light text-sagala-opt-700">August 22, 2024</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">No Author</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">N/A</p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-500 text-wrap">
-                                    All you need to know about Ground Handling
-                                </h5>
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
+                                    No blogs available at the moment.
+                                </h3>
                             </div>
-                        </a>
+                        </div>
                     @endforelse
                 </div>
             </div>
@@ -177,6 +185,7 @@
     </section>
 
     @stack('before-scripts')
+    <!-- FAQ Script -->
     <script>
         document.querySelectorAll('.toggle-faq').forEach(button => {
             button.addEventListener('click', () => {
@@ -188,7 +197,5 @@
             });
         });
     </script>
-
-
     @stack('after-scripts')
 @endsection

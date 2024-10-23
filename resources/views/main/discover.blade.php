@@ -25,28 +25,29 @@
         <div class="container mx-auto text-sagala-opt-50 px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold mb-8 text-center">{{ $fleet->title }}</h2>
             <div class="flex flex-wrap justify-between gap-8">
-                <div class="">
+                <div>
                     <h5 class="text-lg font-semibold">Practice Range</h5>
                     <p>{{ $fleet->practice_range }} km</p>
                 </div>
-                <div class="">
+                <div>
                     <h5 class="text-lg font-semibold">Cruise Speed</h5>
                     <p>{{ $fleet->cruise_speed }} km/h</p>
                 </div>
-                <div class="">
+                <div>
                     <h5 class="text-lg font-semibold">Maximum Speed</h5>
                     <p>{{ $fleet->maximum_speed }} km/h</p>
                 </div>
-                <div class="">
+                <div>
                     <h5 class="text-lg font-semibold">Normal Takeoff Weight</h5>
                     <p>{{ $fleet->normal_takeoff_weight }} kg</p>
                 </div>
-                <div class="">
+                <div>
                     <h5 class="text-lg font-semibold">Max Takeoff Weight</h5>
                     <p>{{ $fleet->max_takeoff_weight }} kg</p>
                 </div>
             </div>
         </div>
+
         <!-- 3D Helicopter -->
         <model-viewer src="{{ asset($fleet->gltf) }}" alt="{{ $fleet->title }}" shadow-intensity="1" camera-controls
             auto-rotate disable-tap style="width: 100%; height: 600px;" camera-orbit="0deg 90deg 5m"
@@ -57,108 +58,27 @@
     <!-- Photo & Video Section -->
     <section class="h-fit">
         <div class="grid grid-cols-1 md:grid-cols-2 justify-items-center">
+            <!-- Video Section -->
             <div class="flex-shrink-0 w-full h-full relative">
                 <video class="w-full h-full object-cover" autoplay muted loop>
                     <source src="{{ asset('videos/2.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <div id="carousel" class="relative w-full h-full">
-                <div class="overflow-hidden relative w-full h-full">
-                    <div class="flex transition-transform duration-500 ease-in-out w-full h-full" id="slides">
-                        <img src="{{ Storage::url($fleet->image) }}" alt=""
-                            class="flex-shrink-0 w-full h-full relative object-cover">
-                        <img src="{{ asset('images/cargo.jpeg') }}" alt=""
-                            class="flex-shrink-0 w-full h-full relative object-cover">
-                    </div>
-                </div>
-                <!-- Navigation Buttons -->
-                <button id="prev"
-                    class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950/40 text-sagala-opt-50 p-2">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <button id="next"
-                    class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950/40 text-sagala-opt-50 p-2">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Spesification Section -->
-    <section class="py-main">
-        <div class="container-main">
-            <div class="flex justify-between mb-4">
-                <span>Spesification</span>
-                <span>Mi-8AMT</span>
-            </div>
-            <div class="mb-8">
-                <div class="flex flex-wrap justify-center -mb-px">
-                    <a href="#cabin"
-                        class="inline-block py-4 px-6 border-b-2 border-transparent font-medium text-lg leading-5 text-sagala-opt-500 hover:text-sagala-opt-700 hover:border-sagala-opt-300 focus:outline-none focus:text-sagala-opt-700 focus:border-sagala-opt-300"
-                        aria-selected="false">
-                        Cabin
-                    </a>
-                    <a href="#performance"
-                        class="inline-block py-4 px-6 border-b-2 border-transparent font-medium text-lg leading-5 text-sagala-opt-500 hover:text-sagala-opt-700 hover:border-sagala-opt-300 focus:outline-none focus:text-sagala-opt-700 focus:border-sagala-opt-300"
-                        aria-selected="false">
-                        Performance
-                    </a>
-                </div>
-            </div>
-            <div id="cabin-and-performance-content">
-                <div id="cabin" class="hidden">
-                    <table class="table-auto w-full">
-                        <tbody>
-                            <tr>
-                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Payload</td>
-                                <td class="py-2 px-4">Up to 4.000 Kg</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Hold Size (LxWxH)</td>
-                                <td class="py-2 px-4">5.34 m x 2.34 m x 1.8 m</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Door Size</td>
-                                <td class="py-2 px-4">1.25 m x 1.6 m</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="performance" class="hidden">
-                    <table class="table-auto w-full">
-                        <tbody>
-                            <tr>
-                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Load Volume</td>
-                                <td class="py-2 px-4">23 cubic meters</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Fuel Tank</td>
-                                <td class="py-2 px-4">500 Km</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 px-4 font-medium text-sagala-opt-900">Fuel Tank (Additional)</td>
-                                <td class="py-2 px-4">1.065 Km</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <!-- Image Section -->
+            <div class="flex-shrink-0 w-full h-full relative">
+                <img src="{{ Storage::url($fleet->image) }}" alt="{{ $fleet->title }}" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
 
     <!-- Request a Quote Section -->
     <section class="bg-sagala-600 py-main">
-        <div class="container-main text-sagala-opt-50 lg:text-start text-center">
-            <h3 class="text-title">
+        <div class="container-main text-sagala-opt-50 lg:text-start text-center px-4">
+            <h2 class="text-title">
                 Request a Quote
-            </h3>
+            </h2>
             <p class="text-desc">
                 <strong class="underline">Need a personalized aviation solution?</strong> We're here to provide you with
                 exactly what you need. Request a customized quote today, and let our experts craft the perfect solution
@@ -166,7 +86,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-sagala-opt-50 py-[10px] px-[26px] text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600">
+                class="inline-flex items-center border border-sagala-opt-50 py-2 px-6 text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600 rounded-md">
                 Get a Quote
             </a>
         </div>
@@ -208,18 +128,18 @@
         </div>
     </section>
 
-    <!-- Latest News and Blog Section -->
+    <!-- Blog Section -->
     <section class="bg-sagala-opt-50 py-main">
         <div class="container-main">
             <h2 class="text-title">Latest News and Blog</h2>
         </div>
         <div class="px-4 sm:px-6 lg:px-8">
             <div class="overflow-x-auto">
-                <div class="flex gap-6 whitespace-nowrap mb-8">
+                <div class="flex gap-6 overflow-x-auto mb-8 p-6">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
-                            <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
+                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow rounded-lg transition-transform transform hover:scale-105">
+                            <img class="object-cover h-36 w-full rounded-t-lg" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
                                 <div class="flex justify-between">
@@ -228,24 +148,24 @@
                                         {{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     {{ $blog->title }}
-                                </h5>
+                                </h3>
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
-                            <img class="object-cover h-36 w-full" src="" alt="" />
+                        <div class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow rounded-lg">
+                            <img class="object-cover h-36 w-full rounded-t-lg" src="" alt="No image available" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-sagala-opt-700">News</p>
-                                    <p class="mb-3 font-light text-sagala-opt-700">August 22, 2024</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">No Author</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">N/A</p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
-                                    All you need to know about Ground Handling
-                                </h5>
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
+                                    No blogs available at the moment.
+                                </h3>
                             </div>
-                        </a>
+                        </div>
                     @endforelse
                 </div>
             </div>
@@ -253,8 +173,38 @@
     </section>
 
     @stack('before-scripts')
+    <!-- 3D View Script -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
+    <!-- Carousel Script -->
+    <script>
+        const slides = document.getElementById('slides');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let index = 0;
+
+        // Function to update the slide position
+        function updateSlidePosition() {
+            const totalSlides = slides.children.length;
+            const slideWidth = slides.clientWidth;
+            slides.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        // Event listeners for navigation buttons
+        prevButton.addEventListener('click', () => {
+            const totalSlides = slides.children.length;
+            index = (index - 1 + totalSlides) % totalSlides; // Wrap around
+            updateSlidePosition();
+        });
+
+        nextButton.addEventListener('click', () => {
+            const totalSlides = slides.children.length;
+            index = (index + 1) % totalSlides; // Wrap around
+            updateSlidePosition();
+        });
+    </script>
+
+    <!-- FAQ Script -->
     <script>
         document.querySelectorAll('.toggle-faq').forEach(button => {
             button.addEventListener('click', () => {
@@ -266,6 +216,5 @@
             });
         });
     </script>
-
     @stack('after-scripts')
 @endsection

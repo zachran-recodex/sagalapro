@@ -37,12 +37,13 @@
 
     <!-- Blog Section -->
     <section class="py-main">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container-main">
 
             <!-- Blog Content -->
             <article>
                 <h2 class="text-3xl lg:text-4xl font-bold mb-4">{{ $blog->title }}</h2>
-                <p class="text-sm text-sagala-opt-500 mb-6">{{ $blog->created_at->format('M d, Y') }} | {{ $blog->author }}
+                <p class="text-sm text-sagala-opt-500 mb-6">
+                    {{ $blog->created_at->format('M d, Y') }} | {{ $blog->author }}
                 </p>
 
                 <img src="{{ Storage::url($blog->image) }}" alt="{{ $blog->title }}"
@@ -55,18 +56,18 @@
         </div>
     </section>
 
-    <!-- Latest News and Blog Section -->
+    <!-- Latest Blog Section -->
     <section class="bg-sagala-opt-50 py-main">
         <div class="container-main">
             <h2 class="text-title">Latest News and Blog</h2>
         </div>
         <div class="px-4 sm:px-6 lg:px-8">
             <div class="overflow-x-auto">
-                <div class="flex gap-6 whitespace-nowrap mb-8">
+                <div class="flex gap-6 overflow-x-auto mb-8 p-6">
                     @forelse ($blogs as $blog)
                         <a href="{{ route('blog.details', $blog->slug) }}"
-                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
-                            <img class="object-cover h-36 w-full" src="{{ Storage::url($blog->image) }}"
+                            class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow rounded-lg transition-transform transform hover:scale-105">
+                            <img class="object-cover h-36 w-full rounded-t-lg" src="{{ Storage::url($blog->image) }}"
                                 alt="{{ $blog->title }}" />
                             <div class="p-5">
                                 <div class="flex justify-between">
@@ -75,24 +76,24 @@
                                         {{ $blog->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
                                     {{ $blog->title }}
-                                </h5>
+                                </h3>
                             </div>
                         </a>
                     @empty
-                        <a href="" class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow">
-                            <img class="object-cover h-36 w-full" src="" alt="" />
+                        <div class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow rounded-lg">
+                            <img class="object-cover h-36 w-full rounded-t-lg" src="" alt="No image available" />
                             <div class="p-5">
                                 <div class="flex justify-between">
-                                    <p class="mb-3 font-light text-sagala-opt-700">News</p>
-                                    <p class="mb-3 font-light text-sagala-opt-700">August 22, 2024</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">No Author</p>
+                                    <p class="mb-3 font-light text-sagala-opt-700">N/A</p>
                                 </div>
-                                <h5 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
-                                    All you need to know about Ground Handling
-                                </h5>
+                                <h3 class="mb-2 text-lg font-normal tracking-tight text-sagala-600 text-wrap">
+                                    No blogs available at the moment.
+                                </h3>
                             </div>
-                        </a>
+                        </div>
                     @endforelse
                 </div>
             </div>

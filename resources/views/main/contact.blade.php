@@ -47,7 +47,7 @@
             </div>
 
             <!-- Contact Content -->
-            <div class="flex flex-wrap lg:flex-nowrap gap-12 items-start">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
                 <!-- Contact Info -->
                 <div class="w-full lg:w-1/2">
                     <iframe class="mb-4 w-full h-[300px]"
@@ -61,9 +61,9 @@
                         </p>
                         <h5 class="text-lg font-semibold mb-2">PHONE / FAX</h5>
                         <p>
-                            +62-21-22580029
+                            {{ $setting->phone_one }}
                             <br>
-                            0815-1312-1517
+                            {{ $setting->phone_two }}
                         </p>
                     </div>
                     <p class="text-justify text-sagala-opt-700">
@@ -93,7 +93,7 @@
                                     placeholder="Your Phone Number" required pattern="[0-9]{10,15}">
                             </div>
                             <div class="mb-5">
-                                <label for="mail" class="block mb-2 text-sm font-medium text-sagala-opt-900">E-mail
+                                <label for="email" class="block mb-2 text-sm font-medium text-sagala-opt-900">E-mail
                                     Address</label>
                                 <input type="email" id="email" name="email"
                                     class="bg-sagala-opt-200 border-0 text-sagala-opt-900 text-sm focus:ring-sagala-600 focus:border-sagala-600 block w-full p-2.5"
