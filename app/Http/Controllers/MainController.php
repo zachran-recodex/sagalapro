@@ -81,7 +81,7 @@ class MainController extends Controller
     {
         $contact = new Contact();
 
-        // Update fields with request data
+        // Manual assignment
         $contact->name = $request->name;
         $contact->phone = $request->phone;
         $contact->email = $request->email;
@@ -90,7 +90,7 @@ class MainController extends Controller
 
         $contact->save();
 
-        return redirect()->route('main.contact')->with('success', 'Service created successfully');
+        return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 
     public function acquisition()

@@ -157,7 +157,8 @@
                         </script> © PT. Triwalana Sagala Pro
                     </div>
                     <div class="md:flex hidden gap-2 item-center md:justify-end">
-                        Design &amp; Develop by<a href="#" class="text-primary">RECODEX</a>
+                        Design &amp; Develop by<a href="https://recodex.id" target="_blank"
+                            class="font-bold text-[#86C332]">RECODEX</a>
                     </div>
                 </div>
             </footer>

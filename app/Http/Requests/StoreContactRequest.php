@@ -22,11 +22,11 @@ class StoreContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:20'],
-            'email' => ['required', 'email', 'max:255'],
-            'service' => ['required', 'string'],
-            'message' => ['required', 'string', 'min:10'],
+            'name' => 'required|string|max:255',
+            'phone' => 'required|regex:/^[0-9]{10,15}$/',
+            'email' => 'required|email|max:255',
+            'service' => 'required|string|in:acquisition,aerial,cargo,charter,other',
+            'message' => 'required|string|max:1000',
         ];
     }
 }

@@ -3,11 +3,7 @@
 @section('content')
     <!-- Page Title Start -->
     <div class="flex items-center justify-between flex-wrap gap-2 mb-6">
-        <h4 class="text-default-900 text-lg font-medium">Contact</h4>
-
-        <div class="md:flex hidden items-center gap-3 text-sm font-semibold">
-            <a href="#" class="text-sm font-medium text-default-700" aria-current="page">Contact</a>
-        </div>
+        <h4 class="text-default-900 text-lg font-medium">Contacts</h4>
     </div>
     <!-- Page Title End -->
 
@@ -34,7 +30,7 @@
                                     <td class="px-6 py-3">{{ $services[$contact->service] }}</td>
                                     <td class="px-6 py-3">
                                         <a href="{{ route('admin.contacts.show', $contact) }}"
-                                            class="px-2 py-1 bg-success/10 text-success text-xs rounded hover:bg-success/20 transition">
+                                            class="px-2 py-1 bg-green-500 text-white text-xs rounded hover:bg-green-600 transition">
                                             Details
                                         </a>
                                     </td>
@@ -49,5 +45,5 @@
                 </div>
             </div>
         </div>
-    </div> <!-- end card-->
+    </div>
 @endsection

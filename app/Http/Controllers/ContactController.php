@@ -11,7 +11,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::orderByDesc('id')->paginate(10);
+        $contacts = Contact::orderByDesc('id')->paginate(20);
 
         $services = [
             'acquisition' => 'Aircraft & Helicopter Acquisition',
@@ -21,7 +21,7 @@ class ContactController extends Controller
             'other' => 'Other',
         ];
 
-        return view ('admin.contacts.index', compact('contacts', 'services'));
+        return view('admin.contacts.index', compact('contacts', 'services'));
     }
 
     /**
@@ -29,6 +29,14 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        $services = [
+            'acquisition' => 'Aircraft & Helicopter Acquisition',
+            'aerial' => 'Aerial Fire-Fighting Consultant & Operation',
+            'cargo' => 'Heavy & Outsized Cargo Service',
+            'charter' => 'Private Jet Charters & Flights',
+            'other' => 'Other',
+        ];
+
+        return view('admin.contacts.detail', compact('contact', 'services'));
     }
 }
