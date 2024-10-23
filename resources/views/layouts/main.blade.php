@@ -43,21 +43,18 @@
                 <img src="{{ asset('images/logo-sagala.png') }}" alt="Logo Sagala Pro" class="w-[255px]"
                     id="navbarLogo">
             </a>
-            <div class="">
+            <div>
                 <ul class="flex space-x-12 justify-between items-center">
                     <li>
-                        <a href="{{ route('home') }}" class="hover:text-sagala-600">
-                            Home
-                        </a>
+                        <a href="{{ route('home') }}" class="hover:text-sagala-600">Home</a>
                     </li>
                     <li>
-                        <a href="{{ route('about') }}" class="hover:text-sagala-600">
-                            About Us
-                        </a>
+                        <a href="{{ route('about') }}" class="hover:text-sagala-600">About Us</a>
                     </li>
                     <li>
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="flex justify-between items-center hover:text-sagala-600">Services
+                            class="flex justify-between items-center hover:text-sagala-600">
+                            Services
                             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -67,7 +64,7 @@
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
                             class="z-10 hidden font-normal bg-sagala-opt-50 divide-y divide-sagala-opt-100 rounded-lg shadow w-fit">
-                            <ul class="py-2 text-sm text-sagala-opt-700" aria-labelledby="dropdownLargeButton">
+                            <ul class="py-2 text-sm text-sagala-opt-700" aria-labelledby="dropdownNavbarLink">
                                 @forelse ($navServices as $service)
                                     <li>
                                         <a href="{{ route('service.details', $service->slug) }}"
@@ -82,15 +79,12 @@
                         </div>
                     </li>
                     <li>
-                        <a href="{{ route('fleet') }}" class="hover:text-sagala-600">
-                            Fleets
-                        </a>
+                        <a href="{{ route('fleet') }}" class="hover:text-sagala-600">Fleets</a>
                     </li>
                     <li>
                         <a href="{{ route('contact') }}"
-                            class="bg-sagala-600 px-4 py-2 rounded-lg border hover:bg-transparent hover:border">
-                            Contact Us
-                        </a>
+                            class="bg-sagala-600 px-4 py-2 rounded-lg border hover:bg-transparent hover:border">Contact
+                            Us</a>
                     </li>
                 </ul>
             </div>
@@ -119,7 +113,7 @@
                             </li>
                         @empty
                             <li>
-                                <a href="" class="hover:underline">No Data</a>
+                                <a href="#" class="hover:underline">No Data</a>
                             </li>
                         @endforelse
                     </ul>
@@ -127,7 +121,7 @@
 
                 <!-- Section 2: Contact Information (Phone, Email, Address) -->
                 <div class="flex flex-col space-y-4">
-                    <div class="">
+                    <div>
                         <h4 class="font-semibold">PHONE / FAX</h4>
                         <p>
                             <a href="tel:{{ $setting->phone_one }}"
@@ -135,21 +129,18 @@
                         </p>
                     </div>
 
-                    <div class="">
+                    <div>
                         <h4 class="font-semibold">EMAIL</h4>
                         <p>
-                            <a href="mailto:{{ $setting->email_one }}" class="hover:underline">
-                                {{ $setting->email_one }}
-                            </a>
+                            <a href="mailto:{{ $setting->email_one }}"
+                                class="hover:underline">{{ $setting->email_one }}</a>
                         </p>
                     </div>
 
-                    <div class="">
+                    <div>
                         <h4 class="font-semibold">ADDRESS</h4>
                         <p class="text-justify">
-                            <a href="#" class="hover:underline">
-                                {{ $setting->address }}
-                            </a>
+                            <a href="#" class="hover:underline">{{ $setting->address }}</a>
                         </p>
                     </div>
 
@@ -173,26 +164,24 @@
                 </div>
 
                 <!-- Section 3: Mobile and Operational Address -->
-                <div class="flex flex-col">
-                    <div class="">
-                        <h4 class="font-semibold mb-2">MOBILE</h4>
+                <div class="flex flex-col space-y-4">
+                    <div>
+                        <h4 class="font-semibold">MOBILE</h4>
                         <p>
                             <a href="tel:{{ $setting->phone_two }}"
                                 class="hover:underline">{{ $setting->phone_two }}</a>
                         </p>
                     </div>
 
-                    <div class="">
-                        <h4 class="font-semibold mt-4 mb-2">OPERATIONAL</h4>
+                    <div>
+                        <h4 class="font-semibold">OPERATIONAL</h4>
                         <p class="text-justify">
-                            <a href="#" class="hover:underline">
-                                {{ $setting->operational_address }}
-                            </a>
+                            <a href="#" class="hover:underline">{{ $setting->operational_address }}</a>
                         </p>
                     </div>
 
-                    <div class="">
-                        <h4 class="font-semibold mt-4 mb-2">QUICK LINKS</h4>
+                    <div>
+                        <h4 class="font-semibold">QUICK LINKS</h4>
                         <ul class="space-y-2">
                             <li><a href="#" class="hover:underline">Blogs</a></li>
                             <li><a href="#" class="hover:underline">Careers</a></li>
@@ -218,6 +207,7 @@
     @stack('before-scripts')
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
+    <!-- Navbar Script -->
     <script>
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
@@ -226,11 +216,11 @@
             if (window.scrollY > 50) {
                 navbar.classList.add('bg-sagala-opt-50', 'shadow-md', 'text-sagala-opt-950');
                 navbar.classList.remove('bg-transparent', 'text-sagala-opt-50');
-                logo.src = "{{ asset('images/logo-sagala-second.png') }}";
+                logo.src = "{{ asset('images/logo-sagala-second.png') }}"; // Ganti logo saat scroll
             } else {
                 navbar.classList.add('bg-transparent', 'text-sagala-opt-50');
                 navbar.classList.remove('bg-sagala-opt-50', 'shadow-md', 'text-sagala-opt-950');
-                logo.src = "{{ asset('images/logo-sagala.png') }}";
+                logo.src = "{{ asset('images/logo-sagala.png') }}"; // Kembali ke logo asli
             }
         });
     </script>
