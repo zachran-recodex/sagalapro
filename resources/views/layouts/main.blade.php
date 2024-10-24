@@ -122,7 +122,7 @@
                 <!-- Section 2: Contact Information (Phone, Email, Address) -->
                 <div class="flex flex-col space-y-4">
                     <div>
-                        <h4 class="font-semibold">PHONE / FAX</h4>
+                        <h4 class="font-semibold">PHONE</h4>
                         <p>
                             <a href="tel:{{ $setting->phone_one }}"
                                 class="hover:underline">{{ $setting->phone_one }}</a>

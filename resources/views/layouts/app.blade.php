@@ -122,7 +122,7 @@
                     <div class="relative">
                         <div class="hs-dropdown relative inline-flex [--placement:bottom-right]">
                             <button type="button" class="hs-dropdown-toggle">
-                                <p>Admin</p>
+                                <p>{{ auth()->user()->name }}</p>
                             </button>
                             <div
                                 class="hs-dropdown-menu duration mt-2 min-w-48 rounded-lg border border-default-200 bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
