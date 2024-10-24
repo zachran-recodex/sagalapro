@@ -28,11 +28,23 @@
                                     <td class="px-6 py-3">{{ $contact->phone }}</td>
                                     <td class="px-6 py-3">{{ $contact->email }}</td>
                                     <td class="px-6 py-3">{{ $services[$contact->service] }}</td>
-                                    <td class="px-6 py-3">
+                                    <td class="px-6 py-3 flex justify-center space-x-2">
+                                        <!-- Button to show details -->
                                         <a href="{{ route('admin.contacts.show', $contact) }}"
                                             class="px-2 py-1 bg-green-500 text-white text-xs rounded hover:bg-green-600 transition">
                                             Details
                                         </a>
+
+                                        <!-- Delete button -->
+                                        <form action="{{ route('admin.contacts.destroy', $contact) }}" method="POST"
+                                            onsubmit="return confirm('Are you sure you want to delete this contact?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 transition">
+                                                Delete
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @empty

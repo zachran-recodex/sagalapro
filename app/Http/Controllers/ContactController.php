@@ -39,4 +39,11 @@ class ContactController extends Controller
 
         return view('admin.contacts.detail', compact('contact', 'services'));
     }
+
+    public function destroy(Contact $contact)
+    {
+        $contact->delete();
+
+        return redirect()->route('admin.contacts.index')->with('success', 'Contact deleted successfully');
+    }
 }
