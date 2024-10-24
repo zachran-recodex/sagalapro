@@ -122,7 +122,7 @@
                     <div class="relative">
                         <div class="hs-dropdown relative inline-flex [--placement:bottom-right]">
                             <button type="button" class="hs-dropdown-toggle">
-                                <p>{{ auth()->user()->name }}</p>
+                                <p>{{ Auth::user()->name }}</p>
                             </button>
                             <div
                                 class="hs-dropdown-menu duration mt-2 min-w-48 rounded-lg border border-default-200 bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
@@ -132,10 +132,16 @@
                                 </a>
 
                                 <hr class="my-2">
-                                <a class="flex items-center py-2 px-3 rounded-md text-sm text-default-800 hover:bg-gray-100"
-                                    href="{{ route('logout') }}">
-                                    Log Out
-                                </a>
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </form>
                             </div>
                         </div>
                     </div>
