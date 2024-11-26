@@ -78,7 +78,7 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->name('admin.')->group(function (){
 
-        Route::middleware('can:manage heroSections')->group(function () {
+        Route::middleware('can:manage hero sections')->group(function () {
             Route::resource('hero-sections', HeroSectionController::class);
         });
 

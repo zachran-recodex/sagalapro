@@ -21,7 +21,7 @@ class RolePermissionSeeder extends Seeder
             'manage faqs',
             'manage partners',
             'manage contacts',
-            'manage heroSections',
+            'manage hero sections',
             'manage fleets',
             'manage settings',
         ];
