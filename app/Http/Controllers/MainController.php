@@ -21,28 +21,48 @@ class MainController extends Controller
         $heroSections = HeroSection::where('status', true)
             ->orderBy('id', 'desc')
             ->paginate(3);
-        $services = Service::where('status', true);
-        $partners = Partner::where('status', true);
-        $blogs = Blog::where('status', true);
-        $faqs = Faq::where('status', true);
+        $services = Service::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+        $partners = Partner::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+        $blogs = Blog::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+        $faqs = Faq::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
 
         return view('index', compact('heroSections', 'services', 'partners', 'blogs', 'faqs'));
     }
 
     public function about()
     {
-        $partners = Partner::where('status', true);
-        $blogs = Blog::where('status', true);
-        $faqs = Faq::where('status', true);
+        $partners = Partner::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(20);
+        $blogs = Blog::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+        $faqs = Faq::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
 
         return view ('main.about', compact('partners', 'blogs', 'faqs'));
     }
 
     public function service($slug)
     {
-        $services = Service::where('status', true);
-        $blogs = Blog::where('status', true);
-        $faqs = Faq::where('status', true);
+        $services = Service::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+        $blogs = Blog::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+        $faqs = Faq::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
         $service = Service::where('slug', $slug)->firstOrFail();
 
         return view('main.service', compact('service', 'services', 'faqs', 'blogs'));
@@ -50,17 +70,27 @@ class MainController extends Controller
 
     public function fleet()
     {
-        $fleets = Fleet::where('status', true);
-        $blogs = Blog::where('status', true);
-        $faqs = Faq::where('status', true);
+        $fleets = Fleet::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+        $blogs = Blog::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+        $faqs = Faq::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
 
         return view ('main.fleet', compact('fleets', 'blogs', 'faqs'));
     }
 
     public function detailFleet($slug)
     {
-        $blogs = Blog::where('status', true);
-        $faqs = Faq::where('status', true);
+        $blogs = Blog::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+        $faqs = Faq::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(5);
         $fleet = Fleet::where('slug', $slug)->firstOrFail();
 
         return view ('main.discover', compact('fleet', 'faqs', 'blogs'));
@@ -68,7 +98,9 @@ class MainController extends Controller
 
     public function blog($slug)
     {
-        $blogs = Blog::where('status', true);
+        $blogs = Blog::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(10);
         $blog = Blog::where('slug', $slug)->firstOrFail();
 
         return view('main.blog', compact('blog', 'blogs'));

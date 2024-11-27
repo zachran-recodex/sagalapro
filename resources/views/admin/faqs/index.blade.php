@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4 px-4">
+        <div class="my-4 px-4">
             {{ $faqs->links() }}
         </div>
     </div>
