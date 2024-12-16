@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Daftarkan AppConfigService ke service container
-        $this->app->singleton(AppConfigService::class, function ($app) {
+        $this->app->singleton(AppConfigService::class, function () {
             return new AppConfigService();
         });
 
@@ -35,10 +35,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::before(function ($user, $ability) {
-            if($user->hasRole('admin')) {
+        Gate::before(function ($user) {
+            if ($user->hasRole('admin')) {
                 return true;
             }
+            // Fallback return value
+            return null;
         });
 
         // Layout
