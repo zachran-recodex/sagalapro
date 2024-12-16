@@ -16,8 +16,8 @@
     <div class="col-span-12">
         <div class="card border-0 overflow-hidden">
             <div class="card-header border-b border-neutral-200 dark:border-neutral-600 bg-white dark:bg-neutral-700 py-4 px-6 flex items-center flex-wrap gap-3 justify-between">
-                <h5 class="card-title text-lg mb-0">Create Service</h5>
-                <a href="{{ route('admin.services.index') }}" class="btn btn-primary text-sm btn-sm px-3 py-3 rounded-lg flex items-center gap-2">
+                <h5 class="card-title text-lg mb-0">Show Contact</h5>
+                <a href="{{ route('admin.contacts.index') }}" class="btn btn-primary text-sm btn-sm px-3 py-3 rounded-lg flex items-center gap-2">
                     <iconify-icon icon="ion:arrow-back-outline" class="icon text-xl line-height-1"></iconify-icon>
                     BACK
                 </a>
