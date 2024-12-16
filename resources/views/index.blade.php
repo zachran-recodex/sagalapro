@@ -84,7 +84,7 @@
     </section>
 
     <!-- Partner Section -->
-    <x-partner-section :partners="$partners" />
+    <x-section.partner-section :partners="$partners" />
 
     <!-- Service Section -->
     <section class="lg:h-screen">
@@ -215,8 +215,8 @@
     </section>
 
     <!-- FAQ Section -->
-    <x-faq-section :faqs="$faqs" />
+    <x-section.faq-section :faqs="$faqs" />
 
     <!-- Blog Section -->
-    <x-blog-section :blogs="$blogs" />
+    <x-section.blog-section :blogs="$blogs" />
 @endsection

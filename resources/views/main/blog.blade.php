@@ -57,7 +57,7 @@
     </section>
 
     <!-- Latest Blog Section -->
-    <x-blog-section :blogs="$blogs" />
+    <x-section.blog-section :blogs="$blogs" />
 
     @stack('before-scripts')
 

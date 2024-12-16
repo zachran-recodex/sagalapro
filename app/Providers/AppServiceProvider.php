@@ -3,10 +3,16 @@
 namespace App\Providers;
 
 use App\Services\AppConfigService;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Http\View\Composers\SettingComposer;
+use App\View\Layout\Admin;
+use App\View\Layout\Auth;
+use App\View\Section\BlogSection;
+use App\View\Section\FaqSection;
+use App\View\Section\PartnerSection;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,5 +40,14 @@ class AppServiceProvider extends ServiceProvider
                 return true;
             }
         });
+
+        // Layout
+        Blade::component('layout.admin', Admin::class);
+        Blade::component('layout.auth', Auth::class);
+
+        // Section
+        Blade::component('section.blog-section', BlogSection::class);
+        Blade::component('section.faq-section', FaqSection::class);
+        Blade::component('section.partner-section', PartnerSection::class);
     }
 }

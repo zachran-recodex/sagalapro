@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\Layout;
+namespace App\View\Layout;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
-class Auth extends Component
+class Admin extends Component
 {
     /**
      * Get the view / contents that represents the component.
      */
     public function render(): View
     {
-        return view('layouts.auth');
+        return view('layouts.admin');
     }
 }

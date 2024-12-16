@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Section;
+namespace App\View\Section;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -23,6 +23,6 @@ class FaqSection extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.faq-section');
+        return view('sections.faq-section');
     }
 }

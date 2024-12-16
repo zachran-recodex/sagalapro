@@ -1,21 +1,21 @@
 <?php
 
-namespace App\View\Components\Section;
+namespace App\View\Section;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class PartnerSection extends Component
+class BlogSection extends Component
 {
-    public $partners;
+    public $blogs;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($partners)
+    public function __construct($blogs)
     {
-        $this->partners = $partners;
+        $this->blogs = $blogs;
     }
 
     /**
@@ -23,6 +23,6 @@ class PartnerSection extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.partner-section');
+        return view('sections.blog-section');
     }
 }

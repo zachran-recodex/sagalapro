@@ -79,7 +79,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <x-faq-section :faqs="$faqs" />
+    <x-section.faq-section :faqs="$faqs" />
 
     <!-- Service Section -->
     <section class="bg-sagala-opt-100">
@@ -118,7 +118,7 @@
     </section>
 
     <!-- Blog Section -->
-    <x-blog-section :blogs="$blogs" />
+    <x-section.blog-section :blogs="$blogs" />
 
     @stack('before-scripts')
 
