@@ -24,7 +24,6 @@ class HeroSectionStoreRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'status' => 'required|boolean',
         ];
     }
 }

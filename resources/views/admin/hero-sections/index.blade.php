@@ -1,61 +1,71 @@
-@extends('layouts.app')
-
-@section('content')
-    <!-- Page Title Start -->
-    <div class="flex heroSections-center justify-between flex-wrap gap-2 mb-6">
-        <h4 class="text-default-900 text-lg font-medium">Hero Sections</h4>
-
-        <a href="{{ route('admin.hero-sections.create') }}"
-            class="md:flex bg-sagala-500 hover:bg-sagala-600 px-6 py-2 rounded-md heroSections-center gap-3 text-sm font-semibold">
-            <p class="text-sm text-white font-medium text-default-700">
-                ADD
-            </p>
-        </a>
+<x-layout.admin>
+    <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
+        <h6 class="font-semibold mb-0 dark:text-white">Hero Section</h6>
+        <ul class="flex items-center gap-[6px]">
+            <li class="font-medium">
+                <a href="{{ route('admin.dashboard.index') }}" class="flex items-center gap-2 hover:text-primary-600 dark:text-white">
+                    <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+                    Dashboard
+                </a>
+            </li>
+            <li class="dark:text-white">-</li>
+            <li class="font-medium dark:text-white">Hero Section</li>
+        </ul>
     </div>
-    <!-- Page Title End -->
 
-    <div class="card overflow-hidden">
-        <div class="overflow-x-auto custom-scroll">
-            <div class="min-w-full inline-block align-middle whitespace-nowrap">
-                <div class="overflow-hidden">
-                    <table class="min-w-full table-auto border-collapse">
-                        <thead class="bg-light/40 border-b border-gray-200">
+    <div class="col-span-12">
+        <div class="card border-0 overflow-hidden">
+            <div class="card-header border-b border-neutral-200 dark:border-neutral-600 bg-white dark:bg-neutral-700 py-4 px-6 flex items-center flex-wrap gap-3 justify-between">
+                <h5 class="card-title text-lg mb-0">Hero Section List</h5>
+                <a href="{{ route('admin.hero-sections.create')  }}" class="btn btn-primary text-sm btn-sm px-3 py-3 rounded-lg flex items-center gap-2">
+                    <iconify-icon icon="ic:baseline-plus" class="icon text-xl line-height-1"></iconify-icon>
+                    CREATE
+                </a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table bordered-table mb-0">
+                        <thead>
                             <tr>
-                                <th class="px-6 py-3 text-start">Title</th>
-                                <th class="px-6 py-3 text-start">Image</th>
-                                <th class="px-6 py-3 text-start">Status</th>
-                                <th class="px-6 py-3 text-center">Action</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Image</th>
+                                <th scope="col" class="text-center">Status</th>
+                                <th scope="col" class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($heroSections as $heroSection)
-                                <tr class="border-b border-gray-200 hover:bg-gray-50 transition">
-                                    <td class="px-6 py-3">{{ $heroSection->title }}</td>
-                                    <td class="px-6 py-3">
-                                        <img src="{{ Storage::url($heroSection->image) }}" alt="{{ $heroSection->title }}"
-                                            class="w-16 h-16 object-cover">
+                            @forelse($heroSections as $heroSection)
+                                <tr>
+                                    <td>
+                                        <span class="text-lg text-secondary-light font-semibold grow">{{ $heroSection->title }}</span>
                                     </td>
-                                    <td class="px-6 py-3">{{ $heroSection->status ? 'Active' : 'Not Active' }}</td>
-                                    <td class="px-6 py-3 text-center">
-                                        <a href="{{ route('admin.hero-sections.edit', $heroSection) }}"
-                                            class="me-3 px-2 py-1 bg-yellow-300 text-white text-xs rounded hover:bg-yellow-400 transition">
-                                            Edit
+                                    <td class="flex justify-center">
+                                        <img src="{{ Storage::url($heroSection->image) }}" alt="{{ $heroSection->title }}" class="border rounded-lg w-24 h-16 object-cover">
+                                    </td>
+                                    <td class="text-center">
+                                        @if ($heroSection->status)
+                                            <span class="bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 px-6 py-1.5 rounded-full font-medium text-sm">Active</span>
+                                        @else
+                                            <span class="bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 px-6 py-1.5 rounded-full font-medium text-sm">Disable</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('admin.hero-sections.edit', $heroSection) }}" class="w-8 h-8 bg-success-100 dark:bg-success-600/25 text-success-600 dark:text-success-400 rounded-full inline-flex items-center justify-center">
+                                            <iconify-icon icon="lucide:edit"></iconify-icon>
                                         </a>
-                                        <form action="{{ route('admin.hero-sections.destroy', $heroSection) }}"
-                                            method="POST" class="inline">
+                                        <form action="{{ route('admin.hero-sections.destroy', $heroSection) }}" method="POST" class="inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit"
-                                                class="px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 transition"
-                                                onclick="return confirm('Are you sure you want to delete this Hero Section?');">
-                                                Delete
+
+                                            <button type="submit" class="w-8 h-8 bg-danger-100 dark:bg-danger-600/25 text-danger-600 dark:text-danger-400 rounded-full inline-flex items-center justify-center" onclick="return confirm('Are you sure you want to delete this Hero Section?');">
+                                                <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
                                             </button>
                                         </form>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5" class="px-6 py-3 text-center text-gray-500">No Hero Sections
+                                    <td colspan="4" class="text-center text-gray-500">No Hero Sections
                                         Available
                                     </td>
                                 </tr>
@@ -64,9 +74,9 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="my-4 px-4">
-            {{ $heroSections->links() }}
+            <div class="card-footer border-t border-neutral-200 dark:border-neutral-600 bg-white dark:bg-neutral-700 py-4 px-6 flex justify-end">
+                {{ $heroSections->links('components.pagination') }}
+            </div>
         </div>
     </div>
-@endsection
+</x-layout.admin>

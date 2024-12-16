@@ -49,7 +49,7 @@
         </div>
 
         <!-- 3D Helicopter -->
-        <model-viewer src="{{ asset($fleet->gltf) }}" alt="{{ $fleet->title }}" shadow-intensity="1" camera-controls
+            <model-viewer src="{{ asset('3d/' . $fleet->gltf) }}" alt="{{ $fleet->title }}" shadow-intensity="1" camera-controls
             auto-rotate disable-tap style="width: 100%; height: 600px;" camera-orbit="0deg 90deg 5m"
             min-camera-orbit="auto 90deg auto" max-camera-orbit="auto 90deg auto">
         </model-viewer>

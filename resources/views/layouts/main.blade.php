@@ -205,8 +205,6 @@
     </footer>
 
     @stack('before-scripts')
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-
     <!-- Navbar Script -->
     <script>
         window.addEventListener('scroll', function() {
@@ -225,7 +223,6 @@
         });
     </script>
     @stack('after-scripts')
-
 </body>
 
 </html>

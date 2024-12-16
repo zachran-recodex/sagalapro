@@ -127,7 +127,7 @@
                             <div
                                 class="hs-dropdown-menu duration mt-2 min-w-48 rounded-lg border border-default-200 bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
                                 <a class="flex items-center py-2 px-3 rounded-md text-sm text-default-800 hover:bg-gray-100"
-                                    href="{{ route('profile.edit') }}">
+                                    href="{{ route('admin.profile.edit') }}">
                                     Profile
                                 </a>
 

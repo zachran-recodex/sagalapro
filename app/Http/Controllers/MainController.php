@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Faq;
+use App\Http\Requests\ContactStoreRequest;
 use App\Models\Blog;
-use App\Models\Fleet;
 use App\Models\Contact;
+use App\Models\Faq;
+use App\Models\Fleet;
+use App\Models\HeroSection;
 use App\Models\Partner;
 use App\Models\Service;
-use App\Models\HeroSection;
-use App\Http\Requests\ContactStoreRequest;
 
 class MainController extends Controller
 {

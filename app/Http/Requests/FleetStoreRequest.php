@@ -26,7 +26,6 @@ class FleetStoreRequest extends FormRequest
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
             'gltf' => 'nullable|string',
             'description' => 'required|string',
-            'status' => 'required|boolean',
             'practice_range' => 'required|string|max:255',
             'cruise_speed' => 'required|string|max:255',
             'maximum_speed' => 'required|string|max:255',

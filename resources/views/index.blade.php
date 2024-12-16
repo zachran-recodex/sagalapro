@@ -19,7 +19,7 @@
 @endsection
 
 @section('content')
-    <!-- Hero Section -->
+    <!-- Start: Hero Section -->
     <section id="carousel" class="h-screen z-10" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-screen overflow-hidden">
@@ -219,31 +219,4 @@
 
     <!-- Blog Section -->
     <x-blog-section :blogs="$blogs" />
-
-    @stack('before-scripts')
-    <!-- Video Script -->
-    <script>
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-        const slides = document.getElementById('slides');
-        let index = 0;
-
-        function updateSlidePosition() {
-            const slideWidth = slides.children[0].clientWidth;
-            slides.style.transform = `translateX(-${index * slideWidth}px)`;
-        }
-
-        prevButton.addEventListener('click', () => {
-            index = (index > 0) ? index - 1 : slides.children.length - 1;
-            updateSlidePosition();
-        });
-
-        nextButton.addEventListener('click', () => {
-            index = (index < slides.children.length - 1) ? index + 1 : 0;
-            updateSlidePosition();
-        });
-
-        window.addEventListener('resize', updateSlidePosition);
-    </script>
-    @stack('after-scripts')
 @endsection
