@@ -40,37 +40,37 @@
 
                     <div class="col-span-3">
                         <label for="phone_one" class="form-label">Phone One</label>
-                        <input type="text" name="phone_one" id="phone_one" value="{{ old('phone_one', $setting->phone_one ?? '') }}" class="border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
+                        <input type="text" name="phone_one" id="phone_one" value="{{ old('phone_one', $setting->phone_one ?? '') }}" class="form-control border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
                     </div>
 
                     <div class="col-span-3">
                         <label for="phone_two" class="form-label">Phone Two</label>
-                        <input type="text" name="phone_two" id="phone_two" value="{{ old('phone_two', $setting->phone_two ?? '') }}" class="border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
+                        <input type="text" name="phone_two" id="phone_two" value="{{ old('phone_two', $setting->phone_two ?? '') }}" class="form-control border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
                     </div>
 
                     <div class="col-span-3">
                         <label for="email_one" class="form-label">Email One</label>
-                        <input type="email" name="email_one" id="email_one" value="{{ old('email_one', $setting->email_one ?? '') }}" class="border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
+                        <input type="email" name="email_one" id="email_one" value="{{ old('email_one', $setting->email_one ?? '') }}" class="form-control border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
                     </div>
 
                     <div class="col-span-3">
                         <label for="email_two" class="form-label">Email Two</label>
-                        <input type="email" name="email_two" id="email_two" value="{{ old('email_two', $setting->email_two ?? '') }}" class="border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
+                        <input type="email" name="email_two" id="email_two" value="{{ old('email_two', $setting->email_two ?? '') }}" class="form-control border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
                     </div>
 
                     <div class="col-span-6">
                         <label for="address" class="form-label">Address</label>
-                        <input type="text" name="address" id="address" value="{{ old('address', $setting->address ?? '') }}" class="border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
+                        <input type="text" name="address" id="address" value="{{ old('address', $setting->address ?? '') }}" class="form-control border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
                     </div>
 
                     <div class="col-span-6">
                         <label for="operational_address" class="form-label">Operational Address</label>
-                        <input type="text" name="operational_address" id="operational_address" value="{{ old('operational_address', $setting->operational_address ?? '') }}" class="border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
+                        <input type="text" name="operational_address" id="operational_address" value="{{ old('operational_address', $setting->operational_address ?? '') }}" class="form-control border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
                     </div>
 
                     <div class="col-span-12">
                         <label for="footer_text" class="form-label">Footer Text</label>
-                        <input type="text" name="footer_text" id="footer_text" value="{{ old('footer_text', $setting->footer_text ?? '') }}" class="border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
+                        <input type="text" name="footer_text" id="footer_text" value="{{ old('footer_text', $setting->footer_text ?? '') }}" class="form-control border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
                     </div>
 
                     <div class="col-span-12 flex justify-end">
