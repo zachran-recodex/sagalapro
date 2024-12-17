@@ -1,31 +1,13 @@
 @if ($paginator->hasPages())
-    <ul class="pagination d-flex flex-wrap align-items-center gap-2 justify-content-center">
-        {{-- First Page Link --}}
+    <ul class="pagination flex flex-wrap items-center gap-2 justify-center">
+        {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
             <li class="page-item">
-                <span class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px">
-                    <iconify-icon icon="ic:baseline-first-page" class="text-lg"></iconify-icon>
-                    First
-                </span>
-            </li>
-            <li class="page-item">
-                <span class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px">
-                    <iconify-icon icon="ep:arrow-left" class="text-lg"></iconify-icon>
-                    Previous
-                </span>
+                <span class="page-link bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 text-secondary-light font-medium rounded-lg px-5 py-2.5 flex items-center justify-center h-[48px]">Previous</span>
             </li>
         @else
             <li class="page-item">
-                <a class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px" href="{{ $paginator->url(1) }}">
-                    <iconify-icon icon="ic:baseline-first-page" class="text-lg"></iconify-icon>
-                    First
-                </a>
-            </li>
-            <li class="page-item">
-                <a class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px" href="{{ $paginator->previousPageUrl() }}">
-                    <iconify-icon icon="ep:arrow-left" class="text-lg"></iconify-icon>
-                    Previous
-                </a>
+                <a class="page-link bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 text-secondary-light font-medium rounded-lg px-5 py-2.5 flex items-center justify-center h-[48px]" href="{{ $paginator->previousPageUrl() }}">Previous</a>
             </li>
         @endif
 
@@ -43,11 +25,11 @@
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())
                         <li class="page-item">
-                            <span class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px w-48-px text-white">{{ $page }}</span>
+                            <span class="page-link bg-white dark:bg-neutral-700 border dark:border-neutral-600 text-secondary-light font-medium rounded-lg px-5 py-2.5 flex items-center justify-center h-[48px] w-[48px] border-primary-400 text-primary-600">{{ $page }}</span>
                         </li>
                     @else
                         <li class="page-item">
-                            <a class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px w-48-px" href="{{ $url }}">{{ $page }}</a>
+                            <a class="page-link bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 text-secondary-light font-medium rounded-lg px-5 py-2.5 flex items-center justify-center h-[48px] w-[48px]" href="{{ $url }}">{{ $page }}</a>
                         </li>
                     @endif
                 @endforeach
@@ -57,29 +39,11 @@
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
             <li class="page-item">
-                <a class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px" href="{{ $paginator->nextPageUrl() }}">
-                    Next
-                    <iconify-icon icon="ep:arrow-right" class="text-lg"></iconify-icon>
-                </a>
-            </li>
-            <li class="page-item">
-                <a class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px" href="{{ $paginator->url($paginator->lastPage()) }}">
-                    Last
-                    <iconify-icon icon="ic:baseline-last-page" class="text-lg"></iconify-icon>
-                </a>
+                <a class="page-link bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 text-secondary-light font-medium rounded-lg px-5 py-2.5 flex items-center justify-center h-[48px]" href="{{ $paginator->nextPageUrl() }}">Next</a>
             </li>
         @else
             <li class="page-item">
-                <span class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px">
-                    Next
-                    <iconify-icon icon="ep:arrow-right" class="text-lg"></iconify-icon>
-                </span>
-            </li>
-            <li class="page-item">
-                <span class="page-link bg-primary-50 text-secondary-light fw-medium radius-8 border-0 px-20 py-10 d-flex align-items-center justify-content-center h-48-px">
-                    Last
-                    <iconify-icon icon="ic:baseline-last-page" class="text-lg"></iconify-icon>
-                </span>
+                <span class="page-link bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 text-secondary-light font-medium rounded-lg px-5 py-2.5 flex items-center justify-center h-[48px]">Next</span>
             </li>
         @endif
     </ul>
