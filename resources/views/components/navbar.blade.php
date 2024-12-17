@@ -21,12 +21,8 @@
         <div class="col-auto">
             <div class="flex flex-wrap items-center gap-3">
                 <button type="button" id="theme-toggle" class="w-10 h-10 bg-neutral-200 dark:bg-neutral-700 dark:text-white rounded-full flex justify-center items-center">
-                  <span id="theme-toggle-dark-icon" class="hidden">
-                    <i class="ri-sun-line"></i>
-                  </span>
-                            <span id="theme-toggle-light-icon" class="hidden">
-                    <i class="ri-moon-line"></i>
-                  </span>
+                    <span id="theme-toggle-dark-icon" class="hidden"><i class="ri-sun-line"></i></span>
+                    <span id="theme-toggle-light-icon" class="hidden"><i class="ri-moon-line"></i></span>
                 </button>
 
                 <!-- Notification Start  -->
@@ -119,25 +115,21 @@
                 </div>
                 <!-- Notification End  -->
 
-
                 <button data-dropdown-toggle="dropdownProfile" class="flex justify-center items-center rounded-full" type="button">
-                    <img src="{{ asset('dashboard/images/user.png') }}" alt="image" class="w-10 h-10 object-fit-cover rounded-full">
+                    <img src="{{ Storage::url(Auth::user()->profile_picture) }}" alt="image" class="w-10 h-10 object-fit-cover rounded-full">
                 </button>
                 <div id="dropdownProfile" class="z-10 hidden bg-white dark:bg-neutral-700 rounded-lg shadow-lg dropdown-menu-sm p-3">
                     <div class="py-3 px-4 rounded-lg bg-primary-50 dark:bg-primary-600/25 mb-4 flex items-center justify-between gap-2">
                         <div>
-                            <h6 class="text-lg text-neutral-900 font-semibold mb-0">Shahidul Islam</h6>
-                            <span class="text-neutral-500">Admin</span>
+                            <h6 class="text-lg text-neutral-900 font-semibold mb-0">{{ Auth::user()->name }}</h6>
+                            <span class="text-neutral-500 capitalize">{{ Auth::user()->getRoleNames()->first() }}</span>
                         </div>
-                        <button type="button" class="hover:text-danger-600">
-                            <iconify-icon icon="radix-icons:cross-1" class="icon text-xl"></iconify-icon>
-                        </button>
                     </div>
 
                     <div class="max-h-[400px] overflow-y-auto scroll-sm pe-2">
                         <ul class="flex flex-col">
                             <li>
-                                <a class="text-black px-0 py-2 hover:text-primary-600 flex items-center gap-4" href="">
+                                <a class="text-black px-0 py-2 hover:text-primary-600 flex items-center gap-4" href="{{ route('admin.profile.edit') }}">
                                     <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon>  My Profile</a>
                             </li>
                             <li>

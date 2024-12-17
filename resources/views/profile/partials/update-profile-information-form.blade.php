@@ -1,31 +1,29 @@
 <section>
-    <header>
-        <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
-        </h2>
-
-        <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
-        </p>
-    </header>
-
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('admin.profile.update') }}" class="space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" value="{{ old('name', $user->name) }}" class="form-control border border-neutral-200 dark:border-neutral-600 w-full rounded-lg" required autofocus autocomplete="name">
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
+
+            <label for="profile_picture" class="form-label pt-5">Profile Picture</label>
+            <input type="file" name="profile_picture" id="profile_picture" accept="image/*" class="mt-1 border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
         </div>
 
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
+            <label for="current_profile_picture" class="form-label">Current Profile Picture</label>
+            <img src="{{ Storage::url($user->profile_picture) }}" alt="{{ $user->name }}" class="border rounded-lg w-32 h-32 object-cover">
+        </div>
+
+        <div>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" value="{{ old('email', $user->email) }}" class="form-control border border-neutral-200 dark:border-neutral-600 w-full rounded-lg" required autocomplete="username">
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
