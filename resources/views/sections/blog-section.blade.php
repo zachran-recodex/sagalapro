@@ -9,7 +9,7 @@
                 @forelse ($blogs as $blog)
                     <a href="{{ route('blog.details', $blog->slug) }}"
                         class="min-w-[300px] bg-sagala-opt-50 border border-sagala-opt-200 shadow rounded-lg transition-transform transform hover:scale-105">
-                        <img class="object-cover h-36 w-full rounded-t-lg" src="{{ Storage::url($blog->image) }}"
+                        <img class="object-cover h-36 w-full rounded-t-lg" src="{{ asset($blog->image) }}"
                             alt="{{ $blog->title }}" />
                         <div class="p-5">
                             <div class="flex justify-between">

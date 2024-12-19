@@ -40,7 +40,7 @@
                     @if ($index % 2 === 0)
                         <!-- Gambar di kiri -->
                         <div>
-                            <img src="{{ Storage::url($fleet->image) }}" alt="{{ $fleet->title }}"
+                            <img src="{{ asset($fleet->image) }}" alt="{{ $fleet->title }}"
                                 class="w-full h-[350px] object-cover rounded-lg shadow-lg">
                         </div>
                         <div class="col-span-2">
@@ -70,7 +70,7 @@
                             </a>
                         </div>
                         <div>
-                            <img src="{{ Storage::url($fleet->image) }}" alt="{{ $fleet->title }}"
+                            <img src="{{ asset($fleet->image) }}" alt="{{ $fleet->title }}"
                                 class="w-full h-[350px] object-cover rounded-lg shadow-lg">
                         </div>
                     @endif

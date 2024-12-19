@@ -13,7 +13,7 @@
                 @forelse ($partners as $partner)
                     <li
                         class="flex-shrink-0 w-[150px] h-[100px] p-4 bg-sagala-opt-50 flex items-center justify-center shadow rounded me-4">
-                        <img src="{{ Storage::url($partner->image) }}" alt="{{ $partner->id }}"
+                        <img src="{{ asset($partner->image) }}" alt="{{ $partner->id }}"
                             class="max-w-full max-h-full object-contain">
                     </li>
                 @empty

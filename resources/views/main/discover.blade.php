@@ -68,7 +68,7 @@
 
             <!-- Image Section -->
             <div class="flex-shrink-0 w-full h-full relative">
-                <img src="{{ Storage::url($fleet->image) }}" alt="{{ $fleet->title }}" class="w-full h-full object-cover">
+                <img src="{{ asset($fleet->image) }}" alt="{{ $fleet->title }}" class="w-full h-full object-cover">
             </div>
         </div>
     </section>

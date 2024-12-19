@@ -26,7 +26,7 @@
             @forelse ($heroSections as $heroSection)
                 <!-- Carousel Item -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="{{ Storage::url($heroSection->image) }}"
+                    <img src="{{ asset($heroSection->image) }}"
                         class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                         alt="{{ $heroSection->title }}">
 
@@ -92,7 +92,7 @@
             @forelse($services as $service)
                 <a href="{{ route('service.details', $service->slug) }}" class="relative">
                     <div>
-                        <img src="{{ Storage::url($service->image) }}" alt="{{ $service->title }}"
+                        <img src="{{ asset($service->image) }}" alt="{{ $service->title }}"
                             class="w-full h-screen object-cover">
                         <div
                             class="absolute inset-0 flex flex-col justify-end items-start bg-sagala-opt-950 hover:bg-sagala-700 bg-opacity-50 hover:bg-opacity-65 pb-[125px] pl-10">

@@ -21,7 +21,7 @@
 @section('content')
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-screen"
-        style="background-image: url({{ Storage::url($service->image) }})">
+        style="background-image: url({{ asset($service->image) }})">
         <div class="absolute inset-0 bg-sagala-opt-950 opacity-50"></div>
         <div class="relative h-full flex items-center">
             <div class="container-main py-12">
@@ -43,7 +43,7 @@
             <div class="flex flex-wrap lg:flex-nowrap gap-8 items-center">
                 <!-- Image Section -->
                 <div class="w-full lg:w-1/2">
-                    <img class="w-full h-auto object-cover" src="{{ Storage::url($service->image) }}"
+                    <img class="w-full h-auto object-cover" src="{{ asset($service->image) }}"
                         alt="{{ $service->title }}">
                 </div>
                 <!-- Text Section -->
@@ -86,7 +86,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             @forelse ($services as $service)
                 <a href="{{ route('service.details', $service->slug) }}" class="relative">
-                    <img src="{{ Storage::url($service->image) }}" alt="{{ $service->title }}"
+                    <img src="{{ asset($service->image) }}" alt="{{ $service->title }}"
                         class="w-full h-[390px] object-cover transition duration-300 ease-in-out transform hover:scale-105">
                     <div
                         class="absolute inset-0 flex flex-col justify-end items-start bg-sagala-opt-950 bg-opacity-50 hover:bg-sagala-600 hover:bg-opacity-65 pb-[55px] pl-10">

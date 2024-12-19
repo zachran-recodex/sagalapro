@@ -20,7 +20,7 @@
 @section('content')
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-[50vh]"
-        style="background-image: url({{ Storage::url($blog->image) }})">
+        style="background-image: url({{ asset($blog->image) }})">
         <div class="relative bg-sagala-opt-950/50 h-full flex items-center">
             <div class="container-main py-12">
                 <div class="text-center lg:text-start">
@@ -46,7 +46,7 @@
                     {{ $blog->created_at->format('M d, Y') }} | {{ $blog->author }}
                 </p>
 
-                <img src="{{ Storage::url($blog->image) }}" alt="{{ $blog->title }}"
+                <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}"
                     class="mb-6 w-full h-[530px] rounded-lg shadow-lg object-cover">
 
                 <p class="text-sagala-opt-700 leading-relaxed mb-4 text-justify">
