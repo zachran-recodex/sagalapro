@@ -1,5 +1,3 @@
-@extends('layouts.main')
-
 @section('meta_tag')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +13,7 @@
     <title>Terms and Conditions | Triwalana Sagala Pro</title>
 @endsection
 
-@section('content')
+<x-layout.main>
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-[50vh]"
         style="background-image: url({{ asset('images/hero-about.jpg') }})">
@@ -71,4 +69,4 @@
             </p>
         </div>
     </section>
-@endsection
+</x-layout.main>

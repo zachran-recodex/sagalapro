@@ -1,5 +1,3 @@
-@extends('layouts.main')
-
 @section('meta_tag')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,10 +16,10 @@
     <title>Fleet | Triwalana Sagala Pro – Advanced Aerial Support Aircraft</title>
 @endsection
 
-@section('content')
+<x-layout.main>
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-[50vh]"
-        style="background-image: url({{ asset('images/hero-about.jpg') }})">
+             style="background-image: url({{ asset('images/hero-about.jpg') }})">
         <div class="relative bg-sagala-opt-950/50 h-full flex items-center">
             <div class="container-main py-12">
                 <div class="text-center lg:text-start">
@@ -41,7 +39,7 @@
                         <!-- Gambar di kiri -->
                         <div>
                             <img src="{{ asset($fleet->image) }}" alt="{{ $fleet->title }}"
-                                class="w-full h-[350px] object-cover rounded-lg shadow-lg">
+                                 class="w-full h-[350px] object-cover rounded-lg shadow-lg">
                         </div>
                         <div class="col-span-2">
                             <h2 class="text-sagala-600 text-2xl font-bold mb-4 pb-4 border-b-2 border-sagala-opt-950">
@@ -51,7 +49,7 @@
                                 {{ $fleet->description }}
                             </p>
                             <a href="{{ route('fleet.details', $fleet->slug) }}"
-                                class="inline-block py-2 border-b-2 border-sagala-opt-950">
+                               class="inline-block py-2 border-b-2 border-sagala-opt-950">
                                 Discover {{ $fleet->title }}
                             </a>
                         </div>
@@ -65,13 +63,13 @@
                                 {{ $fleet->description }}
                             </p>
                             <a href="{{ route('fleet.details', $fleet->slug) }}"
-                                class="inline-block py-2 border-b-2 border-sagala-opt-950">
+                               class="inline-block py-2 border-b-2 border-sagala-opt-950">
                                 Discover {{ $fleet->title }}
                             </a>
                         </div>
                         <div>
                             <img src="{{ asset($fleet->image) }}" alt="{{ $fleet->title }}"
-                                class="w-full h-[350px] object-cover rounded-lg shadow-lg">
+                                 class="w-full h-[350px] object-cover rounded-lg shadow-lg">
                         </div>
                     @endif
                 </div>
@@ -98,7 +96,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-sagala-opt-50 py-2 px-6 text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600 rounded-md">
+               class="inline-flex items-center border border-sagala-opt-50 py-2 px-6 text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600 rounded-md">
                 Get a Quote
             </a>
         </div>
@@ -113,4 +111,4 @@
     @stack('before-scripts')
 
     @stack('after-scripts')
-@endsection
+</x-layout.main>

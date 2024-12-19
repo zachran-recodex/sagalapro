@@ -1,5 +1,3 @@
-@extends('layouts.main')
-
 @section('meta_tag')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,10 +16,10 @@
     <title>{{ $fleet->title }} | Triwalana Sagala Pro</title>
 @endsection
 
-@section('content')
+<x-layout.main>
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat min-h-screen"
-        style="background-image: url({{ asset('images/discover-bg.jpg') }}); padding-top: 85px;">
+             style="background-image: url({{ asset('images/discover-bg.jpg') }}); padding-top: 85px;">
         <div class="container mx-auto text-sagala-opt-50 px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold mb-8 text-center">{{ $fleet->title }}</h2>
             <div class="flex flex-wrap justify-between gap-8">
@@ -49,9 +47,9 @@
         </div>
 
         <!-- 3D Helicopter -->
-            <model-viewer src="{{ asset('3d/' . $fleet->gltf) }}" alt="{{ $fleet->title }}" shadow-intensity="1" camera-controls
-            auto-rotate disable-tap style="width: 100%; height: 600px;" camera-orbit="0deg 90deg 5m"
-            min-camera-orbit="auto 90deg auto" max-camera-orbit="auto 90deg auto">
+        <model-viewer src="{{ asset('3d/' . $fleet->gltf) }}" alt="{{ $fleet->title }}" shadow-intensity="1" camera-controls
+                      auto-rotate disable-tap style="width: 100%; height: 600px;" camera-orbit="0deg 90deg 5m"
+                      min-camera-orbit="auto 90deg auto" max-camera-orbit="auto 90deg auto">
         </model-viewer>
     </section>
 
@@ -86,7 +84,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-sagala-opt-50 py-2 px-6 text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600 rounded-md">
+               class="inline-flex items-center border border-sagala-opt-50 py-2 px-6 text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600 rounded-md">
                 Get a Quote
             </a>
         </div>
@@ -130,4 +128,4 @@
         });
     </script>
     @stack('after-scripts')
-@endsection
+</x-layout.main>

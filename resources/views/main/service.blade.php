@@ -1,5 +1,3 @@
-@extends('layouts.main')
-
 @section('meta_tag')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +16,7 @@
     <title>{{ $service->title }} | Triwalana Sagala Pro</title>
 @endsection
 
-@section('content')
+<x-layout.main>
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-screen"
         style="background-image: url({{ asset($service->image) }})">
@@ -123,4 +121,4 @@
     @stack('before-scripts')
 
     @stack('after-scripts')
-@endsection
+</x-layout.main>

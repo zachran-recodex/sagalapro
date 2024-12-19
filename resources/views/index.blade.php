@@ -1,12 +1,10 @@
-@extends('layouts.main')
-
 @section('meta_tag')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
-        content="Triwalana Sagala Pro specializes in providing reliable aerial support services in Indonesia, including aerial mapping, surveys, and operational air support.">
+          content="Triwalana Sagala Pro specializes in providing reliable aerial support services in Indonesia, including aerial mapping, surveys, and operational air support.">
     <meta name="keywords"
-        content="Aerial Support Indonesia, Aerial Services, Aerial Mapping, Land Surveys, Operational Air Support, Triwalana Sagala Pro, Aerial Support Company, Air Operational Support, Aerial Technology, Reliable Aerial Services">
+          content="Aerial Support Indonesia, Aerial Services, Aerial Mapping, Land Surveys, Operational Air Support, Triwalana Sagala Pro, Aerial Support Company, Air Operational Support, Aerial Technology, Reliable Aerial Services">
     <meta name="author" content="RECODEX">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,7 +16,7 @@
     <title>Triwalana Sagala Pro | Reliable Aerial Support Services in Indonesia</title>
 @endsection
 
-@section('content')
+<x-layout.main>
     <!-- Start: Hero Section -->
     <section id="carousel" class="h-screen z-10" data-carousel="slide">
         <!-- Carousel wrapper -->
@@ -27,8 +25,8 @@
                 <!-- Carousel Item -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <img src="{{ asset($heroSection->image) }}"
-                        class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="{{ $heroSection->title }}">
+                         class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                         alt="{{ $heroSection->title }}">
 
                     <div class="absolute inset-0 bg-sagala-opt-950 opacity-50"></div>
 
@@ -41,10 +39,10 @@
                                     {{ $heroSection->title }}</h1>
                                 <div class="flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
                                     <a href="{{ route('about') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition bg-sagala-600 border-0 hover:bg-sagala-700 focus:outline-none">About
+                                       class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition bg-sagala-600 border-0 hover:bg-sagala-700 focus:outline-none">About
                                         Us</a>
                                     <a href="{{ route('contact') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition border border-sagala-opt-50 hover:bg-sagala-opt-50 hover:text-sagala-600 focus:outline-none">Get
+                                       class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition border border-sagala-opt-50 hover:bg-sagala-opt-50 hover:text-sagala-600 focus:outline-none">Get
                                         a Quote</a>
                                 </div>
                             </div>
@@ -55,8 +53,8 @@
                 <!-- Default Item when no carousel items are available -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <img src="{{ asset('images/default.jpg') }}"
-                        class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="Hero Image">
+                         class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                         alt="Hero Image">
 
                     <div class="absolute inset-0 bg-sagala-opt-950 opacity-50"></div>
 
@@ -69,10 +67,10 @@
                                 </h1>
                                 <div class="flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
                                     <a href="{{ route('about') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition bg-sagala-600 border-0 hover:bg-sagala-700 focus:outline-none">About
+                                       class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition bg-sagala-600 border-0 hover:bg-sagala-700 focus:outline-none">About
                                         Us</a>
                                     <a href="{{ route('contact') }}"
-                                        class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition border border-sagala-opt-50 hover:bg-sagala-opt-50 hover:text-sagala-600 focus:outline-none">Get
+                                       class="inline-flex py-2 px-6 text-lg text-sagala-opt-50 transition border border-sagala-opt-50 hover:bg-sagala-opt-50 hover:text-sagala-600 focus:outline-none">Get
                                         a Quote</a>
                                 </div>
                             </div>
@@ -93,15 +91,15 @@
                 <a href="{{ route('service.details', $service->slug) }}" class="relative">
                     <div>
                         <img src="{{ asset($service->image) }}" alt="{{ $service->title }}"
-                            class="w-full h-screen object-cover">
+                             class="w-full h-screen object-cover">
                         <div
                             class="absolute inset-0 flex flex-col justify-end items-start bg-sagala-opt-950 hover:bg-sagala-700 bg-opacity-50 hover:bg-opacity-65 pb-[125px] pl-10">
                             <h3 class="text-sagala-opt-50 text-lg font-medium mb-1">{{ $service->title }}</h3>
                             <svg class="w-[56px] h-[16px] text-sagala-600 hover:text-sagala-opt-50" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="56" height="16" fill="none"
-                                viewBox="0 0 56 16">
+                                 xmlns="http://www.w3.org/2000/svg" width="56" height="16" fill="none"
+                                 viewBox="0 0 56 16">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M52 8H4m48 0-4 4m4-4-4-4" />
+                                      d="M52 8H4m48 0-4 4m4-4-4-4" />
                             </svg>
                         </div>
                     </div>
@@ -127,12 +125,12 @@
             </p>
             <div class="flex justify-center sm:justify-start">
                 <a href="{{ route('about') }}"
-                    class="inline-flex items-center border border-sagala-opt-400 py-2 px-4 sm:py-3 sm:px-6 focus:outline-none text-sm sm:text-lg transition hover:bg-sagala-opt-950 hover:text-sagala-opt-50">
+                   class="inline-flex items-center border border-sagala-opt-400 py-2 px-4 sm:py-3 sm:px-6 focus:outline-none text-sm sm:text-lg transition hover:bg-sagala-opt-950 hover:text-sagala-opt-50">
                     More About Us
                     <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sagala-600 ml-2" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 12H5m14 0-4 4m4-4-4-4" />
+                              d="M19 12H5m14 0-4 4m4-4-4-4" />
                     </svg>
                 </a>
             </div>
@@ -177,16 +175,16 @@
                     </div>
                     <!-- Navigation Buttons -->
                     <button id="prev"
-                        class="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950 text-sagala-opt-50 p-2 shadow-md">
+                            class="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950 text-sagala-opt-50 p-2 shadow-md">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
+                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
                     <button id="next"
-                        class="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950 text-sagala-opt-50 p-2 shadow-md">
+                            class="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-sagala-opt-950 text-sagala-opt-50 p-2 shadow-md">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
+                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
@@ -208,7 +206,7 @@
                 a prompt and professional response from our team.
             </p>
             <a href="{{ route('contact') }}"
-                class="inline-flex items-center border border-sagala-opt-50 py-2 px-6 text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600 rounded-md">
+               class="inline-flex items-center border border-sagala-opt-50 py-2 px-6 text-base transition hover:bg-sagala-opt-50 hover:text-sagala-600 rounded-md">
                 Get a Quote
             </a>
         </div>
@@ -219,4 +217,4 @@
 
     <!-- Blog Section -->
     <x-section.blog-section :blogs="$blogs" />
-@endsection
+</x-layout.main>

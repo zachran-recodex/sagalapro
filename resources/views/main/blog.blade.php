@@ -1,5 +1,3 @@
-@extends('layouts.main')
-
 @section('meta_tag')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,10 +15,10 @@
     <title>{{ $blog->title }} | Triwalana Sagala Pro</title>
 @endsection
 
-@section('content')
+<x-layout.main>
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-[50vh]"
-        style="background-image: url({{ asset($blog->image) }})">
+             style="background-image: url({{ asset($blog->image) }})">
         <div class="relative bg-sagala-opt-950/50 h-full flex items-center">
             <div class="container-main py-12">
                 <div class="text-center lg:text-start">
@@ -47,7 +45,7 @@
                 </p>
 
                 <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}"
-                    class="mb-6 w-full h-[530px] rounded-lg shadow-lg object-cover">
+                     class="mb-6 w-full h-[530px] rounded-lg shadow-lg object-cover">
 
                 <p class="text-sagala-opt-700 leading-relaxed mb-4 text-justify">
                     {{ $blog->description }}
@@ -62,4 +60,4 @@
     @stack('before-scripts')
 
     @stack('after-scripts')
-@endsection
+</x-layout.main>

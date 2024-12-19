@@ -10,6 +10,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Http\View\Composers\SettingComposer;
 use App\View\Layout\Admin;
 use App\View\Layout\Auth;
+use App\View\Layout\Main;
 use App\View\Section\BlogSection;
 use App\View\Section\FaqSection;
 use App\View\Section\PartnerSection;
@@ -46,6 +47,7 @@ class AppServiceProvider extends ServiceProvider
         // Layout
         Blade::component('layout.admin', Admin::class);
         Blade::component('layout.auth', Auth::class);
+        Blade::component('layout.main', Main::class);
 
         // Section
         Blade::component('section.blog-section', BlogSection::class);

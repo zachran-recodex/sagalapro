@@ -1,12 +1,10 @@
-@extends('layouts.main')
-
 @section('meta_tag')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
-        content="Learn more about Triwalana Sagala Pro, a trusted aerial support company in Indonesia. With years of experience, we offer aerial mapping, land surveys, and air support solutions tailored to your industry.">
+          content="Learn more about Triwalana Sagala Pro, a trusted aerial support company in Indonesia. With years of experience, we offer aerial mapping, land surveys, and air support solutions tailored to your industry.">
     <meta name="keywords"
-        content="Aerial Support Indonesia, Aerial Services, Aerial Mapping, Land Surveys, Operational Air Support, Triwalana Sagala Pro, Aerial Support Company, Air Operational Support, Aerial Technology, Reliable Aerial Services">
+          content="Aerial Support Indonesia, Aerial Services, Aerial Mapping, Land Surveys, Operational Air Support, Triwalana Sagala Pro, Aerial Support Company, Air Operational Support, Aerial Technology, Reliable Aerial Services">
     <meta name="author" content="RECODEX">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,10 +16,10 @@
     <title>About Triwalana Sagala Pro | Leading Aerial Support Company in Indonesia</title>
 @endsection
 
-@section('content')
+<x-layout.main>
     <!-- Hero Section -->
     <section class="bg-cover bg-center bg-no-repeat h-screen"
-        style="background-image: url({{ asset('images/hero-about.jpg') }})">
+             style="background-image: url({{ asset('images/hero-about.jpg') }})">
         <div class="absolute inset-0 bg-sagala-opt-950 opacity-50"></div>
         <div class="relative h-full flex items-center">
             <div class="container-main py-12">
@@ -39,7 +37,7 @@
 
     <!-- Owner Section -->
     <section class="bg-cover lg:bg-contain bg-no-repeat bg-left h-[616px]"
-        style="background-image: linear-gradient(to left, #FFFFFF 50%, rgba(255, 255, 255, 0) 100%), url({{ asset('images/ceo.jpg') }})">
+             style="background-image: linear-gradient(to left, #FFFFFF 50%, rgba(255, 255, 255, 0) 100%), url({{ asset('images/ceo.jpg') }})">
         <div class="container-main h-full flex items-center justify-end">
             <div class="lg:w-1/2">
                 <img class="h-10 mb-4" src="{{ asset('images/quote-icon.png') }}" alt="Quote Icon">
@@ -117,4 +115,4 @@
         });
     </script>
     @stack('after-scripts')
-@endsection
+</x-layout.main>
