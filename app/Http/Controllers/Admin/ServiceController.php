@@ -11,9 +11,6 @@ use Illuminate\Support\Str;
 
 class ServiceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $services = Service::orderBy('id')->paginate(4);
@@ -21,17 +18,11 @@ class ServiceController extends Controller
         return view('admin.services.index', compact('services'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.services.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(ServiceStoreRequest $request)
     {
         $service = new Service();
@@ -49,20 +40,14 @@ class ServiceController extends Controller
 
         $service->save();
 
-        return redirect()->route('admin.services.index')->with('success', 'Service created successfully');
+        return redirect()->route('admin.services.index')->with('toast', ['type' => 'success', 'message' => 'Service created successfully.']);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Service $service)
     {
         return view('admin.services.edit', compact('service'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(ServiceUpdateRequest $request, Service $service)
     {
         // Update fields with request data
@@ -82,12 +67,9 @@ class ServiceController extends Controller
 
         $service->save();
 
-        return redirect()->route('admin.services.index')->with('success', 'Service updated successfully');
+        return redirect()->route('admin.services.index')->with('toast', ['type' => 'success', 'message' => 'Service updated successfully.']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Service $service)
     {
         // Delete images from storage if they exist
@@ -97,6 +79,6 @@ class ServiceController extends Controller
 
         $service->delete();
 
-        return redirect()->route('admin.services.index')->with('success', 'Service deleted successfully');
+        return redirect()->route('admin.services.index')->with('toast', ['type' => 'success', 'message' => 'Service deleted successfully.']);
     }
 }

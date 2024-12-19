@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class PartnerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $partners = Partner::orderBy('id')->paginate(10);
@@ -20,17 +17,11 @@ class PartnerController extends Controller
         return view('admin.partners.index', compact('partners'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.partners.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(PartnerStoreRequest $request)
     {
         $partner = new Partner();
@@ -45,20 +36,14 @@ class PartnerController extends Controller
 
         $partner->save();
 
-        return redirect()->route('admin.partners.index')->with('success', 'Partner created successfully');
+        return redirect()->route('admin.partners.index')->with('toast', ['type' => 'success', 'message' => 'Partner created successfully.']);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Partner $partner)
     {
         return view('admin.partners.edit', compact('partner'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(PartnerUpdateRequest $request, Partner $partner)
     {
         // Update fields with request data
@@ -75,12 +60,9 @@ class PartnerController extends Controller
 
         $partner->save();
 
-        return redirect()->route('admin.partners.index')->with('success', 'Partner updated successfully');
+        return redirect()->route('admin.partners.index')->with('toast', ['type' => 'success', 'message' => 'Partner updated successfully.']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Partner $partner)
     {
         // Delete images from storage if they exist
@@ -90,6 +72,6 @@ class PartnerController extends Controller
 
         $partner->delete();
 
-        return redirect()->route('admin.partners.index')->with('success', 'Partner deleted successfully');
+        return redirect()->route('admin.partners.index')->with('toast', ['type' => 'success', 'message' => 'Partner deleted successfully.']);
     }
 }

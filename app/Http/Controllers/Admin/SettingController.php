@@ -9,19 +9,14 @@ use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $setting = Setting::first();
 
-        return view ('admin.settings.index', compact('setting'));
+        return view ('admin.settings.edit', compact('setting'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(SettingStoreRequest $request)
     {
         $setting = Setting::first() ?? new Setting();
@@ -54,6 +49,6 @@ class SettingController extends Controller
         // Save the setting record
         $setting->save();
 
-        return redirect()->route('admin.settings.index');
+        return redirect()->route('admin.settings.index')->with('toast', ['type' => 'success', 'message' => 'Setting updated successfully.']);
     }
 }

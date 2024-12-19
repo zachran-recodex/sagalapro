@@ -11,9 +11,6 @@ use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $blogs = Blog::orderBy('id')->paginate(10);
@@ -21,17 +18,11 @@ class BlogController extends Controller
         return view('admin.blogs.index', compact('blogs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.blogs.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(BlogStoreRequest $request)
     {
         $blog = new Blog();
@@ -50,20 +41,14 @@ class BlogController extends Controller
 
         $blog->save();
 
-        return redirect()->route('admin.blogs.index')->with('success', 'blog created successfully');
+        return redirect()->route('admin.blogs.index')->with('toast', ['type' => 'success', 'message' => 'Blog created successfully.']);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(blog $blog)
     {
         return view('admin.blogs.edit', compact('blog'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(BlogUpdateRequest $request, Blog $blog)
     {
         // Update fields with request data
@@ -84,12 +69,9 @@ class BlogController extends Controller
 
         $blog->save();
 
-        return redirect()->route('admin.blogs.index')->with('success', 'blog updated successfully');
+        return redirect()->route('admin.blogs.index')->with('toast', ['type' => 'success', 'message' => 'Blog updated successfully.']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Blog $blog)
     {
         // Delete images from storage if they exist
@@ -99,6 +81,6 @@ class BlogController extends Controller
 
         $blog->delete();
 
-        return redirect()->route('admin.blogs.index')->with('success', 'blog deleted successfully');
+        return redirect()->route('admin.blogs.index') ->with('toast', ['type' => 'success', 'message' => 'Blog deleted successfully.']);
     }
 }

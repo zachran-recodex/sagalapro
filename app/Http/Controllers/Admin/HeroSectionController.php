@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class HeroSectionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $heroSections = HeroSection::orderBy('id')->paginate(5);
@@ -20,17 +17,11 @@ class HeroSectionController extends Controller
         return view('admin.hero-sections.index', compact('heroSections'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.hero-sections.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(HeroSectionStoreRequest $request)
     {
         $heroSection = new HeroSection();
@@ -46,20 +37,14 @@ class HeroSectionController extends Controller
 
         $heroSection->save();
 
-        return redirect()->route('admin.hero-sections.index')->with('success', 'Hero Section created successfully');
+        return redirect()->route('admin.hero-sections.index')->with('toast', ['type' => 'success', 'message' => 'Hero Section created successfully.']);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(HeroSection $heroSection)
     {
         return view('admin.hero-sections.edit', compact('heroSection'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(HeroSectionUpdateRequest $request, HeroSection $heroSection)
     {
         // Update fields with request data
@@ -77,12 +62,9 @@ class HeroSectionController extends Controller
 
         $heroSection->save();
 
-        return redirect()->route('admin.hero-sections.index')->with('success', 'Hero Section updated successfully');
+        return redirect()->route('admin.hero-sections.index')->with('toast', ['type' => 'success', 'message' => 'Hero Section updated successfully.']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(HeroSection $heroSection)
     {
         // Delete images from storage if they exist
@@ -92,6 +74,6 @@ class HeroSectionController extends Controller
 
         $heroSection->delete();
 
-        return redirect()->route('admin.hero-sections.index')->with('success', 'Hero Section deleted successfully');
+        return redirect()->route('admin.hero-sections.index')->with('toast', ['type' => 'success', 'message' => 'Hero Section deleted successfully.']);
     }
 }

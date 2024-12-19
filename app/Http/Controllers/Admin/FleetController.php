@@ -11,9 +11,6 @@ use Illuminate\Support\Str;
 
 class FleetController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $fleets = Fleet::orderBy('id')->paginate(10);
@@ -21,17 +18,11 @@ class FleetController extends Controller
         return view('admin.fleets.index', compact('fleets'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.fleets.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(FleetStoreRequest $request)
     {
         $fleet = new Fleet();
@@ -57,20 +48,14 @@ class FleetController extends Controller
 
         $fleet->save();
 
-        return redirect()->route('admin.fleets.index')->with('success', 'Fleet created successfully');
+        return redirect()->route('admin.fleets.index')->with('toast', ['type' => 'success', 'message' => 'Fleet created successfully.']);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Fleet $fleet)
     {
         return view('admin.fleets.edit', compact('fleet'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(FleetUpdateRequest $request, Fleet $fleet)
     {
         // Update fields with request data
@@ -98,12 +83,9 @@ class FleetController extends Controller
 
         $fleet->save();
 
-        return redirect()->route('admin.fleets.index')->with('success', 'Fleet updated successfully');
+        return redirect()->route('admin.fleets.index')->with('toast', ['type' => 'success', 'message' => 'Fleet updated successfully.']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Fleet $fleet)
     {
         // Delete image from storage if it exists
@@ -113,6 +95,6 @@ class FleetController extends Controller
 
         $fleet->delete();
 
-        return redirect()->route('admin.fleets.index')->with('success', 'Fleet deleted successfully');
+        return redirect()->route('admin.fleets.index')->with('toast', ['type' => 'success', 'message' => 'Fleet deleted successfully.']);
     }
 }
