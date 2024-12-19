@@ -31,7 +31,10 @@ class PartnerController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            $partner->image = $request->file('image')->store('partners', 'public');
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/partners'), $filename);
+            $partner->image = 'uploads/partners/' . $filename;
         }
 
         $partner->save();
@@ -52,10 +55,14 @@ class PartnerController extends Controller
         // Handle image upload
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($partner->image) {
-                Storage::disk('public')->delete($partner->image);
+            if ($partner->image && file_exists(public_path($partner->image))) {
+                unlink(public_path($partner->image));
             }
-            $partner->image = $request->file('image')->store('partners', 'public');
+
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/partners'), $filename);
+            $partner->image = 'uploads/partners/' . $filename;
         }
 
         $partner->save();
@@ -65,9 +72,9 @@ class PartnerController extends Controller
 
     public function destroy(Partner $partner)
     {
-        // Delete images from storage if they exist
-        if ($partner->image) {
-            Storage::disk('public')->delete($partner->image);
+        // Delete image from public folder if exists
+        if ($partner->image && file_exists(public_path($partner->image))) {
+            unlink(public_path($partner->image));
         }
 
         $partner->delete();

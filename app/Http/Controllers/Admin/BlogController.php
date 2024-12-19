@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\BlogStoreRequest;
 use App\Http\Requests\Admin\BlogUpdateRequest;
 use App\Models\Blog;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
@@ -36,7 +35,10 @@ class BlogController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            $blog->image = $request->file('image')->store('blogs', 'public');
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/blogs'), $filename);
+            $blog->image = 'uploads/blogs/' . $filename;
         }
 
         $blog->save();
@@ -61,10 +63,14 @@ class BlogController extends Controller
         // Handle image upload
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($blog->image) {
-                Storage::disk('public')->delete($blog->image);
+            if ($blog->image && file_exists(public_path($blog->image))) {
+                unlink(public_path($blog->image));
             }
-            $blog->image = $request->file('image')->store('blogs', 'public');
+
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/blogs'), $filename);
+            $blog->image = 'uploads/blogs/' . $filename;
         }
 
         $blog->save();
@@ -74,9 +80,9 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog)
     {
-        // Delete images from storage if they exist
-        if ($blog->image) {
-            Storage::disk('public')->delete($blog->image);
+        // Delete image from public folder if exists
+        if ($blog->image && file_exists(public_path($blog->image))) {
+            unlink(public_path($blog->image));
         }
 
         $blog->delete();

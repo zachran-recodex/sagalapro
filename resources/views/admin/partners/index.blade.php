@@ -42,7 +42,7 @@
                         @forelse($partners as $partner)
                             <tr>
                                 <td class="flex">
-                                    <img src="{{ Storage::url($partner->image) }}" alt="image" class="border rounded-lg w-24 h-16 object-cover">
+                                    <img src="{{ asset($partner->image) }}" alt="image" class="border rounded-lg w-24 h-16 object-cover">
                                 </td>
                                 <td class="text-center">
                                     @if ($partner->status)

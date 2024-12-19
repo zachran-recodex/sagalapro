@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\HeroSectionStoreRequest;
 use App\Http\Requests\Admin\HeroSectionUpdateRequest;
 use App\Models\HeroSection;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class HeroSectionController extends Controller
 {
@@ -32,7 +33,10 @@ class HeroSectionController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            $heroSection->image = $request->file('image')->store('hero-sections', 'public');
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/hero-sections'), $filename);
+            $heroSection->image = 'uploads/hero-sections/' . $filename;
         }
 
         $heroSection->save();
@@ -54,10 +58,14 @@ class HeroSectionController extends Controller
         // Handle image upload
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($heroSection->image) {
-                Storage::disk('public')->delete($heroSection->image);
+            if ($heroSection->image && file_exists(public_path($heroSection->image))) {
+                unlink(public_path($heroSection->image));
             }
-            $heroSection->image = $request->file('image')->store('hero-sections', 'public');
+
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/hero-sections'), $filename);
+            $heroSection->image = 'uploads/hero-sections/' . $filename;
         }
 
         $heroSection->save();
@@ -67,9 +75,9 @@ class HeroSectionController extends Controller
 
     public function destroy(HeroSection $heroSection)
     {
-        // Delete images from storage if they exist
-        if ($heroSection->image) {
-            Storage::disk('public')->delete($heroSection->image);
+        // Delete image from public folder if exists
+        if ($heroSection->image && file_exists(public_path($heroSection->image))) {
+            unlink(public_path($heroSection->image));
         }
 
         $heroSection->delete();

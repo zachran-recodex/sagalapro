@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\FleetStoreRequest;
 use App\Http\Requests\Admin\FleetUpdateRequest;
 use App\Models\Fleet;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class FleetController extends Controller
@@ -33,8 +32,6 @@ class FleetController extends Controller
         $fleet->description = $request->description;
         $fleet->status = true;
         $fleet->gltf = $request->gltf;
-
-        // New fields
         $fleet->practice_range = $request->practice_range;
         $fleet->cruise_speed = $request->cruise_speed;
         $fleet->maximum_speed = $request->maximum_speed;
@@ -43,7 +40,10 @@ class FleetController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            $fleet->image = $request->file('image')->store('fleets', 'public');
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/fleets'), $filename);
+            $fleet->image = 'uploads/fleets/' . $filename;
         }
 
         $fleet->save();
@@ -64,8 +64,6 @@ class FleetController extends Controller
         $fleet->description = $request->description;
         $fleet->status = $request->boolean('status', true);
         $fleet->gltf = $request->gltf;
-
-        // New fields
         $fleet->practice_range = $request->practice_range;
         $fleet->cruise_speed = $request->cruise_speed;
         $fleet->maximum_speed = $request->maximum_speed;
@@ -75,10 +73,14 @@ class FleetController extends Controller
         // Handle image upload
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($fleet->image) {
-                Storage::disk('public')->delete($fleet->image);
+            if ($fleet->image && file_exists(public_path($fleet->image))) {
+                unlink(public_path($fleet->image));
             }
-            $fleet->image = $request->file('image')->store('fleets', 'public');
+
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/fleets'), $filename);
+            $fleet->image = 'uploads/fleets/' . $filename;
         }
 
         $fleet->save();
@@ -88,9 +90,9 @@ class FleetController extends Controller
 
     public function destroy(Fleet $fleet)
     {
-        // Delete image from storage if it exists
-        if ($fleet->image) {
-            Storage::disk('public')->delete($fleet->image);
+        // Delete image from public folder if exists
+        if ($fleet->image && file_exists(public_path($fleet->image))) {
+            unlink(public_path($fleet->image));
         }
 
         $fleet->delete();

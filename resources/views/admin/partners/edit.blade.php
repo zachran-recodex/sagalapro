@@ -34,7 +34,7 @@
 
                     <div class="col-span-6">
                         <label for="current-image" class="form-label">Current Image</label>
-                        <img src="{{ Storage::url($partner->image) }}" alt="{{ $partner->title }}" class="border rounded-lg w-full h-32 object-cover">
+                        <img src="{{ asset($partner->image) }}" alt="{{ $partner->title }}" class="border rounded-lg w-full h-32 object-cover">
                     </div>
 
                     <div class="col-span-6 flex items-center">

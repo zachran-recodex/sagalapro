@@ -32,7 +32,7 @@
                         <label for="logo" class="form-label">Logo</label>
                         <input type="file" name="logo" id="logo" accept="image/*" class="border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
                         @if ($setting && $setting->logo)
-                            <img src="{{ Storage::url($setting->logo) }}" alt="Logo" class="mt-2 w-full h-32 border rounded-lg">
+                            <img src="{{ asset($setting->logo) }}" alt="Logo" class="mt-2 w-full h-32 border rounded-lg">
                         @endif
                     </div>
 
@@ -40,7 +40,7 @@
                         <label for="favicon" class="form-label">Favicon</label>
                         <input type="file" name="favicon" id="favicon" accept="image/*" class="border border-neutral-200 dark:border-neutral-600 w-full rounded-lg">
                         @if ($setting && $setting->favicon)
-                            <img src="{{ Storage::url($setting->favicon) }}" alt="Favicon" class="mt-2 w-32 h-32 border rounded-lg">
+                            <img src="{{ asset($setting->favicon) }}" alt="Favicon" class="mt-2 w-32 h-32 border rounded-lg">
                         @endif
                     </div>
 

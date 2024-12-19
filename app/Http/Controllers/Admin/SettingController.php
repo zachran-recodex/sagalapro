@@ -21,21 +21,18 @@ class SettingController extends Controller
     {
         $setting = Setting::first() ?? new Setting();
 
-        // Handle image uploads
         if ($request->hasFile('logo')) {
-            // Delete old image if exists
-            if ($setting->logo) {
-                Storage::disk('public')->delete($setting->logo);
-            }
-            $setting->logo = $request->file('logo')->store('settings', 'public');
+            $file = $request->file('logo');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/settings'), $filename);
+            $setting->logo = 'uploads/settings/' . $filename;
         }
 
         if ($request->hasFile('favicon')) {
-            // Delete old image if exists
-            if ($setting->favicon) {
-                Storage::disk('public')->delete($setting->favicon);
-            }
-            $setting->favicon = $request->file('favicon')->store('settings', 'public');
+            $file = $request->file('favicon');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/settings'), $filename);
+            $setting->favicon = 'uploads/settings/' . $filename;
         }
 
         $setting->phone_one = $request->phone_one;
@@ -46,7 +43,6 @@ class SettingController extends Controller
         $setting->operational_address = $request->operational_address;
         $setting->footer_text = $request->footer_text;
 
-        // Save the setting record
         $setting->save();
 
         return redirect()->route('admin.settings.index')->with('toast', ['type' => 'success', 'message' => 'Setting updated successfully.']);

@@ -46,7 +46,7 @@
                                         <span class="text-lg text-secondary-light font-semibold grow">{{ $service->title }}</span>
                                     </td>
                                     <td class="flex justify-center">
-                                        <img src="{{ Storage::url($service->image) }}" alt="{{ $service->title }}" class="border rounded-lg w-24 h-16 object-cover">
+                                        <img src="{{ asset($service->image) }}" alt="{{ $service->title }}" class="border rounded-lg w-24 h-16 object-cover">
                                     </td>
                                     <td class="text-center">
                                         @if ($service->status)

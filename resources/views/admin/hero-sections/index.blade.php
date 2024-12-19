@@ -46,7 +46,7 @@
                                         <span class="text-lg text-secondary-light font-semibold grow">{{ $heroSection->title }}</span>
                                     </td>
                                     <td class="flex justify-center">
-                                        <img src="{{ Storage::url($heroSection->image) }}" alt="{{ $heroSection->title }}" class="border rounded-lg w-24 h-16 object-cover">
+                                        <img src="{{ asset($heroSection->image) }}" alt="{{ $heroSection->title }}" class="border rounded-lg w-24 h-16 object-cover">
                                     </td>
                                     <td class="text-center">
                                         @if ($heroSection->status)
