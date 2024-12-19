@@ -116,7 +116,7 @@
                 <!-- Notification End  -->
 
                 <button data-dropdown-toggle="dropdownProfile" class="flex justify-center items-center rounded-full" type="button">
-                    <img src="{{ Storage::url(Auth::user()->profile_picture) }}" alt="image" class="w-10 h-10 object-fit-cover rounded-full">
+                    <img src="{{ asset(Auth::user()->profile_picture) }}" alt="image" class="border border-neutral-200 dark:border-neutral-600 w-10 h-10 object-fit-cover rounded-full">
                 </button>
                 <div id="dropdownProfile" class="z-10 hidden bg-white dark:bg-neutral-700 rounded-lg shadow-lg dropdown-menu-sm p-3">
                     <div class="py-3 px-4 rounded-lg bg-primary-50 dark:bg-primary-600/25 mb-4 flex items-center justify-between gap-2">

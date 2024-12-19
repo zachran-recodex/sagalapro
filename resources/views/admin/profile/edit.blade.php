@@ -28,7 +28,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.profile.update') }}" enctype="multipart/form-data" class="grid grid-cols-12 gap-4">
                         @csrf
-                        @method('patch')
+                        @method('PATCH')
 
                         <div class="col-span-6">
                             <label for="profile_picture" class="form-label">Profile Picture</label>
@@ -37,7 +37,7 @@
 
                         <div class="col-span-6">
                             <label for="current_profile_picture" class="form-label">Current Profile Picture</label>
-                            <img src="{{ Storage::url($user->profile_picture) }}" alt="{{ $user->name }}" class="border rounded-lg w-32 h-32 object-cover">
+                            <img src="{{ asset($user->profile_picture) }}" alt="{{ $user->name }}" class="border rounded-lg w-32 h-32 object-cover">
                         </div>
 
                         <div class="flex items-center gap-4">

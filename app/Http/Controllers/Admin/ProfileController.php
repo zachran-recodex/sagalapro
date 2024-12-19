@@ -13,9 +13,6 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
     public function edit(Request $request): View
     {
         return view('admin.profile.edit', [
@@ -23,24 +20,16 @@ class ProfileController extends Controller
         ]);
     }
 
-    /**
-     * Update the user's profile information.
-     */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $user = $request->user();
         $validated = $request->validated();
 
-        // Proses unggah file profile_picture
         if ($request->hasFile('profile_picture')) {
             $file = $request->file('profile_picture');
-            $path = $file->store('profile_pictures', 'public');
-            $validated['profile_picture'] = $path;
-
-            // Hapus file lama jika ada
-            if ($user->profile_picture) {
-                Storage::disk('public')->delete($user->profile_picture);
-            }
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/profile_pictures'), $filename);
+            $validated['profile_picture'] = 'uploads/profile_pictures/' . $filename;
         }
 
         $user->fill($validated);
@@ -54,9 +43,6 @@ class ProfileController extends Controller
         return Redirect::route('admin.profile.edit')->with('status', 'profile-updated');
     }
 
-    /**
-     * Delete the user's account.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
