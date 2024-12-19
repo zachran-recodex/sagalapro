@@ -109,7 +109,7 @@
                         </div>
 
                         <div class="text-center py-3 px-4">
-                            <a href="javascript:void(0)" class="text-primary-600 dark:text-primary-600 font-semibold hover:underline text-center">See All Notification </a>
+                            <a href="javascript:void(0)" class="text-primary-600 dark:text-primary-600 font-semibold hover:underline text-center">See All Notification</a>
                         </div>
                     </div>
                 </div>
@@ -130,19 +130,25 @@
                         <ul class="flex flex-col">
                             <li>
                                 <a class="text-black px-0 py-2 hover:text-primary-600 flex items-center gap-4" href="{{ route('admin.profile.edit') }}">
-                                    <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon>  My Profile</a>
+                                    <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon>My Profile</a>
                             </li>
                             <li>
                                 <a class="text-black px-0 py-2 hover:text-primary-600 flex items-center gap-4" href="">
-                                    <iconify-icon icon="tabler:message-check" class="icon text-xl"></iconify-icon>  Inbox</a>
+                                    <iconify-icon icon="tabler:message-check" class="icon text-xl"></iconify-icon>Inbox</a>
                             </li>
                             <li>
-                                <a class="text-black px-0 py-2 hover:text-primary-600 flex items-center gap-4" href="">
-                                    <iconify-icon icon="icon-park-outline:setting-two" class="icon text-xl"></iconify-icon>  Setting</a>
+                                <a class="text-black px-0 py-2 hover:text-primary-600 flex items-center gap-4" href="{{ route('admin.settings.index') }}">
+                                    <iconify-icon icon="icon-park-outline:setting-two" class="icon text-xl"></iconify-icon>Setting</a>
                             </li>
                             <li>
-                                <a class="text-black px-0 py-2 hover:text-danger-600 flex items-center gap-4" href="javascript:void(0)">
-                                    <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon>  Log Out</a>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <a class="text-black px-0 py-2 hover:text-danger-600 flex items-center gap-4" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                        <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon>
+                                        Log Out
+                                    </a>
+                                </form>
                             </li>
                         </ul>
                     </div>
