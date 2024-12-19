@@ -13,7 +13,7 @@ class FleetController extends Controller
 {
     public function index()
     {
-        $fleets = Fleet::orderBy('id')->paginate(10);
+        $fleets = Fleet::orderByDesc('id')->paginate(10);
 
         return view('admin.fleets.index', compact('fleets'));
     }

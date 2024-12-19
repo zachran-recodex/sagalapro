@@ -2,14 +2,14 @@
     <section class="bg-white dark:bg-dark-2 flex flex-wrap min-h-[100vh]">
         <div class="lg:w-1/2 lg:block hidden">
             <div class="flex items-center flex-col h-full justify-center">
-                <img class="h-screen w-full" src="{{ asset('dashboard/images/auth/auth-img.png') }}" alt="image">
+                <img class="h-screen w-full" src="{{ asset('/images/discover-bg.jpg') }}" alt="image">
             </div>
         </div>
         <div class="lg:w-1/2 py-8 px-6 flex flex-col justify-center">
             <div class="lg:max-w-[464px] mx-auto w-full">
                 <div>
-                    <a href="" class="mb-2.5 max-w-[290px]">
-                        <img src="{{ asset('dashboard/images/logo.png') }}" alt="image">
+                    <a href="{{ route('home') }}" class="mb-2.5 max-w-[290px]">
+                        <img src="{{ asset('/images/logo-sagala-second.png') }}" alt="image">
                     </a>
                     <h4 class="mb-3">Login to your Account</h4>
                     <p class="mb-8 text-secondary-light text-lg">Welcome back! please enter your detail</p>

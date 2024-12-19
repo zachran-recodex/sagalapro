@@ -11,7 +11,7 @@ class FaqController extends Controller
 {
     public function index()
     {
-        $faqs = Faq::orderBy('id')->paginate(4);
+        $faqs = Faq::orderByDesc('id')->paginate(4);
 
         return view('admin.faqs.index', compact('faqs'));
     }

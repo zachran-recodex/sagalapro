@@ -2,7 +2,7 @@
     <section class="bg-white dark:bg-dark-2 flex flex-wrap min-h-[100vh]">
         <div class="lg:w-1/2 lg:block hidden">
             <div class="flex items-center flex-col h-full justify-center">
-                <img class="h-screen w-full" src="{{ asset('dashboard/images/auth/forgot-pass-img.png') }}" alt="">
+                <img class="h-screen w-full" src="{{ asset('/images/discover-bg.jpg') }}" alt="image">
             </div>
         </div>
         <div class="lg:w-1/2 py-8 px-6 flex flex-col justify-center">

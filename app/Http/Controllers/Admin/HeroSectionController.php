@@ -12,7 +12,7 @@ class HeroSectionController extends Controller
 {
     public function index()
     {
-        $heroSections = HeroSection::orderBy('id')->paginate(5);
+        $heroSections = HeroSection::orderByDesc('id')->paginate(5);
 
         return view('admin.hero-sections.index', compact('heroSections'));
     }
