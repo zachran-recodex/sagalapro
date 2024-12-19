@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BlogStoreRequest;
-use App\Http\Requests\BlogUpdateRequest;
+use App\Http\Requests\Admin\BlogStoreRequest;
+use App\Http\Requests\Admin\BlogUpdateRequest;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;

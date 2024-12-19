@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ServiceStoreRequest;
-use App\Http\Requests\ServiceUpdateRequest;
+use App\Http\Requests\Admin\ServiceStoreRequest;
+use App\Http\Requests\Admin\ServiceUpdateRequest;
 use App\Models\Service;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;

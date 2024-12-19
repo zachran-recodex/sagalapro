@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\HeroSectionStoreRequest;
-use App\Http\Requests\HeroSectionUpdateRequest;
+use App\Http\Requests\Admin\HeroSectionStoreRequest;
+use App\Http\Requests\Admin\HeroSectionUpdateRequest;
 use App\Models\HeroSection;
 use Illuminate\Support\Facades\Storage;
 

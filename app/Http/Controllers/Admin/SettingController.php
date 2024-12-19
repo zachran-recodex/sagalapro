@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SettingStoreRequest;
+use App\Http\Requests\Admin\SettingStoreRequest;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Storage;
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ContactStoreRequest;
+use App\Http\Requests\Admin\ContactStoreRequest;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Faq;

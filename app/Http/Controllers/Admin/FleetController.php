@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\FleetStoreRequest;
-use App\Http\Requests\FleetUpdateRequest;
+use App\Http\Requests\Admin\FleetStoreRequest;
+use App\Http\Requests\Admin\FleetUpdateRequest;
 use App\Models\Fleet;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;

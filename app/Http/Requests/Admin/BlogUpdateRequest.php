@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class ServiceUpdateRequest extends FormRequest
+class BlogUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +23,7 @@ class ServiceUpdateRequest extends FormRequest
     {
         return [
             'title' => 'sometimes|required|string|max:255',
+            'author' => 'sometimes|required|string|max:255',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'description' => 'sometimes|required|string',
             'status' => 'required|boolean',

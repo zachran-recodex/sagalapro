@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\FaqStoreRequest;
-use App\Http\Requests\FaqUpdateRequest;
+use App\Http\Requests\Admin\FaqStoreRequest;
+use App\Http\Requests\Admin\FaqUpdateRequest;
 use App\Models\Faq;
 
 class FaqController extends Controller

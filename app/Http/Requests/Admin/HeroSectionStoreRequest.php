@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ServiceStoreRequest extends FormRequest
+class HeroSectionStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,6 @@ class ServiceStoreRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-            'description' => 'required|string',
         ];
     }
 }

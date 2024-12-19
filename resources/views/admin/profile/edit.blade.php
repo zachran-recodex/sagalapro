@@ -28,7 +28,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.profile.update') }}" enctype="multipart/form-data" class="grid grid-cols-12 gap-4">
                         @csrf
-                        @method('PATCH')
+                        @method('patch')
 
                         <div class="col-span-6">
                             <label for="profile_picture" class="form-label">Profile Picture</label>

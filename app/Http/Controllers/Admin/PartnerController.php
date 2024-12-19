@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PartnerStoreRequest;
-use App\Http\Requests\PartnerUpdateRequest;
+use App\Http\Requests\Admin\PartnerStoreRequest;
+use App\Http\Requests\Admin\PartnerUpdateRequest;
 use App\Models\Partner;
 use Illuminate\Support\Facades\Storage;
 
