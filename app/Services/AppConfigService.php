@@ -5,12 +5,10 @@ namespace App\Services;
 use App\Models\Service;
 use App\Models\Setting;
 
-
 class AppConfigService
 {
     protected $navServices;
-
-    protected $setting;
+    protected Setting $setting;
 
     public function __construct()
     {

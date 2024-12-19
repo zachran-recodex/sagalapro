@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class PartnerUpdateRequest extends FormRequest
+class FaqUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +22,8 @@ class PartnerUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'title' => 'sometimes|required|string|max:255',
+            'description' => 'sometimes|required|string',
             'status' => 'required|boolean',
         ];
     }

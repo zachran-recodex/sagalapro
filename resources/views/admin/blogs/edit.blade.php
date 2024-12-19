@@ -44,7 +44,7 @@
 
                     <div class="col-span-6">
                         <label for="current-image" class="form-label">Current Image</label>
-                        <img src="{{ Storage::url($blog->image) }}" alt="{{ $blog->title }}" class="border rounded-lg w-full h-32 object-cover">
+                        <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="border rounded-lg w-full h-32 object-cover">
                     </div>
 
                     <div class="col-span-12">

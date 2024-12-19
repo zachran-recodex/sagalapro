@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class HeroSectionUpdateRequest extends FormRequest
+class PartnerUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,6 @@ class HeroSectionUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'sometimes|required|string|max:255',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'status' => 'required|boolean',
         ];

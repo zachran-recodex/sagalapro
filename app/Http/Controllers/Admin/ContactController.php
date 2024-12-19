@@ -7,9 +7,6 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $contacts = Contact::orderByDesc('id')->paginate(10);
@@ -25,9 +22,6 @@ class ContactController extends Controller
         return view('admin.contacts.index', compact('contacts', 'services'));
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Contact $contact)
     {
         $services = [
@@ -45,6 +39,6 @@ class ContactController extends Controller
     {
         $contact->delete();
 
-        return redirect()->route('admin.contacts.index')->with('success', 'Contact deleted successfully');
+        return redirect()->route('admin.contacts.index')->with('toast', ['type' => 'success', 'message' => 'Contact deleted successfully.']);
     }
 }

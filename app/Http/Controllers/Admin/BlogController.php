@@ -3,35 +3,25 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BlogStoreRequest;
-use App\Http\Requests\BlogUpdateRequest;
+use App\Http\Requests\Admin\BlogStoreRequest;
+use App\Http\Requests\Admin\BlogUpdateRequest;
 use App\Models\Blog;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $blogs = Blog::orderBy('id')->paginate(10);
+        $blogs = Blog::orderByDesc('id')->paginate(10);
 
         return view('admin.blogs.index', compact('blogs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.blogs.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(BlogStoreRequest $request)
     {
         $blog = new Blog();
@@ -45,25 +35,22 @@ class BlogController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            $blog->image = $request->file('image')->store('blogs', 'public');
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/blogs'), $filename);
+            $blog->image = 'uploads/blogs/' . $filename;
         }
 
         $blog->save();
 
-        return redirect()->route('admin.blogs.index')->with('success', 'blog created successfully');
+        return redirect()->route('admin.blogs.index')->with('toast', ['type' => 'success', 'message' => 'Blog created successfully.']);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(blog $blog)
     {
         return view('admin.blogs.edit', compact('blog'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(BlogUpdateRequest $request, Blog $blog)
     {
         // Update fields with request data
@@ -76,29 +63,30 @@ class BlogController extends Controller
         // Handle image upload
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($blog->image) {
-                Storage::disk('public')->delete($blog->image);
+            if ($blog->image && file_exists(public_path($blog->image))) {
+                unlink(public_path($blog->image));
             }
-            $blog->image = $request->file('image')->store('blogs', 'public');
+
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/blogs'), $filename);
+            $blog->image = 'uploads/blogs/' . $filename;
         }
 
         $blog->save();
 
-        return redirect()->route('admin.blogs.index')->with('success', 'blog updated successfully');
+        return redirect()->route('admin.blogs.index')->with('toast', ['type' => 'success', 'message' => 'Blog updated successfully.']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Blog $blog)
     {
-        // Delete images from storage if they exist
-        if ($blog->image) {
-            Storage::disk('public')->delete($blog->image);
+        // Delete image from public folder if exists
+        if ($blog->image && file_exists(public_path($blog->image))) {
+            unlink(public_path($blog->image));
         }
 
         $blog->delete();
 
-        return redirect()->route('admin.blogs.index')->with('success', 'blog deleted successfully');
+        return redirect()->route('admin.blogs.index') ->with('toast', ['type' => 'success', 'message' => 'Blog deleted successfully.']);
     }
 }

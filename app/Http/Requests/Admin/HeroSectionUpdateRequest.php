@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ContactStoreRequest extends FormRequest
+class HeroSectionUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,9 @@ class ContactStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'phone' => 'required|regex:/^[0-9]{10,15}$/',
-            'email' => 'required|email|max:255',
-            'service' => 'required|string|in:acquisition,aerial,cargo,charter,other',
-            'message' => 'required|string|max:1000',
+            'title' => 'sometimes|required|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'status' => 'required|boolean',
         ];
     }
 }

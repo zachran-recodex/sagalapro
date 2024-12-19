@@ -25,5 +25,16 @@
         </main>
 
         <x-scripts />
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const toast = document.querySelector('[role="alert"]');
+                if (toast) {
+                    setTimeout(() => {
+                        toast.remove();
+                    }, 5000); // 5 detik
+                }
+            });
+        </script>
     </body>
 </html>

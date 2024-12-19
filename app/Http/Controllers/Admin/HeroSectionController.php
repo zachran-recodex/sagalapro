@@ -3,34 +3,26 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\HeroSectionStoreRequest;
-use App\Http\Requests\HeroSectionUpdateRequest;
+use App\Http\Requests\Admin\HeroSectionStoreRequest;
+use App\Http\Requests\Admin\HeroSectionUpdateRequest;
 use App\Models\HeroSection;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class HeroSectionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $heroSections = HeroSection::orderBy('id')->paginate(5);
+        $heroSections = HeroSection::orderByDesc('id')->paginate(5);
 
         return view('admin.hero-sections.index', compact('heroSections'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.hero-sections.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(HeroSectionStoreRequest $request)
     {
         $heroSection = new HeroSection();
@@ -41,25 +33,22 @@ class HeroSectionController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            $heroSection->image = $request->file('image')->store('hero-sections', 'public');
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/hero-sections'), $filename);
+            $heroSection->image = 'uploads/hero-sections/' . $filename;
         }
 
         $heroSection->save();
 
-        return redirect()->route('admin.hero-sections.index')->with('success', 'Hero Section created successfully');
+        return redirect()->route('admin.hero-sections.index')->with('toast', ['type' => 'success', 'message' => 'Hero Section created successfully.']);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(HeroSection $heroSection)
     {
         return view('admin.hero-sections.edit', compact('heroSection'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(HeroSectionUpdateRequest $request, HeroSection $heroSection)
     {
         // Update fields with request data
@@ -69,29 +58,30 @@ class HeroSectionController extends Controller
         // Handle image upload
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($heroSection->image) {
-                Storage::disk('public')->delete($heroSection->image);
+            if ($heroSection->image && file_exists(public_path($heroSection->image))) {
+                unlink(public_path($heroSection->image));
             }
-            $heroSection->image = $request->file('image')->store('hero-sections', 'public');
+
+            $file = $request->file('image');
+            $filename = time() . '-' . Str::slug($request->title) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/hero-sections'), $filename);
+            $heroSection->image = 'uploads/hero-sections/' . $filename;
         }
 
         $heroSection->save();
 
-        return redirect()->route('admin.hero-sections.index')->with('success', 'Hero Section updated successfully');
+        return redirect()->route('admin.hero-sections.index')->with('toast', ['type' => 'success', 'message' => 'Hero Section updated successfully.']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(HeroSection $heroSection)
     {
-        // Delete images from storage if they exist
-        if ($heroSection->image) {
-            Storage::disk('public')->delete($heroSection->image);
+        // Delete image from public folder if exists
+        if ($heroSection->image && file_exists(public_path($heroSection->image))) {
+            unlink(public_path($heroSection->image));
         }
 
         $heroSection->delete();
 
-        return redirect()->route('admin.hero-sections.index')->with('success', 'Hero Section deleted successfully');
+        return redirect()->route('admin.hero-sections.index')->with('toast', ['type' => 'success', 'message' => 'Hero Section deleted successfully.']);
     }
 }

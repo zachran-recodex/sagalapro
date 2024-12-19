@@ -3,44 +3,36 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SettingStoreRequest;
+use App\Http\Requests\Admin\SettingStoreRequest;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $setting = Setting::first();
 
-        return view ('admin.settings.index', compact('setting'));
+        return view ('admin.settings.edit', compact('setting'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(SettingStoreRequest $request)
     {
         $setting = Setting::first() ?? new Setting();
 
-        // Handle image uploads
         if ($request->hasFile('logo')) {
-            // Delete old image if exists
-            if ($setting->logo) {
-                Storage::disk('public')->delete($setting->logo);
-            }
-            $setting->logo = $request->file('logo')->store('settings', 'public');
+            $file = $request->file('logo');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/settings'), $filename);
+            $setting->logo = 'uploads/settings/' . $filename;
         }
 
         if ($request->hasFile('favicon')) {
-            // Delete old image if exists
-            if ($setting->favicon) {
-                Storage::disk('public')->delete($setting->favicon);
-            }
-            $setting->favicon = $request->file('favicon')->store('settings', 'public');
+            $file = $request->file('favicon');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/settings'), $filename);
+            $setting->favicon = 'uploads/settings/' . $filename;
         }
 
         $setting->phone_one = $request->phone_one;
@@ -51,9 +43,8 @@ class SettingController extends Controller
         $setting->operational_address = $request->operational_address;
         $setting->footer_text = $request->footer_text;
 
-        // Save the setting record
         $setting->save();
 
-        return redirect()->route('admin.settings.index');
+        return redirect()->route('admin.settings.index')->with('toast', ['type' => 'success', 'message' => 'Setting updated successfully.']);
     }
 }

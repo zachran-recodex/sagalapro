@@ -13,6 +13,12 @@
         </ul>
     </div>
 
+    @if (session('toast'))
+        <div class="flex justify-end mb-6">
+            <x-toast type="{{ session('toast.type') }}" message="{{ session('toast.message') }}" />
+        </div>
+    @endif
+
     <div class="col-span-12">
         <div class="card border-0 overflow-hidden">
             <div class="card-header border-b border-neutral-200 dark:border-neutral-600 bg-white dark:bg-neutral-700 py-4 px-6 flex items-center flex-wrap gap-3 justify-between">
@@ -36,7 +42,7 @@
                         @forelse($partners as $partner)
                             <tr>
                                 <td class="flex">
-                                    <img src="{{ Storage::url($partner->image) }}" alt="image" class="border rounded-lg w-24 h-16 object-cover">
+                                    <img src="{{ asset($partner->image) }}" alt="image" class="border rounded-lg w-24 h-16 object-cover">
                                 </td>
                                 <td class="text-center">
                                     @if ($partner->status)
