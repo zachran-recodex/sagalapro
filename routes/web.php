@@ -26,9 +26,9 @@ Route::get('/blog/{slug}', [MainController::class, 'blog'])->name('blog.details'
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::post('/contact', [MainController::class, 'storeContact'])->name('contact.store');
 
-Route::get('/terms-and-conditions', [MainController::class, 'termsconditions'])->name('terms-conditions');
+Route::get('/terms-and-conditions', [MainController::class, 'termsConditions'])->name('terms-conditions');
 
-Route::get('/privacy-policy', [MainController::class, 'privacypolicy'])->name('privacy-policy');
+Route::get('/privacy-policy', [MainController::class, 'privacyPolicy'])->name('privacy-policy');
 
 Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function (){

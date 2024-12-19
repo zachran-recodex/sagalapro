@@ -127,12 +127,12 @@ class MainController extends Controller
         return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 
-    public function termsconditions()
+    public function termsConditions()
     {
         return view('main.terms-conditions');
     }
 
-    public function privacypolicy()
+    public function privacyPolicy()
     {
         return view('main.privacy-policy');
     }
